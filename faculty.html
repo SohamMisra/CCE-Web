@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <link rel="stylesheet" href="faculty.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/access-logo.png">
+    <link rel="stylesheet" href="utility-classes/pop-up.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="icon1">
+            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+        </div>
+
+        <div class="menu">
+            <ul class="nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="faculty.html" style="color: #ff7200;">FACULTY</a></li>
+                <li><a href="committee_member.html">COMMITTEE MEMBERS</a></li>
+                <li><a href="placements.html">PLACEMENTS</a></li>
+                <li><a href="notes.html">NOTES & RESOURCES</a></li>
+                <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
+                <li><a href="about_us.html">ABOUT US</a></li>
+            </ul>
+        </div>
+
+        <!-- <div class="icon2">
+            <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+        <!-- </div> -->
+
+    </div> 
+    <header>
+        <h1><span style= " font-size: 50px; font-weight:bold; color: black; text-decoration: underline;">TEACHING STAFF</span></h1>
+    </header>
+    <main>
+        <div class="faculty-container">
+            <div class="faculty-card">
+                <img src="images/hod.jpg" alt="HOD" class="faculty-photo">
+                <h3>DR. RADHAKRISHNA</h3>
+                <p>Professor & Head</p>
+                <a class="read-more button" href="#popup1" onclick="showMoreInfo('pop-up1')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up1">
+                <div id="popup1" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up1')">&times;</a>
+                        <div class="content">
+                            <img src="images/hod.jpg" alt="HOD" class="faculty-photo">
+                            <h2>DR. RADHAKRISHNA</h2>
+                            <div >
+                                <p><b>Designation: </b>Professor & Head</p>
+                                <p><b>Email: </b>radhakrishna@nitte.edu.in</p>
+                            </div>
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first">
+                                    <label for="first">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>BE - NMAM Institute Of Technology - 2003 .</li>
+                                            <li>M. Tech. - NMAM Institute of Technology Nitte 2007</li>
+                                            <li>Ph. D  </li>
+                                            <li> Lifetime Member of MISTE, MIAENG</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second">
+                                    <label for="second">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>6 months of Teaching as  Lecturer in SGS College , Bhatkal</li>
+                                            <li>20 years  of Teaching Experience in NMAMIT, Nitte</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third">
+                                    <label for="third">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Cryptography and Network Security</li>
+                                            <li>Cyber Security and Forensics</li>
+                                            <li>Artificial Intelligence & Machine Learning</li>
+                                            <li>Database Management Systems</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth">
+                                    <label for="fourth">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Database Management System</li>
+                                            <li>Data Communication</li>
+                                            <li>Computer Networks</li>
+                                            <li>Blockchain</li>
+                                            <li>Cybersecurity & Forensics</li>
+                                            <li>Cryptography & Network Security</li>
+                                            <li>Computer Organisation & Architecture</li>
+                                            <li>Finite Autodata & Formal Language</li>
+                                            <li>OS with C++</li>
+                                            <li>C Programming</li>
+                                            <li>Multi-Core Architecture & Programming</li>
+                                            <li>Unix Concepts</li>
+                                            <li>Malware Analysis & Detection</li>
+                                            <li>Multi-Media Communication</li>
+                                            <li>Security Analystics</li>
+                                            <li>Intellectual Property Rights</li>
+                                            <li>Social Connect and Responsibility</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>   
+
+            <div class="faculty-card">
+                <img src="images/assir.jpeg" alt="L2" class="faculty-photo">
+                <h3>DR. ASHISH SINGH</h3>
+                <p>Associate Professor</p>
+                <a class="read-more button" href="#popup2" onclick="showMoreInfo('pop-up2')">READ MORE</a>
+            </div>
+            
+            <dialog id="pop-up2">
+                <div id="popup2" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up2')">&times;</a>
+                        <div class="content">
+                            <img src="images/assir.jpeg" alt="L2" class="faculty-photo">
+                            <h2>DR. ASHISH SINGH</h2>
+                            <div >
+                                <p><b>Designation: </b>Associate Professor</p>
+                                <p><b>Email: </b>ashishsingh@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup2">
+                                    <label for="first-popup2">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>B.Tech in Applied Electronics and Instrumentation Engineering from Uttar Pradesh Technical University, Lucknow in 2007</li>
+                                            <li>M.Tech - JK Institute of Applied Physics & Technology, University of Allahabad, Allahabad in 2009</li>
+                                            <li>Ph.D. - JK Institute of Applied Physics & Technology, University of Allahabad, Allahabad in 2015 </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup2">
+                                    <label for="second-popup2">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Lecturer in Department of Electronics & Communication Engineering at Dr. Rizivi College of Engineering, Kaushambhi from 1 July 2009-15 June 2010</li>
+                                            <li>Assistant Professor in Department of Electronics & Communication Engineering at Raghu Engineering College, Dakamarri from 1 Aug 2015-25 March 2017</li>
+                                            <li>Assistant Professor Gd-III in Department of Electronics & Communication Engineering at NMAMIT, Nitte from April 2017</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup2">
+                                    <label for="third-popup2">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Wireless Sensor Networks</li>
+                                            <li>Antenna Technology</li>
+                                            <li>Millimetre Waves</li>
+                                            <li>Nano Antennas</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup2">
+                                    <label for="fourth-popup2">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Next Generation Telecom Networks</li>
+                                            <li>Wireless Sensor Networks</li>
+                                            <li>Applied Design and Logic Design</li>
+                                            <li>Multi-Media Communication</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+            <div class="faculty-card">
+                <img src="images/snsir.jpeg" alt="L2" class="faculty-photo">
+                <h3>MR. SHRINIVASA</h3>
+                <p>Assistant Professor Gd-III</p>
+                <!-- <button class="read-more">READ MORE</button> -->
+                <a class="read-more button" href="#popup3" onclick="showMoreInfo('pop-up3')">READ MORE</a>
+            </div> 
+
+            <dialog id="pop-up3">
+                <div id="popup3" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up3')">&times;</a>
+                        <div class="content">
+                            <img src="images/snsir.jpeg" alt="L2" class="faculty-photo">
+                            <h2>MR. SHRINIVASA</h2>
+                            <div>
+                                <p><b>Designation: </b>Assistant Professor Gd-III</p>
+                                <p><b>Email: </b>shrinivasa.naik@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup3">
+                                    <label for="first-popup3">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>B.E. in Computer Science and Engineering from HREC,  Nidasoshi  in 2002</li>
+                                            <li>M. Tech. - Computer Science and Engineering from NMAMIT, Nitte in 2012</li>
+                                            <li>Ph. D (pursuing) </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup3">
+                                    <label for="second-popup3">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>April 2007 to June 2013: Assistant Professor in MKIT, Kundapura</li>
+                                            <li>July 2013 to August 2023: Assistant Professor in SMVITM, Bantakal</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup3">
+                                    <label for="third-popup3">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Data Structures</li>
+                                            <li>Design & Analysis of Algorithms</li>
+                                            <li>Python Programming</li>
+                                            <li>Cloud Security</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup3">
+                                    <label for="fourth-popup3">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Data Structures</li>
+                                            <li>Python Programming</li>
+                                            <li>Introduction to C Programming</li>
+                                            <li>Big Data</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+            <div class="faculty-card">
+                <img src="images/massir.jpeg" alt="L3" class="faculty-photo">
+                <h3>MR. MANJUNATHA A S</h3>
+                <p>Assistant Professor Gd-III</p>
+                <a class="read-more button" href="#popup4" onclick="showMoreInfo('pop-up4')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up4">
+                <div id="popup4" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up4')">&times;</a>
+                        <div class="content">
+                            <img src="images/massir.jpeg" alt="L4" class="faculty-photo">
+                            <h2>MR. MANJUNATHA A S</h2>
+                            <div>
+                                <p><b>Designation: </b>Assistant Professor Gd-III</p>
+                                <p><b>Email: </b>manjunatha.as@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup4">
+                                    <label for="first-popup4">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Diploma in Computer Science & Engineering from VPT, Puttur in 2003</li>
+                                            <li>B.E in Information Science & Engineering from VCET, Puttur in 2006</li>
+                                            <li>M.Tech in CSE from NMAMIT, Nitte in 2012</li>
+                                            <li>PH.D (pursuing)</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup4">
+                                    <label for="second-popup4">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>July 2009 to September 2020: Senior Assistant Professor in MITE, Moodabidri</li>
+                                            <li>October 2020 to August 2021: Assistant Professor (Sr) in SMVITM, Bantakal.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup4">
+                                    <label for="third-popup4">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                          <li>Database Systems</li>
+                                          <li>Network Security</li>
+                                          <li>Wireless Sensor Networks</li>   
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup4">
+                                    <label for="fourth-popup4">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                          <li>Data Structures</li>
+                                          <li>OOOPS with Python</li>
+                                          <li>Design & Analysis of Algorithms</li>
+                                          <li>Database Management Systems</li>
+                                          <li>Cryptography & Network Security</li>
+                                          <li>Cybersecurity & Forensics</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+            <div class="faculty-card">
+                <img src="images/mkm.jpeg" alt="L3" class="faculty-photo">
+                <h3>DR. MAMTHA K M</h3>
+                <p>Assistant Professor Gd-III</p>
+                <a class="read-more button" href="#popup5" onclick="showMoreInfo('pop-up5')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up5">
+                <div id="popup5" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up5')">&times;</a>
+                        <div class="content">
+                            <img src="images/mkm.jpeg" alt="L3" class="faculty-photo">
+                            <h2>DR. MAMTHA K M</h2>
+                            <div>
+                                <p><b>Designation: </b>Assistant Professor Gd-III</p>
+                                <p><b>Email: </b>mamatha.km@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup5">
+                                    <label for="first-popup5">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>B.E. - G M Institute of Technology, Davangere, Affiliated to Visvesvaraya Technological University (VTU)Belgaum. 2011 </li>
+                                            <li>M. Tech. - NMAM Institute of Technology Nitte 200M.E -Atria Institute of Technology, Bangalore, Affiliated to Visvesvaraya Technological University (VTU)Belgaum.</li>
+                                            <li>Ph.D   - JNNCE Research Centre, Shimoga, Affiliated to Visvesvaraya Technological University (VTU) , Belgaum.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup5">
+                                    <label for="second-popup5">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>2014-2016, Kuvempu University, Shimoga</li>
+                                            <li>2018-2022, First Grade College, Shivamogga</li>
+                                            <li>2022-2023, NITK, Surathkal,Mangalore</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup5">
+                                    <label for="third-popup5">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Wireless Sensor Networks</li>
+                                            <li>Natural Language Processing</li>
+                                            <li>Swarm Intelligence and Bio-Inspired Computing</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup5">
+                                    <label for="fourth-popup5">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Applied Design and Logic Design (ADLD)</li>
+                                            <li>Wireless Sensor Networks</li>
+                                            <li>Cybersecurity</li>
+                                            <li>Ethical Hacking</li>
+                                            <li>Next Generation Telecom Networks</li>
+                                            <li>Database Mangement System</li>
+                                            <li>Network Flow Algorithm</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+
+            <div class="faculty-card">
+                <img src="images/kpsir.jpeg" alt="L6" class="faculty-photo">
+                <h3>MR. KRISHNA PRASAD RAO D S</h3>
+                <p>Assistant Professor Gd-II</p>
+                <a class="read-more button" href="#popup6" onclick="showMoreInfo('pop-up6')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up6">
+                <div id="popup6" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up6')">&times;</a>
+                        <div class="content">
+                            <img src="images/kpsir.jpeg" alt="L4" class="faculty-photo">
+                            <h2>MR. KRISHNA PRASAD RAO D S</h2>
+                            <div>
+                                <p><b>Designation: </b>Assistant Professor Gd-III</p>
+                                <p><b>Email: </b>krishnaprasad.cc@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup6">
+                                    <label for="first-popup6">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>B.E in Information Science and Engineering from VTU, Belgaum</li>
+                                            <li>M.Tech in Computer Science and Engineering from VTU, Belgaum</li>
+                                            <li>Ph. D (pursuing)  </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup6">
+                                    <label for="second-popup6">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>July 2014 to July 2022: Assistant Professor in Dept. of CS&E, Canara Engineering College, Bantwal.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup6">
+                                    <label for="third-popup6">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Computer Networks</li>
+                                            <li>Network Security</li>
+                                            <li>Blockchain Technology</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup6">
+                                    <label for="fourth-popup6">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Data Communications</li>
+                                            <li>Computer Networks</li>
+                                            <li>Introduction to Blockchain Technology</li>
+                                            <li>Artificial Intelligence & Machine Learning</li>
+                                            <li>Software Defined Networking</li>
+                                            <li>Android Application Development</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+            <div class="faculty-card">
+                <img src="images/sksir.jpeg" alt="L5" class="faculty-photo">
+                <h3>MR. SANDEEP KUMAR S</h3>
+                <p>Associate Professor Gd-II</p>
+                <a class="read-more button" href="#popup7" onclick="showMoreInfo('pop-up7')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up7">
+                <div id="popup7" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up7')">&times;</a>
+                        <div class="content">
+                            <img src="images/sksir.jpeg" alt="L4" class="faculty-photo">
+                            <h2>MR. SANDEEP KUMAR S</h2>
+                            <div>
+                                <p><b>Designation: </b>Associate Professor Gd-II</p>
+                                <p><b>Email: </b>sandeep.kumar@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup7">
+                                    <label for="first-popup7">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>B.E. in CSE from SSEC (VTU)-2011, Bangalore.</li>
+                                            <li>M.Tech in CSE from Canara Engineering College (VTU)-2013, Mangalore</li>
+                                            <li>Ph. D (pusuing)  </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup7">
+                                    <label for="second-popup7">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>2012-2022, Senior Assistant Professor in MITE, Moodbidri</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup7">
+                                    <label for="third-popup7">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Image Processing</li>
+                                            <li>Information Security</li>
+                                            <li>Machine Learning</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup7">
+                                    <label for="fourth-popup7">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Internet of Things</li>
+                                            <li>Data Structures</li>
+                                            <li>Deep Learning</li>
+                                            <li>Computer Vision</li>
+                                            <li>Artificial Intelligence & Machine Learning</li>
+                                            <li>Cloud Computing</li>
+                                            <li>Cybersecurity and Forensics </li>
+                                            <li>Principles & Practices of Software Engineering</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+            <div class="faculty-card">
+                <img src="images/ctsir.jpeg" alt="L6" class="faculty-photo">
+                <h3>MR. CHIDANANDA T</h3>
+                <p>Assistant Professor Gd-I</p>
+                <a class="read-more button" href="#popup8" onclick="showMoreInfo('pop-up8')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up8">
+                <div id="popup8" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up8')">&times;</a>
+                        <div class="content">
+                            <img src="images/ctsir.jpeg" alt="L4" class="faculty-photo">
+                            <h2>MR. CHIDANANDA T</h2>
+                            <div>
+                                <p><b>Designation: </b>Assistant Professor Gd-I</p>
+                                <p><b>Email: </b>chidananda.t@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup8">
+                                    <label for="first-popup8">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>B.E. in Information Science and Engineering from GM Institute of Technology, Davanagere - 2011</li>
+                                            <li>M.Tech in Computer Networks and Engineering from Siddaganga Institute of Technology, Tumakuru - 2013</li>
+                                            <li>Ph. D (pursuing)  </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup8">
+                                    <label for="second-popup8">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Aug 2014 to Feb 2017, Assistant Professor, Siddaganga Institute of Technology, Tumakuru</li>
+                                            <li>Jul 2018 to May 2019, Assistant Lecturer National Institute of Technology Karnataka, Surathkal</li>
+                                            <li>Nov 2020 to Sept 2022, Assistant Professor, Acharya Institute of Technology, Bengaluru</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup8">
+                                    <label for="third-popup8">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Information Security</li>
+                                            <li>Routing Issues in Wireless Sensor Networks</li>
+                                            <li>Privacy Preserving Techniques in Blockchain</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup8">
+                                    <label for="fourth-popup8">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Design & Analysis of Algorithms</li>
+                                            <li>Operating System</li>
+                                            <li>Object Oriented Programming (OOPS) with Java Programming</li>
+                                            <li>OOPS with C++ Programming</li>
+                                            <li>Software Engineering</li>
+                                            <li>Introduction to Blockchain Technology</li>
+                                            <li>Cloud Computing</li>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+
+            <div class="faculty-card">
+                <img src="images/jpmaam.jpeg" alt="L8" class="faculty-photo">
+                <h3>MS. JYOTHI PRASAD</h3>
+                <p>Assistant Professor Gd-I</p>
+                <a class="read-more button" href="#popup9" onclick="showMoreInfo('pop-up9')">READ MORE</a>
+            </div>
+
+            <dialog id="pop-up9">
+                <div id="popup9" class="overlay">
+                    <div class="popup wrapper">
+                        <a class="close" onclick="closeMoreInfo('pop-up9')">&times;</a>
+                        <div class="content">
+                            <img src="images/jpmaam.jpeg" alt="L4" class="faculty-photo">
+                            <h2>MS. JYOTHI PRASAD</h2>
+                            <div>
+                                <p><b>Designation: </b>Assistant Professor Gd-I</p>
+                                <p><b>Email: </b>jyohti.prasad@nitte.edu.in</p>
+                            </div>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="first-popup9">
+                                    <label for="first-popup9">Education Qualification</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>AMIE in Computer Science and Engineering, Institute of Engineers India, 2013</li>
+                                            <li>M.Tech in Computer Networks and Engineering, Mangalore Institute of Technology and Engineering, Moodbidre, Mangalore, 2015</li>
+                                            <li>Ph. D (pursuing) </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="second-popup9">
+                                    <label for="second-popup9">Past Experience</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Worked as an Assistant Professor in ISE department at Yenepoya Institute of Techology, Moodbidri from July October 2021 to August 2022.</li>
+                                            <li>Worked as an Assistant Professor in CSE department at Mangalore Institute of Technology and Engineering, Moodabidri from August 2022 to July 2024.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="third-popup9">
+                                    <label for="third-popup9">Areas of Interest</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Deep Learning</li>
+                                            <li>Internet of Things</li>
+                                            <li>Machine Learning</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <ul class="accordion">
+                                <li class="accordian-li">
+                                    <input type="radio" name="accordion" id="fourth-popup9">
+                                    <label for="fourth-popup9">Subjects Teaching</label>
+                                    <div class="dropdown-content">
+                                        <ul>
+                                            <li>Fundamentals of Computer Architecture</li>
+                                            <li>Foundations of Operating System</li>
+                                            <li>Multi Media Communication</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </dialog>
+        </div>
+
+        <header>
+            <h2><span style= " font-size: 50px; font-weight:bold; color: black; text-decoration: underline;">NON-TEACHING STAFF</span></h2>
+        </header>
+    </main>
+
+    <main>
+        <div class="faculty-container">
+            <div class="faculty-card">
+                <img src="images/nts2.jpg" alt="HOD" class="faculty-photo">
+                <h3>Ms. Kavyashree</h3>
+                <p>Department Office Assistant</p>
+            </div>
+            
+            <div class="faculty-card">
+                <img src="images/nts1.jpg" alt="HOD" class="faculty-photo">
+                <h3>Ms. Anusha</h3>
+                <p>Lab Assistant</p>
+            </div>
+
+            <div class="faculty-card">
+                <img src="images/nts3.jpg" alt="HOD" class="faculty-photo">
+                <h3>Ms. Sachitha Devadiga</h3>
+                <p>Lab Assistant</p>
+            </div>
+
+            <div class="faculty-card">
+              <img src="images/nts4.jpg" alt="HOD" class="faculty-photo">
+              <h3>Mr. Chethan</h3>
+              <p>Lab Assistant</p>
+          </div>
+
+          <div class="faculty-card">
+            <img src="images/nts5.png" alt="HOD" class="faculty-photo">
+            <h3>Mr. Naman</h3>
+            <p>Lab Assistant</p>
+        </div>
+
+            <div class="faculty-card">
+                <img src="images/nts6.jpg" alt="HOD" class="faculty-photo">
+                <h3>Mrs. Asha</h3>
+                <p>Attender</p>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

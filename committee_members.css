@@ -1,0 +1,124 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/committee.png') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Individual Member Box */
+.member {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Image */
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #eaeaea;
+    margin-bottom: 15px;
+}
+
+/* Member Info */
+.member h2 {
+    font-size: 1.4em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.member .role {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: bold;
+}
+
+.member .semester {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .members-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .member img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.year-tabs {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.year-tab {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.year-tab.active {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
