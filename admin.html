@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Event Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h2>CCE Admin Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p id="login-error" style="color: blue;"></p>
+    </div>
+
+    <div class="admin-container" id="admin-container" style="display: none;">
+        <h2>Event Management</h2>
+        <div id="event-section">
+            <h3>Add Event</h3>
+            <input type="date" id="eventDate">
+            <input type="text" id="eventTitle" placeholder="Event Title">
+            <input type="text" id="eventDescription" placeholder="Event Description">
+            <button onclick="addEvent()">Add</button>
+        </div>
+        <div id="reminder-section">
+            <h3>Reminders</h3>
+            <ul id="reminderList"></ul>
+        </div>
+    </div>
+
+    <script src="./admin.js"></script>
+</body>
+</html>
