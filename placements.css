@@ -1,0 +1,227 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
+@keyframes moveFromLeft {
+  0% { transform: translateX(-100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes moveFromRight {
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-image: url("https://img.freepik.com/free-photo/empty-elegant-background-with-copy-space_24972-1807.jpg?ga=GA1.1.53006499.1737388488&semt=ais_hybrid");
+
+  background-size: cover;
+  background-color: #bbbbbb;
+  background-blend-mode: overlay;
+}
+
+.Student_Card {
+  
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 250px;
+  min-height: 250px;
+  background-image: url("https://img.freepik.com/free-vector/white-with-diagonal-lines-effect_1017-30745.jpg?semt=ais_incoming");
+  background-size: cover;
+  border: 2px solid #b6b4b0;
+  border-radius: 40px 10px 30px 10px;
+  padding: 20px;
+  padding-top: 0px;
+  margin-top: 0px;
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  perspective: 1000px;
+
+  transition: transform 1s ease-in-out;
+  animation-duration: 1s;
+}
+
+.Student_Card > #Name {
+  color: rgba(0, 0, 0, 0.644);
+  font: bolder;
+  font-weight: 700;
+  margin: 5px;
+}
+
+.Student_Card > def {
+  z-index: 1;
+  background-color: #c5c5c5c2;
+  border-radius: 40px 10px 5px 5px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 27%;
+  background-size: cover;
+
+  padding: 10px 20px;
+  font-family: "Exo 2", serif;
+  color: aliceblue;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /*background-image: url("https://img.freepik.com/free-photo/grunge-black-concrete-textured-background_53876-124541.jpg?ga=GA1.1.53006499.1737388488&semt=ais_incoming");*/
+  background-blend-mode: lighten;
+}
+
+.Student_Card > * > #Company {
+  font-family: "Exo 2", serif;
+  font-weight: 900px;
+  margin: 5px;
+  font-size: 40px;
+  color: rgb(56, 56, 56);
+}
+
+.Student_Card > img {
+  margin: 5px;
+  border-radius: 20px;
+  height: 175px;
+  width: 280px;
+}
+.Student_Card:hover {
+  transform: scale(1.075) rotateX(10deg);
+  will-change: transform;
+}
+.Student_Card:hover > def{
+  background-color: #e3e3e385;
+}
+.Student_Card:not(:hover) {
+  transform: scale(1);
+}
+.Student_Card:nth-child(odd) { animation-name: moveFromLeft; }
+.Student_Card:nth-child(even) { animation-name: moveFromRight; }
+.Social_links {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.Social_links > * > * {
+  height: 4vh;
+  opacity: 0.6;
+}
+
+.Year {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.Year > * {
+  width: 95%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #363636;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 95%;
+}
+
+.dropdown-toggle:hover {
+  scale: 1.005;
+  opacity: 0.8;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  background-color: rgba(200, 200, 200, 0.05);
+  min-width: 160px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 1%;
+  padding: 10px;
+  z-index: 1;
+}
+
+.footer {
+  background: rgba(200, 200, 200, 0.1);
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin: 20px auto;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer:hover {
+  transform: scale(1.02);
+}
+
+.footer img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #000;
+}
+
+.footer-content {
+  flex: 1;
+}
+
+.footer h1 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+.airplane {
+  position: absolute;
+  width: 400px;
+  top: 20%;
+  left: -100px; /* Start off-screen */
+  animation: fly 5s linear;
+  opacity: 0;
+}
+@keyframes fly {
+  0% {
+    transform: translateX(-100px) translateY(30vh);
+    z-index: 2;
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(80vw) translateY(-100vh);
+    z-index: 2;
+    opacity: 0;
+  }
+}
