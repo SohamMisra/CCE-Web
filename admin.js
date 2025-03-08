@@ -1,5 +1,5 @@
-const adminUsername="";
-const adminPassword="";
+const adminUsername="CCE";
+const adminPassword="access2025";
 
 function login(){
     const username=document.getElementById("username").value;
