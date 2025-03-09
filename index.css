@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(images/);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.navbar{
+    width: 1200px;
+    height: 100px;
+    margin: auto;
+}
+
+.icon1{
+    width: 150px;
+    float: left;
+    height: 100px;
+}
+
+.logo1 img {
+    width: 200px;
+    height: 100%; /* Fill the height of the navbar */
+    max-height: 100px; /* Optional max height for better scaling */
+}
+
+.icon2{
+    width: 100px;
+    float: right;
+    height: 500px;
+}
+
+.logo2 img {
+    width: 200px;
+    height: 50px; /* Fill the height of the navbar */
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 80px;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 60px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
+}
+
+.content{
+    width: 1200px;
+    height: 50%;
+    margin: auto;
+    color: #fff;
+    position: relative;
+    
+}
+
+.content .par{
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1{
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.home-heading{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.content .cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+.content .cn a{
+    text-decoration: none;
+    color: #000;
+    transition: .3s ease;
+}
+
+.cn:hover{
+    background-color: #fff;
+}
+
+.content span{
+    color: #ff7200;
+    font-size: 65px;
+}
+
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+/* .main-content {
+    padding: 20px;
+    max-width: 1200px;
+} */
+
+/* Department Info Section */
+.department-info {
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+.department-info h1 {
+    color: white;
+    margin-bottom: 10px;
+    
+}
+
+.department-info p {
+    font: helvetica;    
+    font-style: italic;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px ;
+    margin-top: 0; /* Optional spacing from the main content */
+}
+
+footer a {
+    font-weight: bold; /* Makes the text bold */
+    color: #ffffff; /* White color for better visibility */
+    text-decoration: underline; /* Adds an underline to show it's a clickable link */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+footer a:hover {
+    color: #ffcc00; /* Changes color to yellow on hover */
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
