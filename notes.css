@@ -13,24 +13,29 @@ body {
 .container {
     max-width: 1200px;
     margin: 20px auto;
-    padding: 20px;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    padding: 0px;
+    
 }
+
 .content {
     display: flex; /* Use flexbox to align sections side by side */
     justify-content: space-between; /* Add space between the sections */
     align-items: flex-start; /* Align items at the top */
-    gap: 60px; /* Add some space between the two sections */
+    gap: 60px;
 }
 
 .syllabus-section,
 .time-table-section {
-    flex: 1; /* Each section takes equal width */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for aesthetics */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a shadow for aesthetics */
+
+    background-color: #ebe8e8;
+    border: 3px solid #55555538;
 }
 
 /* Style headings inside sections */
@@ -55,17 +60,18 @@ body {
     margin: 10px 0;
     text-align: center;
     text-decoration: none;
-    background: blue;
-    color: black;
+    background: rgba(0, 0, 56, 0.825);
+    color: rgba(255, 255, 255, 0.905);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: bold;
+    width: 50%;
 }
 
 .syllabus-section a:hover,
 .time-table-section a:hover {
-    background: #0056b3; /* Darker blue on hover */
+    background: #004186; /* Darker blue on hover */
     color: #fff;
 }
 
@@ -99,8 +105,10 @@ body {
     padding: 0;
     font-family: 'Calibri' ;
     background: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-teacher-s-college-classroom-coaching-course-poster-background-image_188494.jpg') no-repeat center center fixed;
+    background-color: #dedede;
     background-size: cover;
     color: black;
+    background-blend-mode: lighten;
 }
 
 .notes-container {
@@ -133,11 +141,17 @@ h1 {
 }
 
 .semester {
-    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #ebe8e8;
+    border: 3px solid #55555538;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .semester:hover {
@@ -148,14 +162,14 @@ h1 {
 h2 {
     font-size: 2.4rem;
     margin-bottom: 15px;
-    color: orangered;
+    color: rgb(16, 16, 16);
     font-weight: bold;
 }
 
 .drive-link {
     text-decoration: none;
-    background: blue;
-    color: black;
+    background: rgba(0, 0, 56, 0.825);
+    color: rgba(255, 255, 255, 0.874);
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
@@ -163,7 +177,25 @@ h2 {
 }
 
 .drive-link:hover {
-    background: #ADD8E6;
+    background: #130080c6;
     color: white;
 }
 
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px ;
+    margin-top: 0; /* Optional spacing from the main content */
+}
+
+footer a {
+    font-weight: bold; /* Makes the text bold */
+    color: #ffffff; /* White color for better visibility */
+    text-decoration: underline; /* Adds an underline to show it's a clickable link */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+footer a:hover {
+    color: #ffcc00; /* Changes color to yellow on hover */
+}
