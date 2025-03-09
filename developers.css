@@ -1,0 +1,206 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+body {
+    background-image: url(Images/developerbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 30px;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.team-row {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.team-member {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;  /* Enables 3D effect */
+}
+
+/* Flip Card Container */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Front and Back of Card */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.front img, .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Back Side */
+.back {
+    transform: rotateY(180deg);
+}
+
+/* Flip Effect */
+.team-member:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* Overlay for Name & Social Icons */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 120px;
+    transition: height 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-member:hover .overlay {
+    height: 150px;
+}
+
+.overlay h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.overlay p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px ;
+    margin-top: 0; /* Optional spacing from the main content */
+}
+
+footer a {
+    font-weight: bold; /* Makes the text bold */
+    color: #ffffff; /* White color for better visibility */
+    text-decoration: underline; /* Adds an underline to show it's a clickable link */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+footer a:hover {
+    color: #ffcc00; /* Changes color to yellow on hover */
+}
+
+.navbar{
+    width: 1200px;
+    height: 100px;
+    margin: auto;
+}
+
+.icon1{
+    width: 150px;
+    float: left;
+    height: 100px;
+}
+
+.logo1 img {
+    width: 200px;
+    height: 100%; /* Fill the height of the navbar */
+    max-height: 100px; /* Optional max height for better scaling */
+}
+
+.icon2{
+    width: 100px;
+    float: right;
+    height: 500px;
+}
+
+.logo2 img {
+    width: 200px;
+    height: 50px; /* Fill the height of the navbar */
+}
+
+.menu{
+    width: 400px;
+    float: left;
+    height: 80px;
+}
+
+.nav{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+
+.nav li a{
+    text-decoration: none;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+.nav li a:hover{
+    color: #ff7200;
+}
