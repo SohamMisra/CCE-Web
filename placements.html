@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,6 @@
     <link rel="icon" href="images/access-logo.png">
 </head>
 <body>
-  <img src="./placed_student_photos/plain.png" alt="Airplane" class="airplane">
     <div class="navbar">
         <div class="icon1">
             <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
@@ -28,6 +26,10 @@
             </ul>
         </div>
     </div>
+
+        <!-- <div class="icon2">
+            <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+        <!-- </div> -->
         
         <div class="App">
             <div class="Year" id="year-container">
@@ -57,7 +59,7 @@
           "./placed_student_photos/1738777708471.png",
       },
       {
-        Company_name: "Cohesity",
+        Company_name: "Sasken Technologies, Coheisty",
         Student_name: "Bindiya K",
         Linkdin: "https://www.linkedin.com/in/bindiya-kirlaya-510629229",
         Email: "bindiyakirlaya03@gmail.com",
@@ -65,7 +67,7 @@
           "./placed_student_photos/1738777710055.png",
       },
       {
-        Company_name: "Tismo, Sasken Technologies",
+        Company_name: "Sasken Technologies, Tismo",
         Student_name: "Vijeth Ranade",
         Linkdin: "https://www.linkedin.com/in/vijeth-ranade-288918264",
         Email: "vijethranade@gmail.com",
@@ -82,7 +84,7 @@
           "./placed_student_photos/1738777709523.png",
       },
       {
-        Company_name: "Cognizant, LTIMindtree",
+        Company_name: "Cognizant GenC, LTI Mindtree",
         Student_name: "Shruthi ",
         Linkdin:
           "https://www.linkedin.com/in/shruthi-shettigar-4978772a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -99,7 +101,7 @@
           "./placed_student_photos/1738777710279.png",
       },
       {
-        Company_name: "Edgeverve systems limited",
+        Company_name: "Finacle (Edgeverve)",
         Student_name: "Ranjitha R Bhat ",
         Linkdin: "linkedin.com/in/ranjitha-bhat",
         Email: "4nm21cm042@nmamit.in",
@@ -115,7 +117,7 @@
           "./placed_student_photos/1738777712974.png",
       },
       {
-        Company_name: "Sasken Technologies",
+        Company_name: "Sasken Technologies, LTI Mindtree",
         Student_name: "Ashwini M",
         Linkdin: "linkedin.com/in/ashwini-m-8032aa236",
         Email: "ashwinimoolya777@gmail.com",
@@ -123,7 +125,7 @@
           "./placed_student_photos/1738777711247.png",
       },
       {
-        Company_name: "Edgeverve Systems Limited",
+        Company_name: "Finacle (Edgeverve)",
         Student_name: "Kavya Hegde",
         Linkdin: "https://www.linkedin.com/in/kavya-hegde-9b0790252/",
         Email: "4nm21cm026@nmamit.in",
@@ -148,7 +150,7 @@
           "./placed_student_photos/1738777712704.png",
       },
       {
-        Company_name: "Shibuya Corporation, Infosys",
+        Company_name: "Infosys, Shibuya Corporation",
         Student_name: "Aaron Nazareth",
         Linkdin: "https://www.linkedin.com/in/aaron-n27/",
         Email: "aaronnazareth27@gmail.com",
@@ -198,7 +200,7 @@
           "./placed_student_photos/1738777709211.png",
       },
       {
-        Company_name: "Infosys, Cognizant",
+        Company_name: "Cognizant GenC, Infosys",
         Student_name: "Yuvraj Singh",
         Linkdin:
           "https://www.linkedin.com/in/yuvraj-singh-0078863995559636007/",
@@ -207,13 +209,41 @@
           "./placed_student_photos/1738777711979.png",
       },
       {
-        Company_name: "Cognizant, Infosys, Sony ",
+        Company_name: "Cognizant GenC, Infosys, Sony India ",
         Student_name: "Deepthi H ",
         Linkdin: "https://www.linkedin.com/in/deepthi-h/",
         Email: "4nm21cm018@nmamit.in",
         Student_img:
         "./placed_student_photos/1738777711545.png",
       },
+      {
+        Company_name: "Winman Software ",
+        Student_name: "Srasti S Poojary ",
+        Linkdin:"#",
+        Email:"#",
+        Student_img:"./placed_student_photos/1937094738.png",
+      },
+      {
+        Company_name: "Remidio Innovative Solutions",
+        Student_name: "Kurian George ",
+        Linkdin:"#",
+        Email:"#",
+        Student_img:"./placed_student_photos/869265837583.png",
+      },
+      {
+        Company_name: "Finacle, Nutanix ",
+        Student_name: "Rohan Winston Lobo ",
+        Linkdin: "#",
+        Email: "#",
+        Student_img:"./placed_student_photos/849739718306557.png",
+      },
+      {
+        Company_name: "Kyndryl ",
+        Student_name: "Shivani Dass ",
+        Linkdin:"#",
+        Email: "#",
+        Student_img:"./placed_student_photos/7915368567598.png",
+      }
     ],
   };
     
@@ -229,12 +259,12 @@
                     const button = document.createElement("button");
                     button.classList.add("dropdown-toggle");
                     button.textContent = "Placements "+year;
-                    button.onclick = () => toggleDropdown('dropdown-${year}');
+                    button.onclick = () => toggleDropdown(`dropdown-${year}`);
     
                     // Create the dropdown content container
                     const dropdownContent = document.createElement("div");
                     dropdownContent.classList.add("dropdown-content");
-                    dropdownContent.id = 'dropdown-${year}';
+                    dropdownContent.id = `dropdown-${year}`;
                     //dropdownContent.style.display = "none";
     
                     // Generate student cards
@@ -246,11 +276,11 @@
                             <def>
                             <h3 id="Company">${student.Company_name}</h3>
                             </def>
-                            <img src="${student.Student_img}" alt="${student.Student_name}">
+                            <img src="${student.Student_img}" onerror="this.onerror=null; this.src='./placed_student_photos/default_person.png';" alt="${student.Student_name}">
                             <h3 id="Name">${student.Student_name}</h3>
                             <div class="Social_links">
                                 <a href="${student.Linkdin}" target="_blank">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/61/61109.png">
+                                    <img src="./placed_student_photos/linkdin_img_color.png">
                                 </a>
                                 <a href="mailto:${student.Email}?subject=Seeking Guidance on Placements&body=Hi ${student.Student_name},\n
 
@@ -259,7 +289,7 @@ It would mean a lot if you could share some insights or advice based on your exp
 Looking forward to hearing from you!\n
 Thank you so much for your time and support.\n
 Best regards," target="_blank">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZ78VoK98Q9bPEr0j54VSXJeSZIDchbOtYg&s">
+                                    <img src="./placed_student_photos/email_img_color.png">
                                 </a>
                             </div>
                         `;
@@ -279,6 +309,26 @@ Best regards," target="_blank">
                 //content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
             }
             generateDropdowns(info);
+
+            function checkVisibility() {
+    const elements = document.querySelectorAll('.Student_Card');
+
+    elements.forEach(element => {
+        const rect = element.getBoundingClientRect();
+
+        // Check if element is in viewport
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            element.dataset.animate = "true";
+        }
+    });
+}
+
+// Trigger on scroll
+document.addEventListener('scroll', checkVisibility);
+
+// Trigger on page load
+window.addEventListener('load', checkVisibility);
+
         </script>
 </body>
 </html>
