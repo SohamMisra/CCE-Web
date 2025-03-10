@@ -1,26 +1,23 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
 
 @keyframes moveFromLeft {
-  0% { transform: translateX(-100px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
+  0% { transform: translateY(150px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes moveFromRight {
-  0% { transform: translateX(100px); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
-
 body {
   font-family: sans-serif;
   text-align: center;
-  background-image: url("https://img.freepik.com/free-photo/empty-elegant-background-with-copy-space_24972-1807.jpg?ga=GA1.1.53006499.1737388488&semt=ais_hybrid");
+  background-image: url("./placed_student_photos/background.avif");
 
   background-size: cover;
   background-color: #bbbbbb;
   background-blend-mode: overlay;
 }
-
 .Student_Card {
   
 
@@ -29,29 +26,34 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  max-width: 250px;
+  max-width: 270px;
   min-height: 250px;
   background-image: url("https://img.freepik.com/free-vector/white-with-diagonal-lines-effect_1017-30745.jpg?semt=ais_incoming");
+  /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFm1gPMa0CdDv9L35R_i2jj66qtFWoabgMDAcyuQbYRXQIN2U-z9oBMNPJeCy61-NVqZU&usqp=CAU");*/
+  background-color: #4A5C55;
   background-size: cover;
-  border: 2px solid #b6b4b0;
+  /*border: 2px solid #b6b4b0;*/
   border-radius: 40px 10px 30px 10px;
   padding: 20px;
   padding-top: 0px;
   margin-top: 0px;
 
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease;
-  perspective: 1000px;
-
-  transition: transform 1s ease-in-out;
   animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  opacity: 0;
+}
+.Student_Card[data-animate="true"]{
+  animation-play-state: running;
+  opacity: 1;
 }
 
 .Student_Card > #Name {
-  color: rgba(0, 0, 0, 0.644);
+  color: rgba(0, 0, 0, 0.681);
   font: bolder;
-  font-weight: 700;
+  font-weight: 800;
   margin: 5px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .Student_Card > def {
@@ -89,14 +91,16 @@ body {
   margin: 5px;
   border-radius: 20px;
   height: 175px;
-  width: 280px;
+  width: 250px;
+  border: 5px solid #51625b;
+  transition: transform 0.3s ease-in-out;
 }
-.Student_Card:hover {
-  transform: scale(1.075) rotateX(10deg);
-  will-change: transform;
-}
+
 .Student_Card:hover > def{
   background-color: #e3e3e385;
+}
+.Student_Card:hover > img,.Student_Card:hover > #Name{
+  transform: scale(1.1);
 }
 .Student_Card:not(:hover) {
   transform: scale(1);
@@ -108,12 +112,16 @@ body {
   gap: 50px;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .Social_links > * > * {
   height: 4vh;
-  opacity: 0.6;
+  opacity: 0.7;
+  scale: 1.3;
+  /*border: 3px solid #5c7269;
+  border-radius: 15px;
+  background-color: #5c7269;*/
 }
 
 .Year {
@@ -133,7 +141,7 @@ body {
 }
 
 .dropdown-toggle {
-  background-color: #363636;
+  background-color: #2a3530;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -152,7 +160,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   justify-content: center;
   background-color: rgba(200, 200, 200, 0.05);
   min-width: 160px;
@@ -202,26 +210,4 @@ body {
   font-size: 16px;
   color: #555;
   line-height: 1.5;
-}
-
-
-.airplane {
-  position: absolute;
-  width: 400px;
-  top: 20%;
-  left: -100px; /* Start off-screen */
-  animation: fly 5s linear;
-  opacity: 0;
-}
-@keyframes fly {
-  0% {
-    transform: translateX(-100px) translateY(30vh);
-    z-index: 2;
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateX(80vw) translateY(-100vh);
-    z-index: 2;
-    opacity: 0;
-  }
 }
