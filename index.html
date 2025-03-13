@@ -1,79 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Department of Computer and Communication Engineering</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Parallax Effect</title>
     <link rel="icon" href="images/access-logo.png">
-    <link rel="stylesheet" href="utility-classes/social-media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>  <!-- Social media icons -->
+    <link rel="stylesheet" href="utility-classes/pop-up.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            overflow-y: auto; /* Enable scrolling */
+            overflow-x: hidden;
+            background-image: url("./HomeImages/w13.jpg");
+        }
 
+        #video-container {
+            width: 100vw;
+            height: 100vh; /* Full-screen height */
+        }
+
+        #content {
+            position: fixed;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.nav-button {
+    border: none;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav-button.active {
+    background-color: #d1ff00;
+}
+        .information {
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin: 20px;
+        }
+        .content-section, .info-section{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50% 50%;
+            gap: 10px;
+            font-size: 24px;
+            /*
+            box-shadow: 3px 2px 3pc 2px #0000006d;*/
+            background-color: #ffffff7a;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 20px;
+            padding: 30px;
+            transition: ease-in-out 0.3s;
+            width: 80vw;
+        }
+        .info-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #Experiential{
+            grid-area: 2/1/3/3;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 20% 80%;
+            width: 100%;
+            height: 40%;
+        }
+        #Experiential>p{
+            grid-area: 1/1/2/4;
+            text-align: center;
+        }
+        #Experiential>div{
+            background-size: cover;
+        }
+        .content-section:hover{
+            transform: translateY(-10px);
+            box-shadow: 6px 4px 6pc 4px #0000006d;
+        }
+        .content-section:hover .content-section-topics > .content-section-topic > img {
+            filter: grayscale(0%);
+        }
+        .content-section-topics{
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 10% 45% 45%;
+            gap: 20px;
+            width: 35vw;
+            margin: 40px;
+        }
+        #cctt{
+            grid-area: 2/1/4/2;
+            object-fit: cover;
+        }
+        .sub_title{
+            grid-area: 1/1/2/3;
+            text-align: center;
+        }
+        .content-section-topic {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: ease-in-out 0.3s;
+}
+.content-section-topic img {
+    width: 100%;
+    height: 100%; /* Ensures consistent height */
+    object-fit: cover; /* Maintains aspect ratio and fills the container */
+    filter: grayscale(80%);
+    transition: filter 0.5s ease-in-out;
+}
+.content-section-topic:hover>img{
+    filter: grayscale(0%);
+}
+.content-section-topic:hover{
+    transform: scale(1.03);
+}
+.content-section-topic:hover> .overlay-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+.content-section-topic .overlay-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #welcome{
+            text-align: center;
+            font-weight: bolder;
+            font-size: xx-large;
+        }
+    </style>
 </head>
 <body>
-    <div class="main">
-        <div class="navbar">
-            <div class="icon1">
-                <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
-            </div>
+    <div id="video-container">
+        <video id="intro-video" src="./HomeImages/introVid.mp4" autoplay muted></video>
+    </div>
 
-            <div class="menu">
-                <ul>
-                    <li><a href="index.html" style="color: #ff7200;">HOME</a></li>
-                    <li><a href="faculty.html">FACULTY</a></li>
-                    <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
-                    <li><a href="placements.html">PLACEMENTS</a></li>
-                    <li><a href="notes.html">NOTES & RESOURCES</a></li>
-                    <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
-                    <li><a href="about_us.html">ABOUT US</a></li>
-                </ul>
-            </div>
-
-            <div class="icon2">
-                <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
-            </div>
-
-        </div> 
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Department Information -->
-            <section class="department-info">
-                <h1 class="home-heading"> <span style= " font-size: 50px; font-weight:bold; color: black;"> Welcome to the Department of Computer & Communication Engineering </span></h1>
-                <p>
-                    Bachelor of Technology in Computer & Communication Engineering is designed to provide expertise to those students who seek specialization in Computer Communication Technologies and Telecommunications. The main focus of the programme is on Computer Networks (Wired and Wireless) and Telecommunications technologies. 
-                </p>
-                <p>
-                    The program offers courses in Computer Science, Cloud Computing, Multimedia Communications and Big Data Analytics. Emphasis is placed throughout the course on developing the practical skills and in-depth knowledge required by the present industrial scenario. This program equips students to engage in research focusing on the fusion of multi-disciplinary skills employed in designing modern computing devices with communication channels, communication systems with advanced computer algorithms and systems.  
-                </p>
-                <p>
-                    The program provides experiential learning on basic and advanced courses in computer science, communication networks, security and associated subjects.It is a professional degree that integrates communication techniques, problem-solving strategies, simulation skills and mathematical foundations with the hands-on training required to solve real-world problems.
-                </p>
-                <p>
-                    With experienced faculty, cutting-edge infrastructure, and a wide array of co-curricular activities, we strive to offer a comprehensive learning experience.
-                </p>
-            </section>
-            
-            <section class="department-info">
-                <h2 class="home-heading "><span style= " font-size: 30px; font-weight:bold; color: black; text-decoration: underline;"> VISION </span> </h2>
-                <p>
-                    To be a centre of excellence in the Computer Networks and Computer Security education and research, to produce comprehensively trained, technically skilled, ethically strong, innovative engineers to excel globally, take future challenges and contribute for social welfare.
-                </p>
-            </section>
-
-            <section class="department-info">
-                <h3 class="home-heading "><span style= " font-size: 30px; font-weight:bold; color: black; text-decoration: underline;"> MISSION </span> </h3>
-                <p>
-                    1. To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning. 
-                </p>
-                <p>
-                    2. To strengthen gthe industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between aaacademia and industry.
-                </p>
-                <p>
-                    3. To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.
-                </p>
-                <p>
-                    4. To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.
-                </p>
-            </section>
+    <div id="content"></div>
+    
+    <div class="navbar">
+        <div class="icon1">
+            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
         </div>
+
+        <div class="menu">
+            <ul class="nav">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="faculty.html" style="color: #ff7200;">FACULTY</a></li>
+                <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
+                <li><a href="placements.html">PLACEMENTS</a></li>
+                <li><a href="notes.html">NOTES & RESOURCES</a></li>
+                <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
+                <li><a href="about_us.html">ABOUT US</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="information">
+        <p id="welcome">Welcome to the Department of Computer & Communication Engineering</p>
+        <div class="content-section">
+            <div class="content-section-topics">
+                <p class="sub_title">We Specialize in</p>
+                <div class="content-section-topic rotate-left" id="cctt">
+                    <img src="./HomeImages/Computer Communication Technologies & Telecommunications.webp" alt="Computer Communication Technologies">
+                    <div class="overlay-text">Computer Communication Technologies & Telecommunications</div>
+                </div>
+                
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/Programme is on Computer Networks.png" alt="Computer Networks">
+                    <div class="overlay-text">Programme is on Computer Networks</div>
+                </div>
+                
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/telecommunication texknoledgy.jpg" alt="Telecommunications">
+                    <div class="overlay-text">Telecommunications technologies</div>
+                </div>                
+            </div>
+
+
+            
+            <div class="content-section-topics">
+                <p class="sub_title">Program's we offer</p>
+                <div class="content-section-topic rotate-right">
+                    <img src="./HomeImages/cs cources.webp" alt="Courses in Computer Science">
+                    <div class="overlay-text">Courses in Computer Science</div>
+                </div>
+                
+                <div class="content-section-topic rotate-right">
+                    <img src="./HomeImages/cloud.jpg" alt="Cloud Computing">
+                    <div class="overlay-text">Cloud Computing</div>
+                </div>
+                
+                <div class="content-section-topic rotate-right">
+                    <img src="./HomeImages/multymedia.jpeg" alt="Multimedia Communications">
+                    <div class="overlay-text">Multimedia Communications</div>
+                </div>
+
+                <div class="content-section-topic rotate-right">
+                    <img src="./HomeImages/bigdata.jpeg" alt="Big Data Analytics">
+                    <div class="overlay-text">Big Data Analytics</div>
+                </div>
+            </div>
+
+
+
+            <div class="content-section-topics rotate-left" id="Experiential">
+                <p>Provide Experiential learning in</p>
+                <div class="content-section-topic">
+                    <img src="./HomeImages/cs.jpeg" alt="Computer science">
+                    <div class="overlay-text">Computer science</div>
+                </div>
+                
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/computer networks.jpeg" alt="Communication networks">
+                    <div class="overlay-text">Communication networks</div>
+                </div>
+                
+                <div class="content-section-topic rotate-left" id="cctt">
+                    <img src="./HomeImages/cyber security.jpeg" alt="Security and associated subjects">
+                    <div class="overlay-text">Security and associated subjects</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="information">
+        <div class="info-section content-section">
+            <p>VISION</p>
+            <ul>
+                <p>To be a centre of excellence in the Computer Networks and Computer Security education and research, to produce comprehensively trained, technically skilled, ethically strong, innovative engineers to excel globally, take future challenges and contribute for social welfare.</p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="information">
+        <div class="info-section content-section">
+            <p>MISSION</p>
+            <ul>
+                <p>. To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
+                <p>. To strengthen gthe industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between aaacademia and industry.</p>
+                <p>. To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
+                <p>. To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="./homeLogic.js"></script>
+</body>
+</html>
 
         <!-- Footer -->
         <footer>
