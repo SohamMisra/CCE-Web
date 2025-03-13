@@ -1,295 +1,372 @@
-/* styles.css */
-
-/* General styling for the entire page */
-body {
-	font-family: Arial, sans-serif;
-	background-color: white;
-	margin: 0;
+:root {
+    --primary-color: #ff7200;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --background-light: #ffffff;
+    --background-dark: #1a1a1a;
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper {
-	max-width: 1100px;
-	margin: 15px auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+/* Hero Section */
+.hero-section {
+    height: 50vh;
+    /* background-image: url('images/hero-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-/* Calendar container */
-.container-calendar {
-	background: #ffffff;
-	padding: 20px;
-	max-width: 900px;
-	margin: 20px auto;
-	overflow: auto;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	display: flex;
-	justify-content: space-between;
-	border-radius: 8px;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(255,114,0,0.7));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Filter Section */
+.filter-section {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    background: var(--background-light);
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    gap: 2rem;
+    padding: 2rem;
+	justify-content: center; /* Center the cards */
+
+}
+
+/* Event Card */
+.event-card {
 	width: 100%;
-}
-
-#left, #right {
-	width: 45%;
-}
-
-/* Event section styling */
-#event-section {
-	padding: 10px;
-	background: #f5f5f5;
-	margin: 20px 0;
-	border: 1px solid #ccc;
-}
-
-.container-calendar #left h1 {
-	color: green;
-	text-align: center;
-	background-color: #f2f2f2;
-	margin: 0;
-	padding: 10px 0;
-}
-
-#event-section h3 {
-	color: green;
-	font-size: 18px;
-	margin: 0;
-}
-
-#event-section input[type="date"],
-#event-section input[type="text"] {
-	margin: 10px 0;
-	padding: 5px;
-	width: 80%;
-}
-
-#event-section button {
-	background: green;
-	color: white;
-	border: none;
-	padding: 5px 10px;
-	cursor: pointer;
-}
-
-.event-marker {
-	position: relative;
-	background-color: #ffeb3b;
-	cursor: pointer;
-}
-
-.event-marker::after {
-	content: '';
-	display: block;
-	width: 6px;
-	height: 6px;
-	background-color: red;
-	border-radius: 50%;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
-
-.event-marker:hover {
-	background-color: #ffc107;
-}
-
-/* event tooltip styling */
-.event-tooltip {
-	position: absolute;
-	background-color: rgba(234, 232, 232, 0.763);
-	color: black;
-	padding: 10px;
-	border-radius: 4px;
-	bottom: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	display: none;
-	transition: all 0.3s;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.event-marker:hover .event-tooltip {
-	display: block;
-}
-
-/* Reminder section styling */
-#reminder-section {
-	padding: 10px;
-	background: #f5f5f5;
-	margin: 20px 0;
-	border: 1px solid #ccc;
-}
-
-#reminder-section h3 {
-	color: green;
-	font-size: 18px;
-	margin: 0;
-}
-
-#reminderList {
-	list-style: none;
-	padding: 0;
-	list-style-type: none;
-}
-
-#reminderList li {
-	margin: 5px 0;
-	font-size: 16px;
-	background-color: #f8f9fa;
-	padding: 10px;
-	margin: 10px 0;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+    max-width: 500px; /* Limit maximum width */
+    /* background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    margin: 0 auto;  Center the card */
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%; 
 }
 
-#reminderList button {
-	background-color: #dc3545;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	padding: 5px 10px;
-	cursor: pointer;
+.event-card:hover {
+    transform: translateY(-10px);
+}
+.events-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 20px;
 }
 
-#reminderList button:hover {
-	background-color: #c82333;
+.event-image {
+    position: relative;
+    width: 100%;
+	height: 500px; /* Fixed height instead of padding-top 
+
+    padding-top: 141.42%; Aspect ratio for A4 format (1:√2)*/
+    overflow: hidden;
+	background-color: #f5f5f5;
+
 }
 
-/* Style for the delete buttons */
-.delete-event {
-	background: rgb(237, 19, 19);
-	color: white;
-	border: none;
-	padding: 5px 10px;
-	cursor: pointer;
-	margin-left: 10px;
-	align-items: right;
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
 }
 
-/* Buttons in the calendar */
-.button-container-calendar button {
-	cursor: pointer;
-	background: green;
-	color: #fff;
-	border: 1px solid green;
-	border-radius: 4px;
-	padding: 5px 10px;
+.event-card:hover .event-image img {
+    transform: scale(1.1);
 }
 
-/* Calendar table */
-.table-calendar {
-	border-collapse: collapse;
-	width: 100%;
+.event-info {
+    flex: 1; /* Make info section fill remaining space */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1.5rem;
+    background: white;
+    z-index: 1;
+    border-top: 1px solid #eee;
+    backdrop-filter: blur(10px);
 }
 
-.table-calendar td,
-.table-calendar th {
-	padding: 5px;
-	border: 1px solid #e2e2e2;
-	text-align: center;
-	vertical-align: top;
-	width: 14.28%;
-	padding: 10px;
-	text-align: center;
-	border: 1px solid #ddd;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.table-calendar th {
-	background-color: #f4f4f4;
+.event-card {
+    animation: fadeIn 1s ease-out forwards;
 }
 
-/* Date picker */
-.date-picker.selected {
-	background-color: #f2f2f2;
-	font-weight: bold;
-	outline: 1px dashed #00BCD4;
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-light: var(--background-dark);
+        --text-light: var(--text-dark);
+    }
 }
 
-.date-picker.selected span {
-	border-bottom: 2px solid currentColor;
+/* Responsive Design
+@media (max-width: 992px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    } */
+
+    
+
+/* Tech Event Specific Styles */
+.tech-event {
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
 }
 
-/* Day-specific styling */
-.date-picker:nth-child(1) {
-	color: red;
-	/* Sunday */
+.tech-event .event-badge {
+    background: rgba(0, 150, 255, 0.9);
+    color: white;
 }
 
-.date-picker:nth-child(6) {
-	color: green;
-	/* Friday */
+.tech-event .event-date {
+    background: rgba(0, 150, 255, 0.9);
 }
 
-/* Hover effect for date cells */
-.date-picker:hover {
-	background-color: green;
-	color: white;
-	cursor: pointer;
+.tech-event .event-info h3 {
+    color: #00baff;
+    text-shadow: 0 2px 4px rgba(0, 186, 255, 0.3);
 }
 
-/* Header for month and year */
-#monthAndYear {
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 20px;
+.tech-event .view-details {
+    background: #00baff;
 }
 
-/* Navigation buttons */
-.button-container-calendar {
-	position: relative;
-	margin-bottom: 1em;
-	overflow: hidden;
-	clear: both;
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 20px;
+.tech-event .view-details:hover {
+    background: #0099ff;
+    box-shadow: 0 6px 20px rgba(0, 186, 255, 0.4);
 }
 
-#previous {
-	float: left;
+/* Animation for tech event */
+@keyframes techPulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 186, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 186, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 186, 255, 0); }
 }
 
-#next {
-	float: right;
+.tech-event:hover {
+    animation: techPulse 2s infinite;
 }
 
-/* Footer styling */
-.footer-container-calendar {
-	margin-top: 1em;
-	border-top: 1px solid #dadada;
-	padding: 10px 0;
-}
-
-.footer-container-calendar select {
-	cursor: pointer;
-	background: #ffffff;
-	color: #585858;
-	border: 1px solid #bfc5c5;
-	border-radius: 3px;
-	padding: 5px 1em;
+/* Modal Styles */
+.event-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
 
 .modal-content {
     position: relative;
+    background-color: #fff;
+    margin: 5% auto;
     padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content img {
-    max-width: 100%;
-    height: auto;
-}
-
-.close {
+.close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
     cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.modal-body {
+    margin-top: 20px;
+}
+
+.modal-body img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-body h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.modal-body p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.register-button {
+    background: #ff7200;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.register-button:hover {
+    background: #e65d00;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+.event-poster {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from cover to contain */
+	padding: 10px; /* Add padding around the poster */
+
+}
+
+.event-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 150, 255, 0.9);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+.event-date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 114, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 2;
+}
+
+.event-info {
+	position: relative;
+    padding: 1.5rem;
+    background: white;
+    z-index: 1;
+	border-top: 1px solid #eee;
+
+}
+.event-info h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.event-description {
+    flex: 1;
+	color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.event-meta {
+	margin-top: auto; /* Push meta section to bottom */
+
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.view-details {
+    background: #ff7200;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .event-image {
+        height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .event-image {
+        height: 400px; /* Even shorter on mobile */
+    }
+}
+/* Event Type Specific Styles */
+.coding-event .event-badge {
+    background: rgba(64, 196, 255, 0.9);
+}
+
+.workshop-event .event-badge {
+    background: rgba(147, 88, 255, 0.9);
+}
+
+.hackathon-event .event-badge {
+    background: rgba(255, 64, 129, 0.9);
+}
+
+/* Hover Effects for Different Event Types */
+.coding-event:hover {
+    box-shadow: 0 8px 25px rgba(64, 196, 255, 0.3);
+}
+
+.workshop-event:hover {
+    box-shadow: 0 8px 25px rgba(147, 88, 255, 0.3);
+}
+
+.hackathon-event:hover {
+    box-shadow: 0 8px 25px rgba(255, 64, 129, 0.3);
 }
