@@ -257,28 +257,50 @@ body {
 @media screen and (max-width: 768px) {
   .hamburger-btn {
       display: block;
+      position: fixed; /* Changed from absolute to fixed */
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
   }
 
   .menu {
       display: none;
       position: fixed;
-      top: 70px;
+      top: 0;
       left: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      height: 100vh; /* Added full viewport height */
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.95);
       padding: 20px;
+      display: none;
+        justify-content: center;
+        align-items: center;
   }
 
   .menu.active {
-      display: block;
+      display: flex;
   }
 
   .nav {
       flex-direction: column;
       align-items: center;
+      width: 100%;
+
   }
 
   .nav li {
       margin: 15px 0;
+      font-size: 1.2rem; /* Increased font size */
+
   }
+  .nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ff7200;
+}
 }
