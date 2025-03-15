@@ -13,7 +13,13 @@
         <div class="icon1">
             <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
         </div>
-
+        <button class="hamburger-btn" aria-label="Menu">
+          <div class="hamburger-icon">
+              <span class="line">☰</span>
+              <span class="line"></span>
+              <span class="line"></span>
+          </div>
+      </button>
         <div class="menu">
             <ul class="nav">
                 <li><a href="index.html">HOME</a></li>
@@ -328,7 +334,30 @@ document.addEventListener('scroll', checkVisibility);
 
 // Trigger on page load
 window.addEventListener('load', checkVisibility);
+document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger-btn');
+        const menu = document.querySelector('.menu');
 
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+        }
+    });
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+});
         </script>
 </body>
 </html>
