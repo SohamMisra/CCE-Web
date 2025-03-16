@@ -5,8 +5,8 @@ body {
     padding: 0;
     background: url('images/committee.png') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* background-position: center;
+    background-repeat: no-repeat; */
     text-align: center;
 }
 
@@ -101,8 +101,9 @@ h1 {
 }
 
 .year-tabs {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-top: 90px; /* Add space below navbar */
+    position: relative;
+    z-index: 1;
 }
 
 .year-tab {
@@ -121,4 +122,31 @@ h1 {
     color: white;
     font-weight: bold;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    background-color: white;
+}
+
+.container {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .year-tabs {
+        margin-top: 80px;
+    }
+    
+    .container h1 {
+        font-size: 1.5rem;
+        padding: 0 15px;
+    }
 }
