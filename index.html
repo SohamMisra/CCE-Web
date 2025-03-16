@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCE Website</title>
+    <title>Three.js Parallax Effect</title>
     <link rel="icon" href="images/access-logo.png">
     <link rel="stylesheet" href="utility-classes/pop-up.css">
     <link rel="stylesheet" href="style.css">
@@ -167,8 +167,8 @@
             font-weight: bolder;
             font-size: xx-large;
         }
-
-        .hamburger-btn {
+       
+    .hamburger-btn {
         display: none;
         background: none;
         border: none;
@@ -294,6 +294,7 @@
         width: 95% !important;
     }
     }
+
     </style>
 </head>
 <body>
@@ -307,11 +308,18 @@
         <div class="icon1">
             <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
         </div>
-
+    
+        <div class="hamburger-btn">
+            <div class="hamburger-icon">
+                <span class="line">-</span>
+                <span class="line">-</span>
+                <span class="line">-</span>
+            </div>
+        </div>
         <div class="menu">
             <ul class="nav">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="faculty.html">FACULTY</a></li>
+                <li><a href="faculty.html" style="color: #ff7200;">FACULTY</a></li>
                 <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
                 <li><a href="placements.html">PLACEMENTS</a></li>
                 <li><a href="notes.html">NOTES & RESOURCES</a></li>
@@ -344,7 +352,7 @@
 
             
             <div class="content-section-topics">
-                <p class="sub_title">Programs we offer</p>
+                <p class="sub_title">Program's we offer</p>
                 <div class="content-section-topic rotate-right">
                     <img src="./HomeImages/cs cources.webp" alt="Courses in Computer Science">
                     <div class="overlay-text">Courses in Computer Science</div>
@@ -402,15 +410,15 @@
         <div class="info-section content-section">
             <p>MISSION</p>
             <ul>
-                <p>1. To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
-                <p>2. To strengthen the industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between aaacademia and industry.</p>
-                <p>3. To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
-                <p>4. To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
+                <p>. To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
+                <p>. To strengthen gthe industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between aaacademia and industry.</p>
+                <p>. To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
+                <p>. To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
             </ul>
         </div>
     </div>
     <script type="module" src="./homeLogic.js"></script>
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             try {
             const hamburger = document.querySelector('.hamburger-btn');
@@ -449,22 +457,6 @@
         }
         });
     </script>
+    </body>
 
-
-        <!-- Footer -->
-        <footer>
-            <div class="hero">
-    
-                <div class="social-links">
-                    <a href="https://www.instagram.com/access.nmamit" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/computer-and-communication-engineering" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                
-              </div>
-                  <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte. </p>
-                  <p>Made with ❤️ by <a href="developers.html">Developer Team</a></p>
-        </footer>
-  
-  
-</body>
 </html>
