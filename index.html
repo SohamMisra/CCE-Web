@@ -410,12 +410,18 @@
         </div>
     </div>
     <script type="module" src="./homeLogic.js"></script>
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', () => {
+            try {
             const hamburger = document.querySelector('.hamburger-btn');
             const menu = document.querySelector('.menu');
-    
-            hamburger.addEventListener('click', () => {
+            if (!hamburger || !menu) {
+                console.error('Required elements not found');
+                return;
+            }
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation();
+
                 hamburger.classList.toggle('active');
                 menu.classList.toggle('active');
             });
@@ -429,16 +435,21 @@
             });
     
             // Close menu when clicking a link
-            document.querySelectorAll('.nav a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    menu.classList.remove('active');
+            const navLinks = document.querySelectorAll('.nav a');
+            if (navLinks.length > 0) {
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        menu.classList.remove('active');
+                    });
                 });
-            });
+            }
+        }catch (error) {
+            console.error('Error initializing menu:', error);
+        }
         });
     </script>
-</body>
-</html>
+
 
         <!-- Footer -->
         <footer>
@@ -456,5 +467,4 @@
   </div>
   
 </body>
-<script src="dark_mode.js"></script>
 </html>
