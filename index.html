@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
     <style>
-        body {
+ body {
             margin: 0;
             overflow-y: auto; /* Enable scrolling */
             overflow-x: hidden;
@@ -50,13 +50,17 @@
     background-color: #d1ff00;
 }
         .information {
-            padding: 20px;
+            /* padding: 20px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: flex-end;
-            margin: 20px;
+            margin: 20px; */
+            margin-top: 90px; /* Add top margin to create space below navbar */
+    position: relative;
+    z-index: 1;
+
         }
         .content-section, .info-section{
             display: grid;
@@ -171,132 +175,120 @@
             font-size: xx-large;
         }
        
-    .hamburger-btn {
-        display: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        position: fixed;
+        .hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 5 px;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animation for active state */
+.hamburger-btn.active .line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-btn.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active .line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-btn {
+      display: block;
+      position: fixed; /* Changed from absolute to fixed */
         right: 20px;
         top: 20px;
         z-index: 1000;
+  }
+
+  .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh; /* Added full viewport height */
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+      display: none;
+        justify-content: center;
+        align-items: center;
+  }
+
+  .menu.active {
+      display: flex;
+  }
+
+  .nav {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+  }
+
+  .nav li {
+      margin: 15px 0;
+      font-size: 1.2rem; /* Increased font size */
+
+  }
+  .nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ff7200;
+}
+.information {
+        margin-top: 80px;
     }
 
-    .hamburger-icon {
-        width: 30px;
-        height: 24px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    #welcome {
+        padding-top: 20px;
+        margin-top: 0;
     }
+}.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Fixed height for navbar */
+    z-index: 1000;
+    background-color: white;
+}#video-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
 
-    .line {
-        display: block;
-        width: 100%;
-        height: 3px;
-        background-color: black;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    @media screen and (max-width: 768px) {
-        .hamburger-btn {
-            display: block;
-        }
-
-        .menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.95);
-            padding: 20px;
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .menu.active {
-            display: flex;
-        }
-
-        .nav {
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        .nav li {
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
-
-        .content-section {
-            grid-template-columns: 100% !important;
-            grid-template-rows: auto !important;
-        }
-
-        .content-section-topics {
-            width: 100% !important;
-        margin: 10px auto !important;
-        grid-template-columns: 100% !important; /* Change to single column */
-        grid-template-rows: auto !important;
-        gap: 15px;
-        }
-
-        #Experiential {
-            grid-template-columns: 100% !important;
-            gap: 15px;
-        }
-
-        .info-section {
-            padding: 15px;
-        }
-
-        #welcome {
-            font-size: x-large;
-        }
-
-        .content-section-topic .overlay-text {
-            font-size: 16px;
-        }
-        #cctt {
-        grid-area: auto !important; /* Reset grid area for mobile */
-    }
-
-    .content-section-topic {
-        width: 100%;
-        height: 200px; /* Fixed height for consistent sizing */
-        margin-bottom: 15px;
-    }
-
-    .content-section-topic img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .overlay-text {
-        font-size: 14px !important;
-        padding: 8px 5px !important;
-    }
-    #Experiential > p {
-        margin-bottom: 10px;
-    }
-
-    .rotate-left, .rotate-right {
-        transform: none !important; /* Remove any rotations on mobile */
-    }
-
-    .content-section {
-        padding: 15px !important;
-        margin: 10px !important;
-        width: 95% !important;
-    }
-    }
 footer {
     background-color: #333;
     color: white;
@@ -315,6 +307,7 @@ footer a {
 footer a:hover {
     color: #ffcc00; /* Changes color to yellow on hover */
 }
+    
     </style>
 </head>
 <body>
