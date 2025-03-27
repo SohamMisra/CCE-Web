@@ -6,28 +6,134 @@
     <title>Faculty</title>
     <link rel="stylesheet" href="faculty.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/access-logo.png"><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty</title>
-    <link rel="stylesheet" href="faculty.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/access-logo.png">
     <link rel="stylesheet" href="utility-classes/pop-up.css">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
 
+        .hamburger-icon {
+            width: 30px;
+            height: 24px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .line {
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Animation for active state */
+        .hamburger-btn.active .line:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .hamburger-btn.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.active .line:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-btn {
+                display: block;
+                position: fixed;
+                right: 20px;
+                top: 20px;
+                z-index: 1000;
+            }
+
+            .menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                z-index: 999;
+                background-color: rgba(0, 0, 0, 0.98);
+                padding: 20px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav li {
+                margin: 15px 0;
+                font-size: 1.2rem;
+            }
+
+            .nav a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 600;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                padding: 12px 25px;
+                border-radius: 8px;
+                background-color: rgba(255, 255, 255, 0.15);
+                width: 80%;
+                text-align: center;
+                margin: 8px 0;
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .nav a:hover {
+                color: #ffd700;
+                background-color: rgba(255, 255, 255, 0.25);
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
         <div class="icon1">
             <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
         </div>
-
+        <button class="hamburger-btn" aria-label="Menu">
+            <div class="hamburger-icon">
+                <span class="line">☰</span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
         <div class="menu">
             <ul class="nav">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="faculty.html" style="color: #ff7200;">FACULTY</a></li>
+                <li><a href="faculty.html">FACULTY</a></li>
                 <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
                 <li><a href="placements.html">PLACEMENTS</a></li>
                 <li><a href="notes.html">NOTES & RESOURCES</a></li>
@@ -42,7 +148,7 @@
 
     </div> 
     <header>
-        <h1><span style= " font-size: 50px; font-weight:bold; color: black; text-decoration: underline; background-color: light gray;">TEACHING STAFF</span></h1>
+        <h1><span style= " font-size: 50px; font-weight:bold; color: black; text-decoration: underline; background-color: lightgray;">TEACHING STAFF</span></h1>
     </header>
     <main>
         <div class="faculty-container">
@@ -791,7 +897,7 @@
         </div>
 
         <header>
-            <h2><span style= " font-size: 50px; font-weight:bold; color: black; text-decoration: underline; background-color: light gray;">NON-TEACHING STAFF</span></h2>
+            <h2><span style= " font-size: 50px; font-weight:bold; color: black; text-decoration: underline; background-color: lightgray;">NON-TEACHING STAFF</span></h2>
         </header>
     </main>
 
@@ -836,8 +942,6 @@
         </div>
 
     </main>
-    
+    <script src="./navbar.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
-   
