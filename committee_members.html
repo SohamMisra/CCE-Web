@@ -7,13 +7,125 @@
     <link rel="stylesheet" href="committee_members.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/access-logo.png">
+    <style>
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-icon {
+            width: 30px;
+            height: 24px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .line {
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Animation for active state */
+        .hamburger-btn.active .line:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .hamburger-btn.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.active .line:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-btn {
+                display: block;
+                position: fixed;
+                right: 20px;
+                top: 20px;
+                z-index: 1000;
+            }
+
+            .menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                z-index: 999;
+                background-color: rgba(0, 0, 0, 0.98);
+                padding: 20px;
+                display: none;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .nav li {
+                margin: 15px 0;
+                font-size: 1.2rem;
+            }
+
+            .nav a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-weight: 600;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                padding: 12px 25px;
+                border-radius: 8px;
+                background-color: rgba(255, 255, 255, 0.15);
+                width: 80%;
+                text-align: center;
+                margin: 8px 0;
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .nav a:hover {
+                color: #ffd700;
+                background-color: rgba(255, 255, 255, 0.25);
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
         <div class="icon1">
-            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2>
         </div>
-
+        <button class="hamburger-btn" aria-label="Menu">
+            <div class="hamburger-icon">
+                <span class="line">☰</span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </button>
         <div class="menu">
             <ul class="nav">
                 <li><a href="index.html">HOME</a></li>
@@ -115,7 +227,7 @@
                 <p class="semester">Semester: 6th</p>
             </div>
             <div class="member">
-                <img src="Committee Members Pics/cocultural.jpeg" alt="Member 13">
+                <img src="Committee Members Pics/coculturalco.jpg" alt="Member 13">
                 <h2>Vaishnavi V Bhat</h2>
                 <p class="role">Co-Cultural Coordinator</p>
                 <p class="semester">Semester: 4th</p>
@@ -170,19 +282,19 @@
             </div>
             <div class="member">
                 <img src="Committee Members Pics/publicity.jpg" alt="Member 22">
-                <h2>Srinidhi K </h2>
+                <h2>Srinidi K </h2>
                 <p class="role">Publicity Head</p>
                 <p class="semester">Semester: 6th</p>
             </div>
             <div class="member">
                 <img src="Committee Members Pics/cph.jpeg" alt="Member 23">
-                <h2>Sheikh Mohammed Nifal</h2>
+                <h2>S M Nifal</h2>
                 <p class="role">Co-Publicity Head</p>
                 <p class="semester">Semester: 6th</p>
             </div>
         </div>
     </div>
-    <div class="container" data-year="2024">  
+    <div class="container" data-year="2024">
         <h1>Class Representative (CRs) of 2024-25</h1>
         <div class="members-grid">
             <div class="member">
@@ -212,8 +324,7 @@
         </div>
     </div>
 
-
-    <!--2023-24 Committee Members Details-->
+<!--2023-24 Committee Members Details-->
 
     <div class="container" data-year="2023">
         <h1>ACCESS Committee Members of 2023-24</h1>
@@ -340,7 +451,6 @@
             </div>
         </div>
     </div>
-
     <div class="container" data-year="2023">
         <h1>Class Representative (CRs) of 2023-24</h1>
         <div class="members-grid">
@@ -367,104 +477,39 @@
         </div>
     </div>
 
-    <!--2022-23 Committee Members Details-->
+    <script src="./navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all year tabs and containers
+            const yearTabs = document.querySelectorAll('.year-tab');
+            const containers = document.querySelectorAll('.container');
 
-    <div class="container" data-year="2022">
-        <h1>ACCESS Committee Members of 2022-23</h1>
-        <div class="members-grid">
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/president.jpg" alt="Member 1">
-                <h2>Ranjith B K</h2>
-                <p class="role">President</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/vp.png" alt="Member 2">
-                <h2>Rohan Lobo</h2>
-                <p class="role">Vice President</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/branchcaptain.jpg" alt="Member 3">
-                <h2>Prathyush Padmashali</h2>
-                <p class="role">Branch Captain</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/secretary.jpg" alt="Member 4">
-                <h2>Ankith H</h2>
-                <p class="role">Secretary</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/js.jpg" alt="Member 5">
-                <h2>Sannidhi P Shetty</h2>
-                <p class="role">Joint-Secretary</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/treasurer.png" alt="Member 6">
-                <h2>Manan Shetty</h2>
-                <p class="role">Treasurer</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/tc.jpg" alt="Member 7">
-                <h2>Tushar</h2>
-                <p class="role">Technical Coordinator</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/culturalco.jpg" alt="Member 8">
-                <h2>Megha S</h2>
-                <p class="role">Cultural Coordinator</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/cocultural.jpg" alt="Member 19">
-                <h2>Dhanya Srinivas</h2>
-                <p class="role">Co-Cultural Coordinator</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/sc.jpg" alt="Member 10">
-                <h2>Sampath</h2>
-                <p class="role">Sports Coordinator</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/cospc.jpg" alt="Member 11">
-                <h2>Oishanu Bora</h2>
-                <p class="role">Co-Sports Coordinator</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/webco.jpg" alt="Member 12">
-                <h2>Preetam K</h2>
-                <p class="role">Web Coordinator</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/mediahead.jpg" alt="Member 13">
-                <h2>Shreema R Shetty</h2>
-                <p class="role">Publicity & Media Head</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/magazinehead.jpg" alt="Member 14">
-                <h2>Prathamesh M Shenoy</h2>
-                <p class="role">Magazine Head</p>
-            </div>
-        </div>
-    </div>
-    <div class="container" data-year="2022">
-        <h1>Class Representative (CRs) of 2022-23</h1>
-        <div class="members-grid">
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/CR3Y.jpg" alt="CR 3">
-                <h2>Mohammed Nashith</h2>
-                <p class="role">3rd Year CR</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/CR2Y.jpg" alt="CR 2">
-                <h2>Nidheesh N Amin</h2>
-                <p class="role">2nd Year CR</p>
-            </div>
-            <div class="member">
-                <img src="Committee Members Pics/2022-23 Members/CR1Y.jpg" alt="CR 1">
-                <h2>Shashank S Kumar</h2>
-                <p class="role">1st Year CR</p>
-            </div>
-        </div>
-    </div>
+            // Function to show content for selected year
+            function showYearContent(year) {
+                containers.forEach(container => {
+                    if (container.getAttribute('data-year') === year) {
+                        container.style.display = 'block';
+                    } else {
+                        container.style.display = 'none';
+                    }
+                });
+            }
 
+            // Add click event listeners to year tabs
+            yearTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    yearTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    // Show content for selected year
+                    showYearContent(tab.getAttribute('data-year'));
+                });
+            });
+
+            // Show 2024 content by default
+            showYearContent('2024');
+        });
+    </script>
 </body>
-<script src="cm.js"></script>
 </html>
