@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCE Website</title>
+    <title>Department of CCE Website</title>
     <link rel="icon" href="images/access-logo.png">
-    <link rel="stylesheet" href="utility-classes/pop-up.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="utility-classes/social-media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="utility-classes/pop-up.css">-->
+    <!--<link rel="stylesheet" href="style.css">-->
     <style>
- body {
+        body {
             margin: 0;
             overflow-y: auto; /* Enable scrolling */
             overflow-x: hidden;
+            background-image: url("./HomeImages/w13.jpg");
         }
 
         #video-container {
@@ -30,7 +29,7 @@
             z-index: -1;
             opacity: 0.2;
         }
-
+/*
         .navigation {
     display: flex;
     justify-content: center;
@@ -49,20 +48,39 @@
 .nav-button.active {
     background-color: #d1ff00;
 }
+*/
+.navbar{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.logo1>img{
+    max-height: 100px;
+}
+.nav-link-text{
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+.nav-link-text:hover{
+    color: #ff6200;
+}
+.navbar-nav{
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+}
         .information {
-            /* padding: 20px;
+            padding: 20px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: flex-end;
-            margin: 20px; */
-            margin-top: 90px; /* Add top margin to create space below navbar */
-    position: relative;
-    z-index: 1;
-
+            margin: 20px;
         }
-        .content-section, .info-section{
+        .content-section{
             display: grid;
             grid-template-columns: 50% 50%;
             grid-template-rows: 50% 50%;
@@ -76,30 +94,45 @@
             margin: 20px;
             padding: 30px;
             transition: ease-in-out 0.3s;
-            width: 80vw;
+            width: fit-content;
+        }
+        .img_info-section{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            transition: ease-in-out 0.3s;
+            width: 100%;
+        }
+        .img_info-section .info-section{
+            width: 100%;
+            height: 100%;
+        }
+        .img_info-section .content-section-topics *:not(#cctt){
+            max-height: 30vh;
+        }
+        .img_info-section .info-section ul p{
+            font-size: large;
+        }
+        @media only screen and (max-width: 600px) {
+            .img_info-section{
+            flex-direction: column;
+            }
         }
         .info-section{
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
+            background-color: #ffffff7a;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 20px;
+            padding: 30px;
+            transition: ease-in-out 0.3s;
+            width: fit-content;
         }
-        #Experiential{
-            grid-area: 2/1/3/3;
-            display: grid;
-            gap: 20px;
-            grid-template-columns: 30% 30% 30%;
-            grid-template-rows: 20% 80%;
-            width: 100%;
-            height: 40%;
-        }
-        #Experiential>p{
-            grid-area: 1/1/2/4;
-            text-align: center;
-        }
-        #Experiential>div{
-            background-size: cover;
-        }
+        
         .content-section:hover{
             transform: translateY(-10px);
             box-shadow: 6px 4px 6pc 4px #0000006d;
@@ -110,14 +143,14 @@
         .content-section-topics{
             display: grid;
             grid-template-columns: 60% 40%;
-            grid-template-rows: 10% 45% 45%;
+            grid-template-rows: 50% 50%;
             gap: 20px;
-            width: 35vw;
+            width: 100%;
             margin: 40px;
         }
         #cctt{
-            grid-area: 2/1/4/2;
-            object-fit: cover;
+            grid-area: 1 / 1 / 3 / 2;
+            
         }
         .sub_title{
             grid-area: 1/1/2/3;
@@ -144,26 +177,6 @@
 .content-section-topic:hover{
     transform: scale(1.03);
 }
-.content-section-topic:hover> .overlay-text{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.705);
-}
-.content-section-topic .overlay-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-
         video {
             width: 100%;
             height: 100%;
@@ -174,140 +187,30 @@
             font-weight: bolder;
             font-size: xx-large;
         }
-       
-        .hamburger-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  z-index: 1000;
-}
 
-.hamburger-icon {
-  width: 30px;
-  height: 24px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.line {
-  display: block;
-  width: 100%;
-  height: 5 px;
-  background-color: white;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Animation for active state */
-.hamburger-btn.active .line:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger-btn.active .line:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-btn.active .line:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-@media screen and (max-width: 768px) {
-  .hamburger-btn {
-      display: block;
-      position: fixed; /* Changed from absolute to fixed */
-        right: 20px;
-        top: 20px;
-        z-index: 1000;
-  }
-
-  .menu {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh; /* Added full viewport height */
-      z-index: 999;
-      background-color: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      display: none;
-        justify-content: center;
-        align-items: center;
-  }
-
-  .menu.active {
-      display: flex;
-  }
-
-  .nav {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-
-  }
-
-  .nav li {
-      margin: 15px 0;
-      font-size: 1.2rem; /* Increased font size */
-
-  }
-  .nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
-    color: #ff7200;
-}
-.information {
-        margin-top: 80px;
-    }
-
-    #welcome {
-        padding-top: 20px;
-        margin-top: 0;
-    }
-}.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px; /* Fixed height for navbar */
-    z-index: 1000;
-    background-color: white;
-}#video-container {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px ;
-    margin-top: 0; /* Optional spacing from the main content */
-}
-
-footer a {
-    font-weight: bold; /* Makes the text bold */
-    color: #ffffff; /* White color for better visibility */
-    text-decoration: underline; /* Adds an underline to show it's a clickable link */
-    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
-}
-
-footer a:hover {
-    color: #ffcc00; /* Changes color to yellow on hover */
-}
-    
+        .typing-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+        }
+        .typing-text {
+            border-right: 2px solid white;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: xx-large;
+            font-weight: bolder;
+            animation: typing 2s steps(20, end) forwards, cursor-blink 0.7s infinite;
+            max-width: 100vw;
+            line-height: 1.5;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes cursor-blink {
+            50% { border-color: transparent; }
+        }
     </style>
 </head>
 <body>
@@ -316,96 +219,126 @@ footer a:hover {
     </div>
 
     <div id="content"></div>
-    
-    <div class="navbar">
-        <div class="icon1">
-            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <h2 class="navbar-brand logo1"><img src="images/accesslogo.png" alt="Logo"></h2>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"><span class="nav-link-text" style="color: #ff5e00;">Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faculty.html"><span class="nav-link-text">FACULTY</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="placements.html"><span class="nav-link-text">PLACEMENTS</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="notes.html"><span class="nav-link-text">NOTES & RESOURCES</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="upcoming_events.html"><span class="nav-link-text">UPCOMING EVENTS</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="about_us.html"><span class="nav-link-text">ABOUT US</span></a>
+            </li>
+          </ul>
         </div>
-    
-        <div class="hamburger-btn">
-            <div class="hamburger-icon">
-                <span class="line">☰</span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </div>
-        </div>
-        <div class="menu">
-            <ul class="nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="faculty.html"">FACULTY</a></li>
-                <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
-                <li><a href="placements.html">PLACEMENTS</a></li>
-                <li><a href="notes.html">NOTES & RESOURCES</a></li>
-                <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
-                <li><a href="about_us.html">ABOUT US</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="information">
-        <p id="welcome">Welcome to the Department of Computer & Communication Engineering</p>
-        <div class="content-section">
+      </nav>
+      <div class="typing-container">
+        <span class="typing-text" id="typing-text">Welcome to Department of Computer and Communication Engineering,<br> </span>
+      </div>
+      <div class="information">
+        <div class="img_info-section">
             <div class="content-section-topics">
-                <p class="sub_title">We Specialize in</p>
                 <div class="content-section-topic rotate-left" id="cctt">
                     <img src="./HomeImages/Computer Communication Technologies & Telecommunications.webp" alt="Computer Communication Technologies">
-                    <div class="overlay-text">Computer Communication Technologies & Telecommunications</div>
                 </div>
                 
                 <div class="content-section-topic rotate-left">
                     <img src="./HomeImages/Programme is on Computer Networks.png" alt="Computer Networks">
-                    <div class="overlay-text">Programme is on Computer Networks</div>
                 </div>
                 
                 <div class="content-section-topic rotate-left">
                     <img src="./HomeImages/telecommunication texknoledgy.jpg" alt="Telecommunications">
-                    <div class="overlay-text">Telecommunications technologies</div>
                 </div>                
             </div>
-
-
-            
-            <div class="content-section-topics">
-                <p class="sub_title">Program's we offer</p>
-                <div class="content-section-topic rotate-right">
-                    <img src="./HomeImages/cs cources.webp" alt="Courses in Computer Science">
-                    <div class="overlay-text">Courses in Computer Science</div>
-                </div>
-                
-                <div class="content-section-topic rotate-right">
-                    <img src="./HomeImages/cloud.jpg" alt="Cloud Computing">
-                    <div class="overlay-text">Cloud Computing</div>
-                </div>
-                
-                <div class="content-section-topic rotate-right">
-                    <img src="./HomeImages/multymedia.jpeg" alt="Multimedia Communications">
-                    <div class="overlay-text">Multimedia Communications</div>
-                </div>
-
-                <div class="content-section-topic rotate-right">
-                    <img src="./HomeImages/bigdata.jpeg" alt="Big Data Analytics">
-                    <div class="overlay-text">Big Data Analytics</div>
-                </div>
+            <div class="info-section">
+                <p>We Specialize in</p>
+                    <ul>
+                        <li>Computer Communication Technologies & Telecommunications</li>
+                        <li>Programme is on Computer Networks</li>
+                        <li>Telecommunications technologies</li>
+                    </ul>
             </div>
+        </div>
+    </div>
 
 
 
-            <div class="content-section-topics rotate-left" id="Experiential">
-                <p>Provide Experiential learning in</p>
-                <div class="content-section-topic">
+    <div class="information">
+        <div class="img_info-section">
+            <div class="info-section">
+                <p>Program's we offer</p>
+                    <ul>
+                        <li>Courses in Computer Science</li>
+                        <li>Cloud Computing</li>
+                        <li>Multimedia Communications</li>
+                        <li>Big Data Analytics</li>
+                    </ul>
+            </div>
+            <div class="content-section-topics">
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/cs cources.webp" alt="Courses in Computer Science">
+                </div>
+                
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/multymedia.jpeg" alt="Multimedia Communications">
+                </div>
+                
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/cloud.jpg" alt="Cloud Computing">
+                </div>   
+
+                <div class="content-section-topic rotate-left">
+                    <img src="./HomeImages/bigdata.jpeg" alt="Big Data Analytics">  
+                </div>                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="information">
+        <div class="img_info-section">
+            <div class="content-section-topics">
+                <div class="content-section-topic rotate-left" id="cctt">
                     <img src="./HomeImages/cs.jpeg" alt="Computer science">
-                    <div class="overlay-text">Computer science</div>
                 </div>
                 
                 <div class="content-section-topic rotate-left">
                     <img src="./HomeImages/computer networks.jpeg" alt="Communication networks">
-                    <div class="overlay-text">Communication networks</div>
                 </div>
                 
-                <div class="content-section-topic rotate-left" id="cctt">
+                <div class="content-section-topic rotate-left">
                     <img src="./HomeImages/cyber security.jpeg" alt="Security and associated subjects">
-                    <div class="overlay-text">Security and associated subjects</div>
-                </div>
+                </div>                
             </div>
+            <div class="info-section">
+                <p>We Provide Experiential learning in</p>
+                    <ul>
+                        <li>Security and associated subjects</li>
+                        <li>Computer science</li>
+                        <li>Communication networks</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
         </div>
     </div>
 
@@ -423,66 +356,59 @@ footer a:hover {
         <div class="info-section content-section">
             <p>MISSION</p>
             <ul>
-                <p>. To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
-                <p>. To strengthen gthe industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between aaacademia and industry.</p>
-                <p>. To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
-                <p>. To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
+                <p><b>1)</b> To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
+                <p><b>2)</b> To strengthen gthe industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between aaacademia and industry.</p>
+                <p><b>3)</b> To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
+                <p><b>4)</b> To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
             </ul>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="module" src="./homeLogic.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            try {
-            const hamburger = document.querySelector('.hamburger-btn');
-            const menu = document.querySelector('.menu');
-            if (!hamburger || !menu) {
-                console.error('Required elements not found');
-                return;
-            }
-            hamburger.addEventListener('click', (e) => {
-                e.stopPropagation();
-
-                hamburger.classList.toggle('active');
-                menu.classList.toggle('active');
-            });
+  
+</body>
+<script>
+    const messages = [
+            "Where code meets connectivity!",
+            "\nWhere Innovation Drives Intelligence!",
+            "\nEmpowering Coders, Connecting Minds!",
+            "\nYour Gateway to Tech Excellence!",
+        ];
+    let messageIndex = 0;
+    let typingElement = document.getElementById("typing-text");
     
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    menu.classList.remove('active');
-                }
-            });
-    
-            // Close menu when clicking a link
-            const navLinks = document.querySelectorAll('.nav a');
-            if (navLinks.length > 0) {
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        menu.classList.remove('active');
-                    });
-                });
+    function startTyping() {
+        let currentMessage = messages[messageIndex];
+        let charIndex = 0;
+        let typingInterval = setInterval(() => {
+            if (charIndex < currentMessage.length) {
+                typingElement.innerHTML += currentMessage[charIndex];
+                charIndex++;
+            } else {
+                clearInterval(typingInterval);
+                setTimeout(startDeleting, 100);
             }
-        }catch (error) {
-            console.error('Error initializing menu:', error);
-        }
-        });
-    </script>
-    <!-- Footer -->
-         <footer>
-             <div class="hero">
-     
-                 <div class="social-links">
-                     <a href="https://www.instagram.com/access.nmamit" target="_blank"><i class="fab fa-instagram"></i></a>
-                     <a href="https://www.linkedin.com/company/computer-and-communication-engineering" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                 </div>
-                 
-               </div>
-                   <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte. </p>
-                   <p>Made with ❤️ by <a href="developers.html">Developer Team</a></p>
-         </footer>
-    </body>
-
+        }, 100);
+    }
+    
+    function startDeleting() {
+        let currentMessage = typingElement.innerHTML;
+        let charIndex = currentMessage.length;
+        let deletingInterval = setInterval(() => {
+            if (charIndex > 69) {
+                typingElement.innerHTML = currentMessage.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                clearInterval(deletingInterval);
+                messageIndex = (messageIndex + 1) % messages.length;
+                setTimeout(startTyping, 400);
+            }
+        }, 50);
+    }
+    
+    startTyping();
+</script>
+<script src="dark_mode.js"></script>
 </html>
