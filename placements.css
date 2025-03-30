@@ -22,6 +22,7 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 .logo1>img{
   max-height: 100px;
@@ -39,6 +40,8 @@ body {
   width: 70vw;
   display: flex;
   justify-content: space-around;
+  background-color: white;
+
 }
 
 .Student_Card {
@@ -58,8 +61,8 @@ body {
   border-radius: 40px 10px 30px 10px; 
   padding: 20px;
 
-  max-width: 300px;
-  min-height: 60vh;
+  width: 320px;
+  height: 70vh;
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-play-state: paused;
@@ -221,4 +224,176 @@ body {
   font-size: 16px;
   color: #555;
   line-height: 1.5;
+}
+@media screen and (max-width: 768px) {
+  .hamburger-btn {
+      display: block;
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      z-index: 1000;
+  }
+
+  .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+  }
+
+  .menu.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .nav {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+  }
+
+  .nav li {
+      margin: 15px 0;
+      font-size: 1.2rem;
+  }
+  
+  .nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .nav a:hover {
+      color: #ff7200;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo1 > img {
+  max-height: 60px;
+  transition: max-height 0.3s ease;
+}
+
+.navbar-nav {
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-left: auto;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.nav-link-text {
+  color: black;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.4s ease-in-out;
+}
+
+.nav-link-text:hover {
+  color: #ff6200;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 991px) {
+  .navbar-toggler {
+      display: block;
+  }
+  
+  .navbar-collapse {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      z-index: 1000;
+      border-top: 1px solid #eeeeee;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+  }
+
+  .navbar-collapse.show {
+      max-height: 500px;
+  }
+
+  .navbar-nav {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-item {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+  }
+
+  .logo1 > img {
+      max-height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo1 > img {
+      max-height: 40px;
+  }
+
+  .nav-link-text {
+      font-size: 12px;
+  }
 }
