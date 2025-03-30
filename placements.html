@@ -4,34 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Placements</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="placements.css">
     <link rel="icon" href="images/access-logo.png">
 </head>
 <body>
-    <div class="navbar">
-        <div class="icon1">
-            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
-        </div>
-        <button class="hamburger-btn" aria-label="Menu">
-          <div class="hamburger-icon">
-              <span class="line">☰</span>
-              <span class="line"></span>
-              <span class="line"></span>
-          </div>
-      </button>
-        <div class="menu">
-            <ul class="nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="faculty.html">FACULTY</a></li>
-                <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
-                <li><a href="placements.html" style="color: #ff7200;">PLACEMENTS</a></li>
-                <li><a href="notes.html">NOTES & RESOURCES</a></li>
-                <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
-                <li><a href="about_us.html">ABOUT US</a></li>
-            </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <h2 class="navbar-brand logo1"><img src="images/accesslogo.png" alt="Logo"></h2>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html"><span class="nav-link-text">Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="faculty.html"><span class="nav-link-text">FACULTY</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="placements.html"><span class="nav-link-text"style="color: #ff5e00;">PLACEMENTS</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="notes.html"><span class="nav-link-text">NOTES & RESOURCES</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="upcoming_events.html"><span class="nav-link-text">UPCOMING EVENTS</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="about_us.html"><span class="nav-link-text">ABOUT US</span></a>
+        </li>
+      </ul>
     </div>
+  </nav>
 
         <!-- <div class="icon2">
             <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
@@ -52,7 +62,9 @@
           </div>
         </div>
         
-    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
             const info = {
     "2021-2025": [
@@ -65,7 +77,7 @@
           "./placed_student_photos/1738777708471.png",
       },
       {
-        Company_name: "Sasken Technologies, Cohesity",
+        Company_name: "Sasken Technologies, Coheisty",
         Student_name: "Bindiya K",
         Linkdin: "https://www.linkedin.com/in/bindiya-kirlaya-510629229",
         Email: "bindiyakirlaya03@gmail.com",
@@ -173,7 +185,7 @@
           "./placed_student_photos/1738777708180.png",
       },
       {
-        Company_name: "Infosys ",
+        Company_name: "Infosys, Siemans Tecknoledgy & Services",
         Student_name: "Oishanu Brat Bora ",
         Linkdin: "https://www.linkedin.com/in/oishanu-brat-borah-264313268/",
         Email: "oishanubora@gmail.com",
@@ -187,10 +199,10 @@
           "https://www.linkedin.com/in/srilaxmi-k-7320a225b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         Email: "srilaxmi.kamath03@gmail.com",
         Student_img:
-          "https://drive.google.com/open?id=16L4UYWnYHHH4ZhgsuGbmcrW9WA9EGsJw",
+          "./placed_student_photos/9861342648.jpg",
       },
       {
-        Company_name: "Infosys ",
+        Company_name: "Infosys, Siemans Tecknoledgy & Services",
         Student_name: "Nancy Parmar ",
         Linkdin: "Nancy Parmar",
         Email: "4nm21cm034@nmamit.in",
@@ -215,7 +227,7 @@
           "./placed_student_photos/1738777711979.png",
       },
       {
-        Company_name: "Cognizant GenC, Infosys, Sony India ",
+        Company_name: "Cognizant GenC, Infosys, Sony ",
         Student_name: "Deepthi H ",
         Linkdin: "https://www.linkedin.com/in/deepthi-h/",
         Email: "4nm21cm018@nmamit.in",
@@ -277,13 +289,13 @@
                     students.forEach(student => {
                         const studentCard = document.createElement("div");
                         studentCard.classList.add("Student_Card");
-    
+                        
                         studentCard.innerHTML = `
-                            <def>
-                            <h3 id="Company">${student.Company_name}</h3>
-                            </def>
-                            <img src="${student.Student_img}" onerror="this.onerror=null; this.src='./placed_student_photos/default_person.png';" alt="${student.Student_name}">
+                            <img src="${student.Student_img}" onerror="this.onerror=null; this.src='./placed_student_photos/default_person.png';">
+
+                            <div>
                             <h3 id="Name">${student.Student_name}</h3>
+                            <h3 id="Company">${student.Company_name}</h3>
                             <div class="Social_links">
                                 <a href="${student.Linkdin}" target="_blank">
                                     <img src="./placed_student_photos/linkdin_img_color.png">
@@ -297,6 +309,7 @@ Thank you so much for your time and support.\n
 Best regards," target="_blank">
                                     <img src="./placed_student_photos/email_img_color.png">
                                 </a>
+                            </div>
                             </div>
                         `;
     
@@ -334,30 +347,7 @@ document.addEventListener('scroll', checkVisibility);
 
 // Trigger on page load
 window.addEventListener('load', checkVisibility);
-document.addEventListener('DOMContentLoaded', () => {
-        const hamburger = document.querySelector('.hamburger-btn');
-        const menu = document.querySelector('.menu');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            menu.classList.toggle('active');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            menu.classList.remove('active');
-        }
-    });
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            menu.classList.remove('active');
-        });
-    });
-});
         </script>
 </body>
 </html>
