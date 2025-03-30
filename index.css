@@ -79,7 +79,6 @@ ul li a:hover{
     margin: auto;
     color: #fff;
     position: relative;
-    
 }
 
 .content .par{
@@ -117,7 +116,6 @@ ul li a:hover{
     border-radius: 10px;
     cursor: pointer;
     transition: .4s ease;
-    
 }
 
 .content .cn a{
@@ -139,10 +137,6 @@ ul li a:hover{
     color: #fff;
     font-family: Arial;
 }
-/* .main-content {
-    padding: 20px;
-    max-width: 1200px;
-} */
 
 /* Department Info Section */
 .department-info {
@@ -156,7 +150,6 @@ ul li a:hover{
 .department-info h1 {
     color: white;
     margin-bottom: 10px;
-    
 }
 
 .department-info p {
@@ -169,13 +162,27 @@ ul li a:hover{
     font-weight: bold;
 }
 
+/* Page structure to ensure footer stays at bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content-wrapper {
+    flex: 1;
+}
+
 /* Footer */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px ;
-    margin-top: 0; /* Optional spacing from the main content */
+    padding: 20px;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
 }
 
 footer a {
@@ -189,7 +196,55 @@ footer a:hover {
     color: #ffcc00; /* Changes color to yellow on hover */
 }
 
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 22px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: #ffcc00;
+}
+
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
+}
+/* Add this to your index.css file or in the style tag in index.html */
+
+.typing-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 120px; /* Add space below the navbar */
+    padding-top: 20px; /* Additional padding for better spacing */
+}
+
+.typing-text {
+    border-right: 2px solid white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    animation: typing 2s steps(20, end) forwards, cursor-blink 0.7s infinite;
+    max-width: 100vw;
+    line-height: 1.5;
+}
+
+/* You may also want to ensure the navbar has a higher z-index */
+.navbar {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10; /* Ensure navbar is above other content */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: add a slight background to ensure text below doesn't blend with navbar */
 }
