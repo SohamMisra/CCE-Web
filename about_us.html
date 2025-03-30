@@ -9,24 +9,42 @@
     <link rel="icon" href="images/access-logo.png">
     <link rel="stylesheet" href="utility-classes/social-media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 </head>
 <body>
-    <div class="navbar">
-        <div class="icon1">
-            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <h2 class="navbar-brand logo1"><img src="images/accesslogo.png" alt="Logo"></h2>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"><span class="nav-link-text" >Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faculty.html"><span class="nav-link-text">FACULTY</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="placements.html"><span class="nav-link-text">PLACEMENTS</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="notes.html"><span class="nav-link-text">NOTES & RESOURCES</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="upcoming_events.html"><span class="nav-link-text">UPCOMING EVENTS</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="about_us.html"><span class="nav-link-text" style="color:#ff5e00">ABOUT US</span></a>
+            </li>
+          </ul>
         </div>
-
-        <div class="menu">
-            <ul class="nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="faculty.html">FACULTY</a></li>
-                <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
-                <li><a href="placements.html">PLACEMENTS</a></li>
-                <li><a href="notes.html">NOTES & RESOURCES</a></li>
-                <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
-                <li><a href="about_us.html" style="color: #ff7200;">ABOUT US</a></li>
-            </ul>
-        </div>
+      </nav>
+    
 
         <!-- <div class="icon2">
             <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
@@ -35,33 +53,122 @@
     </div> 
     <div class="about-section">
         <div class="content">
-            <h2>The ACCESS Committee</h2>
+            <h1>The ACCESS Committee</h1>
             <div class="section">
                 <h2>ACCESS stands for the Association of Computer and Communication Engineering StudentS</h2>
                 <p>
                     It is the official student branch association of our department and plays a significant role in organizing various events and activities that contribute to the growth and development of students while also supporting the department in multiple ways.
                 </p>
-            <br> </br>
-            <h3><span style= "font-size:2rem">Motto</span></h3>
-                <p><span style= "font-size:1.5rem">Where Code Meets Connectivity</span></p>
             </div>
         </div>
         <div class="image">
-            <img src="images/AOB1.JPG" alt="Group Photo">
-        </div>    
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="Images/AOB1.JPG" alt="Group Photo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/img1.jpg" alt="Group Photo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/img2.jpg" alt="Access Logo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/img3.jpg" alt="Another Photo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/img8.jpg" alt="Group Photo">
+                    </div>
+                    <!-- Add more carousel-items as needed -->
+                </div>
+                
+                <button class="carousel-control carousel-prev">❮</button>
+                <button class="carousel-control carousel-next">❯</button>
+                
+                <div class="carousel-indicators"></div>
+            </div>        
+        </div>
     </div>
-
-    <footer>
-        <div class="hero">
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/access.nmamit" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/computer-and-communication-engineering" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+    <script src="./navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.carousel');
+            const carouselInner = carousel.querySelector('.carousel-inner');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const indicators = carousel.querySelector('.carousel-indicators');
             
-          </div>
-              <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte. </p>
-              <p>Made with ❤️ by <a href="developers.html">Developer Team</a></p>
-    </footer>
+            let currentIndex = 0;
+            const totalItems = items.length;
+        
+            // Create indicators
+            items.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('indicator');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                indicators.appendChild(dot);
+            });
+        
+            function updateIndicators() {
+                const dots = indicators.querySelectorAll('.indicator');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+        
+            function goToSlide(index) {
+                currentIndex = index;
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                updateIndicators();
+            }
+        
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalItems;
+                goToSlide(currentIndex);
+            }
+        
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                goToSlide(currentIndex);
+            }
+        
+            // Add click events
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+        
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 3000);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu handlers - Only show on small screens
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuButton = document.getElementById('close-menu');
+            
+            if (mobileMenuButton && mobileMenu && closeMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.remove('hidden');
+                });
+                
+                closeMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+                
+                // Close mobile menu on window resize if screen becomes larger
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 768) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
+
