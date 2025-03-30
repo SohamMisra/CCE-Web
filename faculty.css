@@ -1,154 +1,300 @@
+/* Dark Theme Update for Faculty Page */
+
+/* Base styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Calibri', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #121212;
+    color: #e0e0e0;
+    background-image: linear-gradient(to bottom right, #1a1a2e, #16213e, #0f3460);
+    background-attachment: fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
 }
 
+/* Add subtle texture overlay */
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADpSURBVGhD7ZZBEsIwDATz/08HHgAH4AGOJzPtNqYhMDaSV56ZHRcnUhTlOI7jOK0sy/IxvTK9P9LKdDP9Md1NsI3c5BVyMsE2cpNXyMUE28hNXiFXE2wjN3mF3Eywjd7JK+PtZLfR9+SV8W6y2+h78sp4O9lt9D15Zbyb7Db6nrwy3k12G31PXhlvJ7uNvievjHeT3Ubfk1fI1QTbyE1eIRcTbCM3eYWcTLCN3OQVcjDBNnKTV8jdBNvITb5Bnk6wjdzkG+TuBNvITb5Bnk6wjdzkG+RtEt5Gb5O3SXgbvU3eJuFt9DY5juM4TiPH8QdxiLtDIMVMkgAAAABJRU5ErkJggg==');
+    opacity: 0.03;
+    z-index: -1;
+}
+
+/* Header styling */
 header {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
+    background: rgba(10, 10, 20, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
 }
 
-.navigation {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+header h1 span, header h2 span {
+    font-size: 50px;
+    font-weight: bold;
+    color: #f0f0f0;
+    text-decoration: none;
+    background: linear-gradient(45deg, #0f3460, #533483);
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.nav-button {
-    border: none;
-    background-color: #f0f0f0;
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 14px;
-    cursor: pointer;
+/* Navbar styling */
+.navbar {
+    background-color: rgba(15, 20, 30, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.nav-button.active {
-    background-color: #d1ff00;
+.nav-link-text {
+    color: #e0e0e0 !important;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Calibri' ;
-    background: url('images/nmamit.png') no-repeat center center fixed;
-    background-size: cover;
-    color: black;
+.nav-link-text:hover {
+    color: #4f4fff !important;
+    text-shadow: 0 0 8px rgba(79, 79, 255, 0.5);
 }
 
+/* Faculty cards styling */
 .faculty-container {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Space between boxes */
-    flex-wrap: wrap; /* Allow wrapping to new rows */
+    gap: 30px;
+    flex-wrap: wrap;
     padding: 20px;
 }
 
 .faculty-card {
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 25px;
     text-align: center;
-    width: 250px; /* Adjust as needed */
-    height: 350px; /* Increased to fit larger photo */
-    transition: background-color 0.3s ease, box-shadow 0.4s ease;
+    width: 250px;
+    height: 350px;
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.faculty-card:hover{
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-    background-color: rgb(233, 230, 230);
-    
+.faculty-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(79, 79, 255, 0.3);
+    background: linear-gradient(145deg, #1e1e3a, #1b2a4e);
 }
 
 .faculty-photo {
-    width: 200px; /* Adjust this size for a larger photo */
-    height: 200px; /* Match the width to maintain the circle */
-    border-radius: 50%; /* Ensures the photo stays circular */
-    object-fit: cover; /* Keeps the image proportionate inside the circle */
-    margin-bottom: 10px; /* Space between photo and text */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.faculty-card:hover .faculty-photo {
+    border-color: rgba(79, 79, 255, 0.3);
+    transform: scale(1.05);
 }
 
 h3 {
-    font-size: 16px;
-    margin: 10px 0 5px;
+    font-size: 18px;
+    margin: 15px 0 5px;
+    color: #ffffff;
 }
 
 p {
-    font-size: 14px;
-    color: #666;
+    font-size: 16px;
+    color: #a0a0a0;
     margin: 0 0 15px;
 }
+
+/* Read more button styling */
 .read-more {
-    margin-top: 10px; 
-    padding: 10px 15px;
-    background-color: #d1ff00;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #4f4fff, #533483);
     border: none;
+    border-radius: 25px;
+    color: white;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.content{
-    text-align: center;
-    height: auto;
+.read-more:hover {
+    background: linear-gradient(45deg, #533483, #4f4fff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(79, 79, 255, 0.4);
 }
 
-body {
-    background-color: #f9f9f9;
-}
-.hamburger-btn {
-    display: none;
-    background: none;
+/* Dialog/Popup styling */
+dialog {
+    background: transparent;
     border: none;
-    cursor: pointer;
     padding: 0;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    z-index: 1000;
-  }
-  
-  .hamburger-icon {
-    width: 30px;
-    height: 24px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .line {
-    display: block;
+}
+
+.popup {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    color: #e0e0e0;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close {
+    color: #ffffff;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #ff4f4f;
+    transform: rotate(90deg);
+}
+
+/* Accordion styling */
+.accordion {
+    margin: 15px 0;
     width: 100%;
-    height: 5 px;
-    background-color: white;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Animation for active state */
-  .hamburger-btn.active .line:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-  }
-  
-  .hamburger-btn.active .line:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger-btn.active .line:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-  }
-  
-  @media screen and (max-width: 768px) {
+}
+
+.accordian-li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background: rgba(15, 20, 30, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion label {
+    padding: 12px 15px;
+    background: linear-gradient(45deg, #0f3460, #533483);
+    color: white;
+    cursor: pointer;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.accordion label:hover {
+    background: linear-gradient(45deg, #533483, #0f3460);
+}
+
+.dropdown-content {
+    background: rgba(20, 25, 35, 0.9);
+    padding: 15px;
+    border-radius: 0 0 8px 8px;
+    display: none;
+}
+
+.accordion input:checked ~ .dropdown-content {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.dropdown-content ul {
+    padding-left: 25px;
+}
+
+.dropdown-content li {
+    color: #d0d0d0;
+    margin: 8px 0;
+}
+
+/* Animation for accordion */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media queries adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(15, 20, 30, 0.95);
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu.active {
+        background-color: rgba(10, 10, 20, 0.95);
+    }
+    
+    .nav a {
+        background-color: rgba(30, 30, 60, 0.5);
+    }
+    
+    .nav a:hover {
+        background-color: rgba(79, 79, 255, 0.3);
+    }
+    
+    .faculty-card {
+        width: 230px;
+        height: 330px;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 span, header h2 span {
+        font-size: 36px;
+        padding: 8px 15px;
+    }
+    
+    .faculty-card {
+        width: 200px;
+        height: 300px;
+    }
+    
+    .faculty-photo {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* Input and radio buttons styling */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+}
+
+/* Add some particle effects to the background */
+.particle {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 50%;
+}
+@media screen and (max-width: 768px) {
     .hamburger-btn {
         display: block;
-        position: fixed; /* Changed from absolute to fixed */
-          right: 20px;
-          top: 20px;
-          z-index: 1000;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
     }
   
     .menu {
@@ -157,47 +303,160 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Added full viewport height */
+        height: 100vh;
         z-index: 999;
         background-color: rgba(0, 0, 0, 0.95);
         padding: 20px;
-        display: none;
-          justify-content: center;
-          align-items: center;
     }
   
     .menu.active {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
   
     .nav {
         flex-direction: column;
         align-items: center;
         width: 100%;
-  
     }
   
     .nav li {
         margin: 15px 0;
-        font-size: 1.2rem; /* Increased font size */
-  
+        font-size: 1.2rem;
     }
+    
     .nav a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+  
+    .nav a:hover {
+        color: #ff7200;
+    }
   }
   
-  .nav a:hover {
-      color: #ff7200;
-  }
-  }
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px; /* Adjust this value based on your navbar height */
+    height: 70px;
     z-index: 1000;
-    /* ...existing navbar styles... */
+    padding: 0.5rem 1rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo1 > img {
+    max-height: 60px;
+    transition: max-height 0.3s ease;
+  }
+  
+  .navbar-nav {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+  }
+  
+  .nav-item {
+    margin: 0 10px;
+  }
+  
+  .nav-link-text {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.4s ease-in-out;
+  }
+  
+  .nav-link-text:hover {
+    color: #ff6200;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+    }
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 1000;
+        border-top: 1px solid #eeeeee;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+  
+    .navbar-collapse.show {
+        max-height: 500px;
+    }
+  
+    .navbar-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .logo1 > img {
+        max-height: 50px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .logo1 > img {
+        max-height: 40px;
+    }
+  
+    .nav-link-text {
+        font-size: 12px;
+    }
   }
