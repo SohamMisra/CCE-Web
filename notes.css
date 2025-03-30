@@ -13,29 +13,24 @@ body {
 .container {
     max-width: 1200px;
     margin: 20px auto;
-    padding: 0px;
-    
-}
+    padding: 20px;
 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 .content {
     display: flex; /* Use flexbox to align sections side by side */
     justify-content: space-between; /* Add space between the sections */
     align-items: flex-start; /* Align items at the top */
-    gap: 60px;
+    gap: 60px; /* Add some space between the two sections */
 }
 
 .syllabus-section,
 .time-table-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex: 1; /* Each section takes equal width */
     padding: 20px;
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a shadow for aesthetics */
-
-    background-color: #ebe8e8;
-    border: 3px solid #55555538;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for aesthetics */
 }
 
 /* Style headings inside sections */
@@ -60,18 +55,17 @@ body {
     margin: 10px 0;
     text-align: center;
     text-decoration: none;
-    background: rgba(0, 0, 56, 0.825);
-    color: rgba(255, 255, 255, 0.905);
+    background: blue;
+    color: black;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 1rem;
     font-weight: bold;
-    width: 50%;
 }
 
 .syllabus-section a:hover,
 .time-table-section a:hover {
-    background: #004186; /* Darker blue on hover */
+    background: #0056b3; /* Darker blue on hover */
     color: #fff;
 }
 
@@ -105,10 +99,8 @@ body {
     padding: 0;
     font-family: 'Calibri' ;
     background: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-teacher-s-college-classroom-coaching-course-poster-background-image_188494.jpg') no-repeat center center fixed;
-    background-color: #dedede;
     background-size: cover;
     color: black;
-    background-blend-mode: lighten;
 }
 
 .notes-container {
@@ -141,17 +133,11 @@ h1 {
 }
 
 .semester {
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
-    border-radius: 20px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    background-color: #ebe8e8;
-    border: 3px solid #55555538;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .semester:hover {
@@ -162,14 +148,14 @@ h1 {
 h2 {
     font-size: 2.4rem;
     margin-bottom: 15px;
-    color: rgb(16, 16, 16);
+    color: orangered;
     font-weight: bold;
 }
 
 .drive-link {
     text-decoration: none;
-    background: rgba(0, 0, 56, 0.825);
-    color: rgba(255, 255, 255, 0.874);
+    background: blue;
+    color: black;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
@@ -177,25 +163,204 @@ h2 {
 }
 
 .drive-link:hover {
-    background: #130080c6;
+    background: #ADD8E6;
     color: white;
 }
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px ;
-    margin-top: 0; /* Optional spacing from the main content */
+.hamburger-btn {
+    display: none;
+}
+  
+.line {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+}
+  
+/* Animation for active state */
+.hamburger-btn.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+  
+.hamburger-btn.active .line:nth-child(2) {
+    opacity: 0;
+}
+  
+.hamburger-btn.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+  
+/* Only show hamburger menu on mobile devices */
+@media screen and (max-width: 768px) {
+    .hamburger-btn {
+        display: block;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
+    }
+  
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding: 20px;
+    }
+  
+    .menu.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+  
+    .nav li {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+    
+    .nav a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+  
+    .nav a:hover {
+        color: #ff7200;
+    }
 }
 
-footer a {
-    font-weight: bold; /* Makes the text bold */
-    color: #ffffff; /* White color for better visibility */
-    text-decoration: underline; /* Adds an underline to show it's a clickable link */
-    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-footer a:hover {
-    color: #ffcc00; /* Changes color to yellow on hover */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo1 > img {
+    max-height: 60px;
+    transition: max-height 0.3s ease;
+}
+
+.navbar-nav {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link-text {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.4s ease-in-out;
+}
+
+.nav-link-text:hover {
+    color: #ff6200;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+    }
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 1000;
+        border-top: 1px solid #eeeeee;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+  
+    .navbar-collapse.show {
+        max-height: 500px;
+    }
+  
+    .navbar-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .logo1 > img {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo1 > img {
+        max-height: 40px;
+    }
+  
+    .nav-link-text {
+        font-size: 12px;
+    }
 }
