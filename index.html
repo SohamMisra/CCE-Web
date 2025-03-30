@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of CCE Website</title>
+    <title>Three.js Parallax Effect</title>
     <link rel="icon" href="images/access-logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="utility-classes/pop-up.css">-->
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="utility-classes/pop-up.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility-classes/social-media.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
     <style>
         body {
             margin: 0;
             overflow-y: auto; /* Enable scrolling */
             overflow-x: hidden;
-            background-image: url("./HomeImages/w13.jpg");
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         #video-container {
@@ -29,48 +35,29 @@
             z-index: -1;
             opacity: 0.2;
         }
-/*
-        .navigation {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
 
-.nav-button {
-    border: none;
-    background-color: #f0f0f0;
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.nav-button.active {
-    background-color: #d1ff00;
-}
-*/
-.navbar{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-.logo1>img{
-    max-height: 100px;
-}
-.nav-link-text{
-    color: black;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-}
-.nav-link-text:hover{
-    color: #ff6200;
-}
-.navbar-nav{
-    width: 70vw;
-    display: flex;
-    justify-content: space-around;
-}
+        .navbar{
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .logo1>img{
+            max-height: 100px;
+        }
+        .nav-link-text{
+            color: black;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+        .nav-link-text:hover{
+            color: #ff6200;
+        }
+        .navbar-nav{
+            width: 70vw;
+            display: flex;
+            justify-content: space-around;
+        }
         .information {
             padding: 20px;
             display: flex;
@@ -118,6 +105,20 @@
             .img_info-section{
             flex-direction: column;
             }
+            .content-section-topics{
+                visibility: hidden;
+                height: 0px;
+                width: 0px;
+                margin: 0px;
+                padding: 0px;
+            }
+            .content-section ul p{
+                font-size: small;
+                font-weight: 700;
+            }
+            .content-section{
+                width: 150vw;
+            }
         }
         .info-section{
             display: flex;
@@ -131,6 +132,9 @@
             padding: 30px;
             transition: ease-in-out 0.3s;
             width: fit-content;
+
+            backdrop-filter: blur(5px); /* Blur effect */
+            -webkit-backdrop-filter: blur(5px);
         }
         
         .content-section:hover{
@@ -157,26 +161,26 @@
             text-align: center;
         }
         .content-section-topic {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-    transition: ease-in-out 0.3s;
-}
-.content-section-topic img {
-    width: 100%;
-    height: 100%; /* Ensures consistent height */
-    object-fit: cover; /* Maintains aspect ratio and fills the container */
-    filter: grayscale(80%);
-    transition: filter 0.5s ease-in-out;
-}
-.content-section-topic:hover>img{
-    filter: grayscale(0%);
-}
-.content-section-topic:hover{
-    transform: scale(1.03);
-}
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: ease-in-out 0.3s;
+        }
+        .content-section-topic img {
+            width: 100%;
+            height: 100%; /* Ensures consistent height */
+            object-fit: cover; /* Maintains aspect ratio and fills the container */
+            filter: grayscale(80%);
+            transition: filter 0.5s ease-in-out;
+        }
+        .content-section-topic:hover>img{
+            filter: grayscale(0%);
+        }
+        .content-section-topic:hover{
+            transform: scale(1.03);
+        }
         video {
             width: 100%;
             height: 100%;
@@ -211,204 +215,383 @@
         @keyframes cursor-blink {
             50% { border-color: transparent; }
         }
+
+        #spider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: none;
+            z-index: -1;
+            pointer-events: none; /* Prevents interference with clicks */
+        }
+        
+        /* Main content wrapper to push footer down */
+        .main-content-wrapper {
+            flex: 1;
+        }
+        
+        /* Footer styling fix */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
-    <div id="video-container">
-        <video id="intro-video" src="./HomeImages/introVid.mp4" autoplay muted></video>
-    </div>
-
-    <div id="content"></div>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <h2 class="navbar-brand logo1"><img src="images/accesslogo.png" alt="Logo"></h2>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html"><span class="nav-link-text" style="color: #ff5e00;">Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="faculty.html"><span class="nav-link-text">FACULTY</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="placements.html"><span class="nav-link-text">PLACEMENTS</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="notes.html"><span class="nav-link-text">NOTES & RESOURCES</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="upcoming_events.html"><span class="nav-link-text">UPCOMING EVENTS</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="about_us.html"><span class="nav-link-text">ABOUT US</span></a>
-            </li>
-          </ul>
+    <div class="main-content-wrapper">
+        <div id="video-container">
+            <video id="intro-video" src="./HomeImages/introVid.mp4" autoplay muted></video>
         </div>
-      </nav>
-      <div class="typing-container">
-        <span class="typing-text" id="typing-text">Welcome to Department of Computer and Communication Engineering,<br> </span>
-      </div>
-      <div class="information">
-        <div class="img_info-section">
-            <div class="content-section-topics">
-                <div class="content-section-topic rotate-left" id="cctt">
-                    <img src="./HomeImages/Computer Communication Technologies & Telecommunications.webp" alt="Computer Communication Technologies">
-                </div>
-                
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/Programme is on Computer Networks.png" alt="Computer Networks">
-                </div>
-                
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/telecommunication texknoledgy.jpg" alt="Telecommunications">
-                </div>                
+        <canvas id="spider"></canvas>
+        <div id="content"></div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <h2 class="navbar-brand logo1"><img src="images/accesslogo.png" alt="Logo"></h2>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html"><span class="nav-link-text" style="color: #ff5e00;">Home</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="faculty.html"><span class="nav-link-text">FACULTY</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="placements.html"><span class="nav-link-text">PLACEMENTS</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="notes.html"><span class="nav-link-text">NOTES & RESOURCES</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="upcoming_events.html"><span class="nav-link-text">UPCOMING EVENTS</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="about_us.html"><span class="nav-link-text">ABOUT US</span></a>
+                </li>
+              </ul>
             </div>
-            <div class="info-section">
-                <p>We Specialize in</p>
-                    <ul>
-                        <li>Computer Communication Technologies & Telecommunications</li>
-                        <li>Programme is on Computer Networks</li>
-                        <li>Telecommunications technologies</li>
-                    </ul>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="information">
-        <div class="img_info-section">
-            <div class="info-section">
-                <p>Program's we offer</p>
-                    <ul>
-                        <li>Courses in Computer Science</li>
-                        <li>Cloud Computing</li>
-                        <li>Multimedia Communications</li>
-                        <li>Big Data Analytics</li>
-                    </ul>
-            </div>
-            <div class="content-section-topics">
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/cs cources.webp" alt="Courses in Computer Science">
+          </nav>
+          <div class="typing-container">
+            <span class="typing-text" id="typing-text">Welcome to Department of Computer and Communication Engineering,<br>-</span>
+          </div>
+          <div class="information">
+            <div class="img_info-section">
+                <div class="content-section-topics">
+                    <div class="content-section-topic rotate-left" id="cctt">
+                        <img src="./HomeImages/Computer Communication Technologies & Telecommunications.webp" alt="Computer Communication Technologies">
+                    </div>
+                    
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/Programme is on Computer Networks.png" alt="Computer Networks">
+                    </div>
+                    
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/telecommunication texknoledgy.jpg" alt="Telecommunications">
+                    </div>                
                 </div>
-                
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/multymedia.jpeg" alt="Multimedia Communications">
+                <div class="info-section">
+                    <p>We Specialize in</p>
+                        <ul>
+                            <li>Computer Communication Technologies & Telecommunications</li>
+                            <li>Programme is on Computer Networks</li>
+                            <li>Telecommunications technologies</li>
+                        </ul>
                 </div>
-                
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/cloud.jpg" alt="Cloud Computing">
-                </div>   
-
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/bigdata.jpeg" alt="Big Data Analytics">  
-                </div>                
             </div>
         </div>
-    </div>
 
-
-    <div class="information">
-        <div class="img_info-section">
-            <div class="content-section-topics">
-                <div class="content-section-topic rotate-left" id="cctt">
-                    <img src="./HomeImages/cs.jpeg" alt="Computer science">
+        <div class="information">
+            <div class="img_info-section">
+                <div class="info-section">
+                    <p>Program's we offer</p>
+                        <ul>
+                            <li>Courses in Computer Science</li>
+                            <li>Cloud Computing</li>
+                            <li>Multimedia Communications</li>
+                            <li>Big Data Analytics</li>
+                        </ul>
                 </div>
-                
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/computer networks.jpeg" alt="Communication networks">
+                <div class="content-section-topics">
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/cs cources.webp" alt="Courses in Computer Science">
+                    </div>
+                    
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/multymedia.jpeg" alt="Multimedia Communications">
+                    </div>
+                    
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/cloud.jpg" alt="Cloud Computing">
+                    </div>   
+
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/bigdata.jpeg" alt="Big Data Analytics">  
+                    </div>                
                 </div>
-                
-                <div class="content-section-topic rotate-left">
-                    <img src="./HomeImages/cyber security.jpeg" alt="Security and associated subjects">
-                </div>                
-            </div>
-            <div class="info-section">
-                <p>We Provide Experiential learning in</p>
-                    <ul>
-                        <li>Security and associated subjects</li>
-                        <li>Computer science</li>
-                        <li>Communication networks</li>
-                    </ul>
             </div>
         </div>
-    </div>
-        </div>
-    </div>
 
 
-    <div class="information">
-        <div class="info-section content-section">
-            <p>VISION</p>
-            <ul>
-                <p>To be a centre of excellence in the Computer Networks and Computer Security education and research, to produce comprehensively trained, technically skilled, ethically strong, innovative engineers to excel globally, take future challenges and contribute for social welfare.</p>
-            </ul>
+        <div class="information">
+            <div class="img_info-section">
+                <div class="content-section-topics">
+                    <div class="content-section-topic rotate-left" id="cctt">
+                        <img src="./HomeImages/cs.jpeg" alt="Computer science">
+                    </div>
+                    
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/computer networks.jpeg" alt="Communication networks">
+                    </div>
+                    
+                    <div class="content-section-topic rotate-left">
+                        <img src="./HomeImages/cyber security.jpeg" alt="Security and associated subjects">
+                    </div>                
+                </div>
+                <div class="info-section">
+                    <p>We Provide Experiential learning in</p>
+                        <ul>
+                            <li>Security and associated subjects</li>
+                            <li>Computer science</li>
+                            <li>Communication networks</li>
+                        </ul>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="information">
-        <div class="info-section content-section">
-            <p>MISSION</p>
-            <ul>
-                <p><b>1)</b> To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
-                <p><b>2)</b> To strengthen the industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between academics and industry.</p>
-                <p><b>3)</b> To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
-                <p><b>4)</b> To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
-            </ul>
+        <div class="information">
+            <div class="info-section content-section">
+                <p>VISION</p>
+                <ul>
+                    <p>To be a centre of excellence in the Computer Networks and Computer Security education and research, to produce comprehensively trained, technically skilled, ethically strong, innovative engineers to excel globally, take future challenges and contribute for social welfare.</p>
+                </ul>
+            </div>
+        </div>
+
+        <div class="information">
+            <div class="info-section content-section">
+                <p>MISSION</p>
+                <ul>
+                    <p><b>1)</b> To provide excellent academic environment to students for continuous improvement in Computer Science and Computer Network specialization and by imparting education with innovation, skills and positive attitude to make them competent engineers and leaders to solve the real world problems to inculcate values of professional ethics, leadership qualities and lifelong learning.</p>
+                    <p><b>2)</b> To strengthen the industry partnership for collaborative work and prepare graduates in cutting edge Computer Network technologies in par with industrial standards by undertaking collaborative projects which offer opportunities for long term interaction between academia and industry.</p>
+                    <p><b>3)</b> To include research, ethical values, professionalism, lifelong learning to make them globally competent and socially committed.</p>
+                    <p><b>4)</b> To provide resources that contribute to congenial learning environment and encourages students to pursue higher education and take competitive exams.</p>
+                </ul>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <div class="hero">
+            <div class="social-links">
+                <a href="https://www.instagram.com/access.nmamit" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/computer-and-communication-engineering" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte. </p>
+        <p>Made with ❤️ by <a href="developers.html">Developer Team</a></p>
+    </footer>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="module" src="./homeLogic.js"></script>
-  
+    
+    <script>
+        const messages = [
+                "Where Code Meets Connectivity!",
+                "Where Innovation Drives Intelligence!",
+                "Empowering Coders, Connecting Minds!",
+                "Your Gateway to Tech Excellence!",
+            ];
+        let messageIndex = 0;
+        let typingElement = document.getElementById("typing-text");
+        
+        function startTyping() {
+            let currentMessage = messages[messageIndex];
+            let charIndex = 0;
+            let typingInterval = setInterval(() => {
+                if (charIndex < currentMessage.length) {
+                    typingElement.innerHTML += currentMessage[charIndex];
+                    charIndex++;
+                } else {
+                    clearInterval(typingInterval);
+                    setTimeout(startDeleting, 100);
+                }
+            }, 100);
+        }
+        
+        function startDeleting() {
+            let currentMessage = typingElement.innerHTML;
+            let charIndex = currentMessage.length;
+            let deletingInterval = setInterval(() => {
+                if (charIndex > 69) {
+                    typingElement.innerHTML = currentMessage.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    clearInterval(deletingInterval);
+                    messageIndex = (messageIndex + 1) % messages.length;
+                    setTimeout(startTyping, 400);
+                }
+            }, 50);
+        }
+        
+        startTyping();
+    </script>
+    <script>
+        const canvas = document.getElementById("spider");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+
+        let dots = [];
+        let connections = new Map();
+        let oldConnections = [];
+        let mouseX = canvas.width / 2;
+        let mouseY = canvas.height / 2;
+
+        window.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function createDot() {
+            const dot = {
+                x: mouseX+(Math.random() ) * canvas.width/5 ,
+                y: mouseY+(Math.random() ) * canvas.height/5,
+                size: Math.random() * 3 ,
+                alpha: 1,
+                speed: Math.random() * 2+3,
+                life: 1000, // Dots disappear after 1 second
+                createdAt: Date.now(),
+                angle: Math.random() * Math.PI * 2,
+                r: Math.floor(Math.random() * 1),
+                g: Math.floor(Math.random() * 1),
+                b: Math.floor(Math.random() * 1),
+            };
+            dots.push(dot);
+            establishConnections(dot);
+        }
+
+        function updateDots() {
+            const now = Date.now();
+            let removedDots = [];
+
+            dots = dots.filter(dot => {
+                const alive = now - dot.createdAt < dot.life;
+                if (!alive) {
+                    removedDots.push(dot);
+                }
+                return alive;
+            });
+
+            // Store old connections for 3 more seconds before removing
+            removedDots.forEach(dot => {
+                if (connections.has(dot)) {
+                    oldConnections.push({ connections: connections.get(dot), removedAt: now });
+                    connections.delete(dot);
+                }
+            });
+
+            // Remove old connections after 3 seconds
+            oldConnections = oldConnections.filter(conn => now - conn.removedAt < 3000);
+
+            for (let dot of dots) {
+                const dx = mouseX - dot.x;
+                const dy = mouseY - dot.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const angleToMouse = Math.atan2(dy, dx);
+
+                dot.angle += (Math.random() - 0.5) * 0.3;
+                dot.x += Math.cos(angleToMouse + dot.angle * 0.2) * dot.speed * (distance / 300);
+                dot.y += Math.sin(angleToMouse + dot.angle * 0.2) * dot.speed * (distance / 300);
+                dot.alpha = 1 - (now - dot.createdAt) / dot.life;
+            }
+        }
+
+        function findNearestDots(dot, count = 5) {
+            return dots
+                .filter(d => d !== dot)
+                .sort((a, b) => {
+                    const da = Math.hypot(dot.x - a.x, dot.y - a.y);
+                    const db = Math.hypot(dot.x - b.x, dot.y - b.y);
+                    return da - db;
+                })
+                .slice(0, count);
+        }
+
+        function establishConnections(dot) {
+            if (!connections.has(dot)) {
+                connections.set(dot, findNearestDots(dot, 5));
+            }
+        }
+
+        function drawFixedConnections() {
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "rgba(0, 0, 0, 0.22)";
+
+            for (let [dot, neighbors] of connections) {
+                if (!dots.includes(dot)) continue; // Skip deleted dots
+
+                for (let neighbor of neighbors) {
+                    //if (!dots.includes(neighbor)) continue; // Skip if neighbor is deleted
+                    ctx.beginPath();
+                    ctx.moveTo(dot.x, dot.y);
+                    ctx.lineTo(neighbor.x, neighbor.y);
+                    ctx.stroke();
+                }
+            }
+
+            
+
+            // Draw old connections for 3 seconds after dot disappears
+            oldConnections.forEach(({ connections }) => {
+                connections.forEach(neighbor => {
+                    ctx.beginPath();
+                    ctx.moveTo(neighbor.x, neighbor.y);
+                    ctx.lineTo(neighbor.x + 1, neighbor.y + 1);
+                    ctx.stroke();
+                });
+            });
+        }
+
+        function drawDots() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawFixedConnections();
+
+            for (let dot of dots) {
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${dot.r},${dot.g},${dot.b}, ${dot.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        function animate() {
+            updateDots();
+            drawDots();
+            requestAnimationFrame(animate);
+        }
+
+        setInterval(createDot, 100);
+        animate();
+    </script>
+    <script src="dark_mode.js"></script>
 </body>
-<script>
-    const messages = [
-            "Where Code Meets Connectivity!",
-            "\nWhere Innovation Drives Intelligence!",
-            "\nEmpowering Coders, Connecting Minds!",
-            "\nYour Gateway to Tech Excellence!",
-        ];
-    let messageIndex = 0;
-    let typingElement = document.getElementById("typing-text");
-    
-    function startTyping() {
-        let currentMessage = messages[messageIndex];
-        let charIndex = 0;
-        let typingInterval = setInterval(() => {
-            if (charIndex < currentMessage.length) {
-                typingElement.innerHTML += currentMessage[charIndex];
-                charIndex++;
-            } else {
-                clearInterval(typingInterval);
-                setTimeout(startDeleting, 100);
-            }
-        }, 100);
-    }
-    
-    function startDeleting() {
-        let currentMessage = typingElement.innerHTML;
-        let charIndex = currentMessage.length;
-        let deletingInterval = setInterval(() => {
-            if (charIndex > 69) {
-                typingElement.innerHTML = currentMessage.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                clearInterval(deletingInterval);
-                messageIndex = (messageIndex + 1) % messages.length;
-                setTimeout(startTyping, 400);
-            }
-        }, 50);
-    }
-    
-    startTyping();
-</script>
-<script src="dark_mode.js"></script>
 </html>
