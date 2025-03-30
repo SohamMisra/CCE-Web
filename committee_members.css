@@ -5,25 +5,27 @@ body {
     padding: 0;
     background: url('images/committee.png') no-repeat center center fixed;
     background-size: cover;
-    /* background-position: center;
-    background-repeat: no-repeat; */
     text-align: center;
+    padding-top: 80px; /* Added padding to account for fixed navbar */
 }
 
 /* Container Styling */
-.container {
+.container[data-year] {
     max-width: 1300px;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 20px;
     background: none;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h1 {
     font-size: 2.5em;
     color: #333;
     margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
 }
 
 /* Grid Layout */
@@ -76,39 +78,71 @@ h1 {
     color: #777;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .members-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 900px) {
-    .members-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    box-shadow: none;
 }
 
-@media (max-width: 600px) {
-    .members-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .member img {
-        width: 120px;
-        height: 120px;
-    }
+.logo1 > img {
+    max-height: 60px;
+    transition: max-height 0.3s ease;
 }
 
+.navbar-nav {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link-text {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.4s ease-in-out;
+}
+
+.nav-link-text:hover {
+    color: #ff6200;
+}
+
+/* Year Tabs Styling */
 .year-tabs {
-    margin-top: 90px; /* Add space below navbar */
+    margin-top: 20px;
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .year-tab {
     padding: 10px 20px;
-    margin: 5px;
     border: none;
     background-color: #ddd;
     cursor: pointer;
@@ -124,29 +158,75 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1000;
-    background-color: white;
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.container {
-    margin-top: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-@media screen and (max-width: 768px) {
-    .year-tabs {
-        margin-top: 80px;
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
     }
     
-    .container h1 {
+    .navbar-collapse {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 1000;
+        border-top: 1px solid #eeeeee;
+    }
+  
+    .navbar-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .logo1 > img {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .logo1 > img {
+        max-height: 40px;
+    }
+  
+    .nav-link-text {
+        font-size: 12px;
+    }
+    
+    h1 {
         font-size: 1.5rem;
         padding: 0 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .members-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .member img {
+        width: 120px;
+        height: 120px;
     }
 }
