@@ -488,7 +488,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Get all year tabs and containers
             const yearTabs = document.querySelectorAll('.year-tab');
@@ -519,7 +519,116 @@
 
             // Show 2024 content by default
             showYearContent('2024');
+        }); -->
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Get all year tabs and containers
+    const yearTabs = document.querySelectorAll('.year-tab');
+    const containers = document.querySelectorAll('.container[data-year]');
+
+    // Function to show content for selected year with smooth transitions
+    function showYearContent(year) {
+        // First fade out all containers
+        containers.forEach(container => {
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            // Short delay before hiding to allow fade out animation
+            setTimeout(() => {
+                if (container.getAttribute('data-year') === year) {
+                    container.style.display = 'block';
+                    // Small delay before fading in the selected container
+                    setTimeout(() => {
+                        container.style.opacity = '1';
+                        container.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    container.style.display = 'none';
+                }
+            }, 300);
         });
+    }
+
+    // Add click event listeners to year tabs
+    yearTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            yearTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab with a pulse effect
+            tab.classList.add('active');
+            tab.style.animation = 'none';
+            setTimeout(() => {
+                tab.style.animation = 'pulse 0.5s ease-in-out';
+            }, 5);
+            
+            // Show content for selected year
+            showYearContent(tab.getAttribute('data-year'));
+        });
+    });
+
+    // Show 2024 content by default
+    showYearContent('2024');
+    
+    // Add hover effect to member cards
+    const memberCards = document.querySelectorAll('.member');
+    memberCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const img = this.querySelector('img');
+            const role = this.querySelector('.role');
+            
+            // Apply additional effects on hover
+            if (img) img.style.transform = 'scale(1.05) rotate(2deg)';
+            if (role) role.style.textShadow = '0 0 10px rgba(255, 98, 0, 0.7)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const img = this.querySelector('img');
+            const role = this.querySelector('.role');
+            
+            // Remove effects on mouse leave
+            if (img) img.style.transform = 'scale(1)';
+            if (role) role.style.textShadow = 'none';
+        });
+    });
+    
+    // Add smooth scrolling for the entire page
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            
+            if (targetId !== '#') {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80, // Adjust for navbar height
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Create staggered animation effect for member cards
+    function animateCards() {
+        memberCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 50);
+        });
+    }
+    
+    // Run animations when page loads
+    animateCards();
+    
+    // Add pulse animation to the active year tab
+    const activeTab = document.querySelector('.year-tab.active');
+    if (activeTab) {
+        activeTab.style.animation = 'pulse 1s ease-in-out';
+    }
+});
     </script>
 </body>
 </html>
