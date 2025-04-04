@@ -3,40 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developers Team</title>
+    <title>Developers Team | ACCESS</title>
     <link rel="stylesheet" href="developers.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="icon" href="images/access-logo.png">
     <link rel="stylesheet" href="utility-classes/social-media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="navbar">
-        <div class="icon1">
-            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
+    <!-- Navbar matching faculty page style -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo1" href="index.html">
+                <img src="images/accesslogo.png" alt="Logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="nav-link-text" id="home-nav">HOME</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" id="faculty-nav">FACULTY</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="committee_members.html"><span class="nav-link-text" id="committee-nav">COMMITTEE MEMBERS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="placements.html"><span class="nav-link-text" id="placements-nav">PLACEMENTS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notes.html"><span class="nav-link-text" id="notes-nav">NOTES & RESOURCES</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="upcoming_events.html"><span class="nav-link-text" id="events-nav">EVENTS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html"><span class="nav-link-text" id="about-nav">ABOUT US</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="developers.html"><span class="nav-link-text" id="developers-nav" style="color: #ff6200;">DEVELOPERS</span></a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="menu">
-            <ul class="nav">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="faculty.html">FACULTY</a></li>
-                <li><a href="committee_members.html">COMMITTEE MEMBERS</a></li>
-                <li><a href="placements.html">PLACEMENTS</a></li>
-                <li><a href="notes.html">NOTES & RESOURCES</a></li>
-                <li><a href="upcoming_events.html">UPCOMING EVENTS</a></li>
-                <li><a href="about_us.html">ABOUT US</a></li>
-            </ul>
-        </div>
-
-        <div class="icon2">
-            <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
-        </div>
-    </div>
+    </nav>
     
+    <!-- Main Content -->
     <header>
-        <h3><span style= " font-size: 50px; font-weight:bold; color: whitesmoke;">Meet the Dev Team...</span></h>
+        <h3><span class="page-title">Meet the Dev Team</span></h3>
     </header>    
     
     <div class="team-container">
         <div class="team-row">
+            <!-- Developer 1 -->
             <div class="team-member">
                 <div class="card">
                     <!-- Front Side (Developer) -->
@@ -52,13 +79,14 @@
                     <h3>Soham Misra</h3>
                     <p>"Hare Krishna"</p>
                     <div class="social-icons">
-                        <a href="https://github.com/SohamMisra" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://in.linkedin.com/in/soham-misra135" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/krishna_sohamisra/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/SohamMisra" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com/in/soham-misra135" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/krishna_sohamisra/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
 
+            <!-- Developer 2 -->
             <div class="team-member">
                 <div class="card">
                     <div class="front">
@@ -72,13 +100,14 @@
                     <h3>Gurudutt R Pai</h3>
                     <p>Twilio, Finacle & HPE Cracked...</p>
                     <div class="social-icons">
-                        <a href="https://github.com/GuruduttRPai" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://in.linkedin.com/in/gurudutt-r-pai-09551124b" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/gurudutt_r_pai_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/GuruduttRPai" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com/in/gurudutt-r-pai-09551124b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/gurudutt_r_pai_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
 
+            <!-- Developer 3 -->
             <div class="team-member">
                 <div class="card">
                     <div class="front">
@@ -92,13 +121,14 @@
                     <h3>Anirudh Pai</h3>
                     <p>"Sometimes one needs a little bit of Faith when faced with a Difficult Situation."</p>
                     <div class="social-icons">
-                        <a href="https://github.com/AnirudhPai13" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://in.linkedin.com/in/anirudh-pai-296714291" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/paiboi_398/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/AnirudhPai13" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com/in/anirudh-pai-296714291" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/paiboi_398/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
 
+            <!-- Developer 4 -->
             <div class="team-member">
                 <div class="card">
                     <div class="front">
@@ -112,28 +142,49 @@
                     <h3>Yajnesh Kumar</h3>
                     <p>SELECT * FROM life WHERE success = 'hardwork' AND regret = NULL;</p>    
                     <div class="social-icons">
-                        <a href="https://github.com/YajneshKumar2004" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://in.linkedin.com/in/yajneshkumar2004" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/kulal_.2004/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/YajneshKumar2004" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com/in/yajneshkumar2004" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kulal_.2004/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="hero">
-
-            <div class="social-links">
-                <a href="https://www.instagram.com/access.nmamit" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/computer-and-communication-engineering" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            
-          </div>
-              <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte. </p>
-              <p>Made with ❤️ by <a href="developers.html">Developer Team</a></p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/access.nmamit" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/computer-and-communication-engineering" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte</p>
+        <p>Made with <span style="color: #ff7200;">❤️</span> by <a href="developers.html">Developer Team</a></p>
     </footer>
 
+    <!-- Navigation & Animation Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation for developer cards
+            function animateCards() {
+                const cards = document.querySelectorAll('.team-member');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, index * 200);
+                });
+            }
+            
+            // Run animations
+            animateCards();
+            
+            // Set active navigation item
+            document.getElementById('developers-nav').style.color = '#ff6200';
+        });
+    </script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-    
