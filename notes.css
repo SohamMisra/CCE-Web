@@ -364,3 +364,31 @@ h2 {
         font-size: 12px;
     }
 }
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px ;
+    margin-top: 0; /* Optional spacing from the main content */
+}
+
+footer a {
+    font-weight: bold; /* Makes the text bold */
+    color: #ffffff; /* White color for better visibility */
+    text-decoration: underline; /* Adds an underline to show it's a clickable link */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+footer a:hover {
+    color: #ffcc00; /* Changes color to yellow on hover */
+}
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
