@@ -392,3 +392,74 @@ footer a:hover {
 .social-icons a:hover {
     color: #ffcc00;
 }
+/* Add these styles to your existing notes.css file */
+
+/* Increase spacing between syllabus section and semester notes section */
+/* Add these styles to your existing notes.css file */
+
+/* Increase spacing between syllabus section and semester notes section */
+.notes-container {
+    margin-top: 100px; /* Increased top margin for more spacing */
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Make the Semester Notes heading larger and more prominent */
+.notes-container .header h1 {
+    font-size: 4.5rem; /* Larger font size */
+    margin-bottom: 30px; /* More space below the heading */
+    color: #333; /* Darker color for better visibility */
+    position: relative;
+    display: inline-block;
+}
+
+/* Add a decorative underline to the heading */
+.notes-container .header h1::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(to right, #ff5e00, #8B00FF);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Update the semester links grid to make it 2 columns with 4 items */
+.semester-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Increased gap between semester cards */
+    margin: 50px auto 0; /* Increased top margin */
+    max-width: 1200px;
+}
+
+/* Make the semester cards a bit larger */
+.semester {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhance hover effects */
+.semester:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .semester-links {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .notes-container .header h1 {
+        font-size: 3rem; /* Smaller font on mobile */
+    }
+    
+    .notes-container {
+        margin-top: 60px; /* Less margin on mobile */
+    }
+}
