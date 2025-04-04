@@ -1,56 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 body {
-    background-image: url(images/developerbg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('Developers Image/Developers_img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* Space for navbar */
 }
 
-header h1 {
-    margin-top: 30px;
-    font-size: 36px;
-    letter-spacing: 2px;
+/* Header styles */
+header {
+    padding: 20px 20px;
 }
 
+header h3 {
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.page-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: whitesmoke;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff7200, transparent);
+    border-radius: 2px;
+}
+
+/* Team container */
 .team-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    gap: 30px;
-    margin-bottom: 50px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .team-row {
     display: flex;
     justify-content: center;
-    gap: 200px;
     flex-wrap: wrap;
-    width: 80%;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
+/* Team member cards */
 .team-member {
     position: relative;
-    width: 250px;
-    height: 350px;
-    perspective: 1000px;  /* Enables 3D effect */
+    width: 280px;
+    height: 380px;
+    perspective: 1500px;
+    margin: 15px;
 }
 
-/* Flip Card Container */
+/* Card container */
 .card {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Front and Back of Card */
+.team-member:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* Card faces */
 .front, .back {
     position: absolute;
     width: 100%;
@@ -60,147 +104,209 @@ header h1 {
     overflow: hidden;
 }
 
+.front::before, .back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
 .front img, .back img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
+    transition: transform 0.5s ease;
 }
 
-/* Back Side */
+.team-member:hover .front img, 
+.team-member:hover .back img {
+    transform: scale(1.05);
+}
+
 .back {
     transform: rotateY(180deg);
 }
 
-/* Flip Effect */
-.team-member:hover .card {
-    transform: rotateY(180deg);
-}
-
-/* Overlay for Name & Social Icons */
+/* Info overlay */
 .overlay {
     position: absolute;
     bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     width: 100%;
-    height: 120px;
-    transition: height 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 20px 15px;
+    border-radius: 0 0 15px 15px;
+    z-index: 2;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
 }
 
 .team-member:hover .overlay {
-    height: 150px;
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .overlay h3 {
-    font-size: 18px;
-    margin: 10px 0 5px;
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: #fff;
+    font-weight: 600;
 }
 
 .overlay p {
     font-size: 14px;
-    margin-bottom: 10px;
-    opacity: 0.8;
+    margin: 0 0 12px;
+    opacity: 0.9;
+    color: #e0e0e0;
+    font-style: italic;
+    line-height: 1.4;
+    max-height: 40px;
+    overflow: hidden;
+}
+
+/* Social icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .social-icons a {
     color: white;
-    font-size: 20px;
-    margin: 0 8px;
-    transition: color 0.3s ease-in-out;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #ffcc00;
+    background: #ff7200;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 114, 0, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .team-row {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
+/* Footer styles */
 footer {
-    background-color: #333;
+    background-color: rgba(20, 20, 30, 0.9);
     color: white;
     text-align: center;
-    padding: 10px ;
-    margin-top: 0; /* Optional spacing from the main content */
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-footer a {
-    font-weight: bold; /* Makes the text bold */
-    color: #ffffff; /* White color for better visibility */
-    text-decoration: underline; /* Adds an underline to show it's a clickable link */
-    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
-}
-
-footer a:hover {
-    color: #ffcc00; /* Changes color to yellow on hover */
-}
-
-.navbar{
-    width: 1200px;
-    height: 100px;
-    margin: auto;
-}
-
-.icon1{
-    width: 150px;
-    float: left;
-    height: 100px;
-}
-
-.logo1 img {
-    width: 200px;
-    height: 100%; /* Fill the height of the navbar */
-    max-height: 100px; /* Optional max height for better scaling */
-}
-
-.icon2{
-    width: 100px;
-    float: right;
-    height: 500px;
-}
-
-.logo2 img {
-    width: 200px;
-    height: 50px; /* Fill the height of the navbar */
-}
-
-.menu{
-    width: 400px;
-    float: left;
-    height: 80px;
-}
-
-.nav{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
+footer p {
+    margin: 5px 0;
     font-size: 14px;
 }
 
-.nav li a{
-    text-decoration: none;
-    color: white;
-    font-family: Arial;
+footer a {
     font-weight: bold;
-    transition: 0.4s ease-in-out;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.nav li a:hover{
+footer a:hover {
     color: #ff7200;
 }
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 10px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    background: #ff7200;
+    transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .team-row {
+        gap: 30px;
+        justify-content: center;
+    }
+    
+    .team-member {
+        width: 260px;
+        height: 360px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 36px;
+    }
+    
+    .team-member {
+        width: 240px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-container {
+        padding: 10px;
+    }
+    
+    .team-member {
+        width: 300px;
+        height: 400px;
+        margin: 15px auto;
+    }
+    
+    .page-title {
+        font-size: 30px;
+    }
+    
+    .overlay h3 {
+        font-size: 18px;
+    }
+}
+
+/* Animation for the cards */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.team-member {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.3s; }
+.team-member:nth-child(3) { animation-delay: 0.5s; }
+.team-member:nth-child(4) { animation-delay: 0.7s; }
