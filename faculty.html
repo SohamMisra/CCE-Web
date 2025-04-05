@@ -9,9 +9,6 @@
     <link rel="icon" href="images/access-logo.png">
     <link rel="stylesheet" href="utility-classes/pop-up.css">
     <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             padding-top: 60px;
@@ -123,52 +120,63 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand logo1" href="index.html">
-                <img src="images/accesslogo.png" alt="Logo">
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><span class="nav-link-text" id="home-nav">HOME</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" id="faculty-nav">FACULTY</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="committee_members.html"><span class="nav-link-text" id="committee-nav">COMMITTEE MEMBERS</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="placements.html"><span class="nav-link-text" id="placements-nav">PLACEMENTS</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="notes.html"><span class="nav-link-text" id="notes-nav">NOTES & RESOURCES</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="upcoming_events.html"><span class="nav-link-text" id="events-nav">EVENTS</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about_us.html"><span class="nav-link-text" id="about-nav">ABOUT US</span></a>
-                    </li>
-                </ul>
-            </div>
+    <div class="navbar">
+        <div class="icon1">
+            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
         </div>
-    </nav>
+        <button class="hamburger-btn" aria-label="Menu">
+            <div class="hamburger-icon">
+                <span class="line">☰</span>
+            </div>
+        </button>
+        <div class="menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                  <a class="navbar-brand logo1" href="/">
+                    <img src="images/accesslogo.png" alt="Logo">
+                  </a>
+                  
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><span class="nav-link-text" >HOME</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" style="color: #ff5e00;">FACULTY</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="placements.html"><span class="nav-link-text">PLACEMENTS</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="notes.html"><span class="nav-link-text">NOTES & RESOURCES</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="upcoming_events.html"><span class="nav-link-text">EVENTS</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about_us.html"><span class="nav-link-text">ABOUT US</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </div>
 
         <!-- <div class="icon2">
             <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
         <!-- </div> -->
 
-    
-        <header>
-            <h1><span style= " font-size: 50px; font-weight:bold; color: #f0f0f0; text-decoration: none; background-color: transparent;">TEACHING STAFF</span></h1>
-        </header>
+    </div> 
+    <header>
+        <h1><span >TEACHING STAFF</span></h1>
+    </header>
     <main>
         <div class="faculty-container">
             <div class="faculty-card">
@@ -594,7 +602,7 @@
 
             <div class="faculty-card">
                 <img src="images/kpsir.jpeg" alt="L6" class="faculty-photo">
-                <h3>MR. KRISHNA PRASAD RAO</h3> <!-- Shortened name -->
+                <h3>MR. KRISHNA PRASAD RAO D S</h3>
                 <p>Assistant Professor Gd-II</p>
                 <a class="read-more button" href="#popup6" onclick="showMoreInfo('pop-up6')">READ MORE</a>
             </div>
@@ -605,7 +613,7 @@
                         <a class="close" onclick="closeMoreInfo('pop-up6')">&times;</a>
                         <div class="content">
                             <img src="images/kpsir.jpeg" alt="L4" class="faculty-photo">
-                            <h2>MR. KRISHNA PRASAD RAO D S</h2> <!-- Full name in the popup -->
+                            <h2>MR. KRISHNA PRASAD RAO D S</h2>
                             <div>
                                 <p><b>Designation: </b>Assistant Professor Gd-III</p>
                                 <p><b>Email: </b>krishnaprasad.cc@nitte.edu.in</p>
@@ -916,7 +924,7 @@
         </div>
 
         <header>
-            <h2><span style= " font-size: 50px; font-weight:bold; color: #f0f0f0; text-decoration: none; background-color: transparent;">NON-TEACHING STAFF</span></h2>
+            <h2><span >NON-TEACHING STAFF</span></h2>
         </header>
     </main>
 
@@ -961,7 +969,7 @@
         </div>
 
     </main>
-    <script src="navbar.js"></script>
+    <script src="./navbar.js"></script>
     <script>
         // Mobile Menu Toggle - Only for small screens
         document.addEventListener('DOMContentLoaded', function() {
@@ -996,10 +1004,6 @@
         function closeMoreInfo(modalId) {
             document.getElementById(modalId).close();
         }
-        // Highlight current page in navbar
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('faculty-nav').style.color = '#ff6200';
-        });
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
