@@ -97,7 +97,7 @@ function animate() {
 }
 
 animate();
-renderer.setClearColor(0xffffff);
+
 
 // Resize Handling (Using Scale Instead of Rebuilding Geometry)
 window.addEventListener('resize', () => {
