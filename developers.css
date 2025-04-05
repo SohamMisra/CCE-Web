@@ -169,30 +169,34 @@ header h3 {
 }
 
 /* Social icons */
-.social-icons {
+/* Update the social-links class to ensure proper centering */
+/* Update the social-links class to ensure proper centering */
+.social-links {
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 20px; /* Creates consistent spacing between the icons */
 }
 
-.social-icons a {
-    color: white;
-    font-size: 18px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+.social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     transition: all 0.3s ease;
+    font-size: 18px;
+    color: white;
+    /* Remove margins since we're using gap for spacing */
+    margin: 0;
 }
 
-.social-icons a:hover {
+.social-links a:hover {
     background: #ff7200;
-    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 114, 0, 0.4);
 }
 
 /* Footer styles */
@@ -221,22 +225,28 @@ footer a:hover {
     color: #ff7200;
 }
 
+/* Update the social-links class to ensure proper centering */
 .social-links {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Creates consistent spacing between the icons */
 }
 
 .social-links a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.1);
-    margin: 0 10px;
     border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
     font-size: 18px;
+    color: white;
+    /* Remove margins since we're using gap for spacing */
+    margin: 0;
 }
 
 .social-links a:hover {
