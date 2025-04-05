@@ -19,8 +19,10 @@
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #121212 0%, #101019 100%);
+            background: linear-gradient(135deg, #121212 0%, #1a1a2d 100%);
             color: aliceblue;
             overflow-x: hidden;
         }
@@ -265,10 +267,28 @@
             width: 100%;
             margin-top: auto;
         }
+        #reveal-btn{
+            z-index: 100;
+            height: 30vh;
+            width: 40vw;
+            background-color: #1a1a2d;
+            border: 1px solid #ff6200;
+            border-radius: 30px;
+            color: aliceblue;
+            font-size: xx-large;
+        }
+        #reveal-btn:hover{
+            background-color: #0e0e18;
+        }
+        .hod-special {
+            display: none;
+            transition: ease-in 0.4;
+        }
     </style>
 </head>
 <body>
-    <div class="main-content-wrapper">
+    <button id="reveal-btn">Launch 🚀</button>
+    <div class="main-content-wrapper hod-special">
         <div id="video-container">
             <video id="intro-video" src="./HomeImages/introVid.mp4" autoplay muted></video>
         </div>
@@ -415,7 +435,7 @@
         </div>
     </div>
     
-    <footer>
+    <footer class="hod-special">
         <div class="hero">
             <div class="social-links">
                 <a href="https://www.instagram.com/access.nmamit" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -615,6 +635,17 @@
 
         setInterval(createDot, 100);
         animate();
+
+        
+        document.getElementById("reveal-btn").addEventListener("click", function () {
+          // Reveal all .hod-special elements
+          document.querySelectorAll(".hod-special").forEach(el => {
+            el.style.display = "block";
+          });
+      
+          // Hide the button
+          this.style.display = "none";
+        });
     </script>
     <script src="dark_mode.js"></script>
 </body>
