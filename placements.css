@@ -203,3 +203,6 @@ body {
   color: #555;
   line-height: 1.5;
 }
+.nav-link span{
+  color:black;
+}
