@@ -3,242 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semester Notes</title>
+    <title>Notes & Resources - CCE Department</title>
     <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="dark-theme-notes.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/access-logo.png">
-        <link rel="stylesheet" href="utility-classes/social-media.css">
-    <link rel="stylesheet" href="utility-classes/pop-up.css" >
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <style>
-        body {
-            padding-top: 60px;
-        }
-        .hamburger-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            z-index: 1000;
-            color: black;
-            font-size: 30px;
-            line-height: 1;
-        }
+    <link rel="stylesheet" href="utility-classes/social-media.css">
+    <link rel="stylesheet" href="utility-classes/pop-up.css">
+    <link rel="stylesheet" href="navbar.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="navbar.js" defer></script>
 
-        @media screen and (max-width: 768px) {
-            .hamburger-btn {
-                display: block;
-                position: fixed;
-                right: 20px;
-                top: 20px;
-                z-index: 1000;
-            }
-
-            .menu {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                z-index: 999;
-                background-color: rgba(0, 0, 0, 0.98);
-                padding: 20px;
-                display: none;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .menu.active {
-                display: flex;
-            }
-
-            .nav {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            .nav li {
-                margin: 15px 0;
-                font-size: 1.2rem;
-            }
-
-            .nav a {
-                color: #ffffff;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                font-weight: 600;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-                padding: 12px 25px;
-                border-radius: 8px;
-                background-color: rgba(255, 255, 255, 0.15);
-                width: 80%;
-                text-align: center;
-                margin: 8px 0;
-                font-size: 1.3rem;
-                letter-spacing: 1px;
-            }
-
-            .nav a:hover {
-                color: #ffd700;
-                background-color: rgba(255, 255, 255, 0.25);
-                transform: scale(1.05);
-                box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-            }
-
-            /* Mobile responsiveness for notes page */
-            .notes-container {
-                padding: 10px;
-            }
-
-            .notes-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .note-card {
-                width: 100%;
-                margin: 0;
-            }
-
-            .note-card img {
-                height: 150px;
-            }
-
-            .note-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .note-card p {
-                font-size: 0.9rem;
-            }
-
-            .download-btn {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-
-            .welcome-message {
-                font-size: 1.5rem;
-                padding: 15px;
-            }
-
-            .welcome-message p {
-                font-size: 1rem;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .note-card img {
-                height: 120px;
-            }
-
-            .note-card h3 {
-                font-size: 1.1rem;
-            }
-
-            .note-card p {
-                font-size: 0.8rem;
-            }
-
-            .welcome-message {
-                font-size: 1.2rem;
-            }
-
-            .welcome-message p {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <!-- Add particles.js for background effects -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div class="navbar">
-        <div class="icon1">
-            <h2 class="logo1"><img src="images/accesslogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
-        </div>
-        <button class="hamburger-btn" aria-label="Menu">
-            <div class="hamburger-icon">
-                <span class="line">☰</span>
+    <!-- Particles background container with lower opacity -->
+    <div id="particles-js"></div>
+    
+    <!-- Updated navbar to match faculty page -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand logo1" href="index.html">
+                <img src="images/accesslogo.png" alt="Logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="nav-link-text" id="home-nav">HOME</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" id="faculty-nav">FACULTY</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="committee_members.html"><span class="nav-link-text" id="committee-nav">COMMITTEE MEMBERS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="placements.html"><span class="nav-link-text" id="placements-nav">PLACEMENTS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="notes.html"><span class="nav-link-text" id="notes-nav">NOTES & RESOURCES</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="upcoming_events.html"><span class="nav-link-text" id="events-nav">EVENTS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html"><span class="nav-link-text" id="about-nav">ABOUT US</span></a>
+                    </li>
+                </ul>
             </div>
-        </button>
-        <div class="menu">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                  <a class="navbar-brand logo1" href="/">
-                    <img src="images/accesslogo.png" alt="Logo">
-                  </a>
-                  
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html"><span class="nav-link-text" >HOME</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" >FACULTY</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="placements.html"><span class="nav-link-text">PLACEMENTS</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="notes.html"><span class="nav-link-text"style="color: #ff5e00;">NOTES & RESOURCES</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="upcoming_events.html"><span class="nav-link-text">EVENTS</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="about_us.html"><span class="nav-link-text">ABOUT US</span></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </nav>
         </div>
+    </nav>
 
-        <!-- <div class="icon2">
-            <h2 class="logo2"><img src="images/nittelogo.png" alt="Logo"></h2> <!-- Add a logo image source -->
-        <!-- </div> -->
-
-    </div>
     <div class="main">
         <div class="container">
-            <h1>Syllabus and Time Table</h1>
+            <h1 style="text-align: center;">Syllabus and Time Table</h1>
             
             <!-- Parent Container for Syllabus and Time Table -->
             <div class="content">
                 <!-- Syllabus Section -->
                 <div class="syllabus-section">
-                    <h2>Syllabus</h2>
-                    <p><span style="font-size: 24px; font-weight: bold;" >View and Download the Syllabus for 2022-26 Batch</span></p>
-                    <a href="syllabus26.pdf" download="Syllabus(2022-26)Batch" class="btn">Download Syllabus</a>
+                    <h2 style="text-align: center;">Syllabus</h2>
                     
-                    <p><span style="font-size: 24px; font-weight: bold;" >View and Download the Syllabus for 2023-27 Batch</span></p>
-                    <a href="syllabus27.pdf" download="Syllabus(2023-27)Batch" class="btn">Download Syllabus</a>
+                    <p><span class="batch-text">View and Download the Syllabus for 2022-26 Batch</span></p>
+                    <a href="syllabus26.pdf" download="Syllabus(2022-26)Batch" class="btn">
+                        <i class="fas fa-download"></i> Download Syllabus
+                    </a>
                     
-                    <p><span style="font-size: 24px; font-weight: bold;" >View and Download the Syllabus for 2024-28 Batch</span></p>
-                    <a href="syllabus28.pdf" download="Syllabus(2024-28)Batch" class="btn">Download Syllabus</a>
+                    <p><span class="batch-text">View and Download the Syllabus for 2023-27 Batch</span></p>
+                    <a href="syllabus27.pdf" download="Syllabus(2023-27)Batch" class="btn">
+                        <i class="fas fa-download"></i> Download Syllabus
+                    </a>
+                    
+                    <p><span class="batch-text">View and Download the Syllabus for 2024-28 Batch</span></p>
+                    <a href="syllabus28.pdf" download="Syllabus(2024-28)Batch" class="btn">
+                        <i class="fas fa-download"></i> Download Syllabus
+                    </a>
                 </div>
 
                 <!-- Time Table Section -->
                 <div class="time-table-section">
-                    <h2>Time Table</h2>
-                    <p><span style="font-size: 24px; font-weight: bold;" >Class Time Table of 4th Sem CCE Students</span></p>
-                    <a href="time_table.pdf" download="Timetable" class="btn">Download Timetable</a>
+                    <h2 style="text-align: center;">Time Table</h2>
                     
-                    <p><span style="font-size: 24px; font-weight: bold;">Class Time Table of 6th Sem CCE Students</span></p>
-                    <a href="time_table.pdf" download="Timetable" class="btn">Download Timetable</a>
+                    <p><span class="batch-text">Class Time Table of 4th Sem CCE Students</span></p>
+                    <a href="time_table.pdf" download="Timetable" class="btn">
+                        <i class="fas fa-calendar-alt"></i> Download Timetable
+                    </a>
+                    
+                    <p><span class="batch-text">Class Time Table of 6th Sem CCE Students</span></p>
+                    <a href="time_table.pdf" download="Timetable" class="btn">
+                        <i class="fas fa-calendar-alt"></i> Download Timetable
+                    </a>
                 </div>
             </div>
         </div>
@@ -246,65 +108,40 @@
         <div class="notes-container">
             <div class="header">
                 <h1>Semester Notes</h1>
-                <p class="notice">Note: Links can Only be Accessed Using your College email ID.</p>
+                <p class="notes-subtitle">Access course materials and study resources for all semesters</p>
             </div>
     
             <div class="semester-links">
-                
-                <a href="https://drive.google.com/drive/folders/1-6Bc155AMdje4_SxJTxinwSmEC9aXthG" target="_blank" class="drive-link">
+                <!-- Removed Semester 1 and Semester 2 cards -->
                 <div class="semester">
                     <h2>Semester 3</h2>
+                    <a href="https://drive.google.com/link3" target="_blank" class="drive-link">
+                        <i class="fab fa-google-drive"></i> Access Google Drive
+                    </a>
                 </div>
-                </a>
-                <a href="https://drive.google.com/drive/folders/1zgQF-rNONEzJhxmK0stbc0pv_39QG4k1" target="_blank" class="drive-link">
                 <div class="semester">
                     <h2>Semester 4</h2>
+                    <a href="https://drive.google.com/link4" target="_blank" class="drive-link">
+                        <i class="fab fa-google-drive"></i> Access Google Drive
+                    </a>
                 </div>
-                </a>
-                <a href="https://drive.google.com/drive/folders/18IvkHqbxYbWV0aR0642AmRvfwEddQtXi" target="_blank" class="drive-link">
                 <div class="semester">
                     <h2>Semester 5</h2>
+                    <a href="https://drive.google.com/link5" target="_blank" class="drive-link">
+                        <i class="fab fa-google-drive"></i> Access Google Drive
+                    </a>
                 </div>
-                </a>
-                <a href="https://drive.google.com/drive/folders/1-lLrYBmXCURsu2wsxKcZbINuk0EDGoWR" target="_blank" class="drive-link">
                 <div class="semester">
                     <h2>Semester 6</h2>
+                    <a href="https://drive.google.com/link6" target="_blank" class="drive-link">
+                        <i class="fab fa-google-drive"></i> Access Google Drive
+                    </a>
                 </div>
-                </a>
             </div>
         </div>
     </div>
-    <script src="./navbar.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu handlers - Only show on small screens
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeMenuButton = document.getElementById('close-menu');
-            
-            if (mobileMenuButton && mobileMenu && closeMenuButton) {
-                mobileMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.remove('hidden');
-                });
-                
-                closeMenuButton.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
-                });
-                
-                // Close mobile menu on window resize if screen becomes larger
-                window.addEventListener('resize', function() {
-                    if (window.innerWidth >= 768) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            }
-        });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<footer>
+    <footer>
         <div class="hero">
 
             <div class="social-links">
@@ -316,5 +153,190 @@
               <p>&copy; 2024 Department of Computer and Communication Engineering, NMAMIT, Nitte. </p>
               <p>Made with ❤️ by <a href="developers.html">Developer Team</a></p>
     </footer>
+
+    <!-- JavaScript for Particles background -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu handlers
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const menu = document.querySelector('.menu');
+            
+            if (hamburgerBtn && menu) {
+                hamburgerBtn.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                    hamburgerBtn.classList.toggle('active');
+                });
+            }
+            
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ff5e00"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.2,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ff5e00",
+                        "opacity": 0.2,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 0.8
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+
+    <!-- Add custom styles for particles background -->
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        /* Additional styles for navbar consistency */
+        body {
+            padding-top: 70px; /* Account for fixed navbar */
+        }
+        
+        .navbar {
+            background-color: white !important;
+        }
+        
+        .nav-link-text {
+            color: black;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link-text:hover {
+            color: #ff6200;
+        }
+        
+        /* Styles for mobile menu */
+        @media screen and (max-width: 768px) {
+            .menu.active {
+                display: flex;
+            }
+            
+            .hamburger-btn {
+                display: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                z-index: 1000;
+            }
+            
+            @media screen and (max-width: 768px) {
+                .hamburger-btn {
+                    display: block;
+                    position: fixed;
+                }
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Add script to highlight current page in navbar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight current page in navbar
+            document.getElementById('notes-nav').style.color = '#ff6200';
+            
+            // Mobile menu handlers
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            const menu = document.querySelector('.menu');
+            
+            if (hamburgerBtn && menu) {
+                hamburgerBtn.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                    hamburgerBtn.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
