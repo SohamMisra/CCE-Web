@@ -22,112 +22,6 @@ body {
     padding-top: 70px;
 }
 
-/* Navbar Styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1000;
-    padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo1 > img {
-    max-height: 60px;
-    transition: max-height 0.3s ease;
-}
-
-.navbar-nav {
-    width: auto;
-    display: flex;
-    justify-content: space-around;
-    margin-left: auto;
-    list-style: none;
-    padding-left: 0;
-}
-
-.nav-item {
-    margin: 0 10px;
-    position: relative;
-}
-
-.nav-link-text {
-    color: black;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.4s ease-in-out;
-    text-decoration: none;
-    position: relative;
-}
-
-.nav-link-text:hover {
-    color: var(--primary-color);
-}
-
-/* Animated underline effect */
-.nav-link-text::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.nav-link-text:hover::after {
-    width: 100%;
-}
-
-/* Current page indicator */
-.nav-link-text.active {
-    color: var(--primary-color);
-}
-
-.nav-link-text.active::after {
-    width: 100%;
-}
-
-/* Mobile menu toggle - Hidden by default, only shown in mobile view */
-.hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-    color: var(--text-dark);
-    font-size: 30px;
-    line-height: 1;
-}
-
-/* Mobile menu */
-.menu {
-    display: none; /* Hidden by default */
-}
-
 /* Hero Section Styles with Enhanced Bubbles */
 .hero-section {
     position: relative;
@@ -446,21 +340,6 @@ body {
     opacity: 1;
 }
 
-.close-button {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #666;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 2;
-}
-
-.close-button:hover {
-    color: #000;
-}
 
 .modal-body {
     margin-top: 20px;
@@ -579,67 +458,6 @@ body {
 
 /* Mobile-specific styles */
 @media screen and (max-width: 768px) {
-    /* Show hamburger button only on mobile */
-    .hamburger-btn {
-        display: block;
-        position: fixed;
-        right: 20px;
-        top: 20px;
-        z-index: 1000;
-    }
-    
-    /* Hide regular navbar and show mobile menu when active */
-    .navbar-collapse {
-        display: none;
-    }
-    
-    .menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 999;
-        background-color: rgba(0, 0, 0, 0.98);
-        padding: 20px;
-    }
-    
-    .menu.active {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .nav {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-    
-    .nav li {
-        margin: 15px 0;
-        font-size: 1.2rem;
-    }
-    
-    .nav a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        padding: 10px 20px;
-        display: block;
-        text-align: center;
-        border-radius: 8px;
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-    
-    .nav a:hover {
-        color: var(--primary-color);
-        background-color: rgba(255, 255, 255, 0.2);
-    }
     
     /* Adjust event grid to single column on mobile */
     .events-grid {
@@ -656,35 +474,7 @@ body {
         font-size: 2.5rem;
     }
     
-    /* Hamburger icon styles */
-    .hamburger-icon {
-        width: 30px;
-        height: 24px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
     
-    .line {
-        width: 100%;
-        height: 3px;
-        background-color: var(--text-dark);
-        transition: all 0.3s ease;
-    }
-    
-    /* Animation for hamburger icon when menu is active */
-    .hamburger-btn.active .line:nth-child(1) {
-        transform: translateY(10px) rotate(45deg);
-    }
-    
-    .hamburger-btn.active .line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger-btn.active .line:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg);
-    }
 }
 
 /* Small mobile devices */
@@ -706,31 +496,171 @@ body {
         padding: 15px;
     }
 }
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px ;
-    margin-top: 0; /* Optional spacing from the main content */
+
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    background-color: rgba(25, 25, 35, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
-footer a {
-    font-weight: bold; /* Makes the text bold */
-    color: #ffffff; /* White color for better visibility */
-    text-decoration: underline; /* Adds an underline to show it's a clickable link */
-    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+.navbar:hover {
+    background-color: rgba(25, 25, 35, 0.95);
 }
 
-footer a:hover {
-    color: #ffcc00; /* Changes color to yellow on hover */
-}
-.social-icons a {
-    color: white;
-    font-size: 20px;
-    margin: 0 8px;
-    transition: color 0.3s ease-in-out;
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    box-shadow: none;
 }
 
-.social-icons a:hover {
-    color: #ffcc00;
+.logo1 > img {
+    max-height: 60px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 98, 0, 0.3));
+}
+
+.navbar-nav {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+}
+
+.nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link-text {
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-link-text:hover {
+    color: #ff6200;
+}
+
+.nav-link-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff6200;
+    transition: width 0.3s ease;
+}
+
+.nav-link-text:hover::after {
+    width: 100%;
+}
+
+.nav-link-text[style*="color: #ff5e00"] {
+    color: #ff6200 !important;
+}
+
+.nav-link-text[style*="color: #ff5e00"]::after {
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block;
+        border: none;
+        background: rgba(255, 98, 0, 0.1);
+        color: #ff6200;
+    }
+    
+    .navbar-collapse {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: rgba(18, 18, 24, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        z-index: 1000;
+        border-top: 1px solid rgba(255, 98, 0, 0.2);
+    }
+  
+    .navbar-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .nav-item {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .logo1 > img {
+        max-height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo1 > img {
+        max-height: 40px;
+    }
+  
+    .nav-link-text {
+        font-size: 12px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        padding: 0 15px;
+    }
+}
+a{
+    text-decoration: none;
+}
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 60px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: #ff7200;
 }
