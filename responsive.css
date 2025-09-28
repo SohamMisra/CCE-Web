@@ -1,0 +1,75 @@
+/* Global responsive utilities - non-invasive */
+
+img, video, canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure containers have side padding on small screens - but not committee members */
+.container:not([data-year]) {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Grid helpers for common galleries - but not committee members page */
+.members-grid:not(.committee-members-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Limit generic faculty grid tweaks to small screens to avoid overriding page-specific layouts */
+@media (max-width: 768px) {
+    .faculty-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Avoid overly wide content blocks */
+.content-section,
+.info-section {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Developers team layout tweaks */
+.team-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+/* Navbar container should not overflow - but not committee members */
+.navbar .container:not([data-year]) {
+    max-width: 1200px;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    /* Neutralize global UL float/flex on mobile to prevent layout shifts */
+    ul {
+        float: none;
+        flex-wrap: wrap;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .typing-text {
+        font-size: 20px !important;
+    }
+
+    .content-section,
+    .info-section {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 20px !important;
+    }
+}
+
+

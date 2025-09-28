@@ -1,42 +1,42 @@
 // Event details data
 const eventDetails = {
-    'LogoRush': {
-        title: 'LogoRush',
-        date: 'August 14-17, 2025',
-        description: 'The event focused on giving the access Logo a new, renovated look but still maintaining it\'s original essence. Participants worked with design tools to create modern, fresh interpretations of the ACCESS brand while preserving its core identity.',
-        image: 'Events/LogoRush.webp'
+    'ISRO': {
+        title: 'IRSO Workshop',
+        date: 'August 20, 2025',
+        description: 'When Science & Dreams Collide, Space is Conquered! Expert session on ISRO Space Programs & Engineering Applications.',
+        image: 'Events/ISRO.webp'
     },
-    'Militia': {
-        title: 'Militia Battleground Arena',
-        date: 'August 31, 2025',
-        description: 'This is where our players got ready to fight, we had students from all over the college participating, with all our labs completely full. We mainly had two games Mini Militia and BGMI LAN EVENT. The competition was fierce with multiple rounds leading to an exciting finale!',
-        image: 'Events/Militia.webp'
+    'Madvertising': {
+        title: 'Madvertising',
+        date: 'August 30, 2025',
+        description: 'Mix, match & market — The Madvertising where ads meet madness, where creativity meets confidence and presence of mind beats presentation!',
+        image: 'Events/Madvertising.jpg'
     },
-    'DataStructures': {
-        title: 'Data Structures Workshop',
-        date: 'September 20, 2024',
-        description: 'A comprehensive refresher session on Data Structures from linear to non-linear. The workshop covered arrays, linked lists, stacks, queues, trees, graphs, and advanced implementations. Practical examples and coding challenges were included to reinforce learning.',
-        image: 'Events/DataStructures.webp'
+    'GitHub': {
+        title: 'GitHub Workshop',
+        date: 'September 02-03, 2025',
+        description: 'Build. Share. Contribute. The GitHub way!',
+        image: 'Events/Git.jpg'
     },
-    'QuizWhiz': {
-        title: 'Quiz Whiz Showdown',
-        date: 'October 5, 2024',
-        description: 'An interesting tech event, with three different rounds in which participants\' intellect were tested based on different criteria and chose the ultimate winner. The competition included technical knowledge, logical reasoning, and quick thinking challenges.',
-        image: 'Events/QuizWhizShowdown.webp'
+    'Teachers': {
+        title: 'Teachers Day Celebration',
+        date: 'September 4, 2025',
+        description: 'A fun filled day where we celebrated teachers and their hardwork !',
+        image: 'Events/Teacher.png'
     },
-    'AyudhaPooja': {
-        title: 'Ayudha Pooja Celebration',
-        date: 'October 7, 2024',
-        description: 'A beautiful celebration for which whole of the CCE department comes together to pray and thank the almighty for all the blessings we have. The event included traditional rituals, sharing of prasad, and community bonding activities.',
-        image: 'Events/GitHubWorkshop.webp'
+    'MindQuest': {
+        title: 'MindQuest',
+        date: 'September 07, 2025',
+        description: 'Puzzles, quizzes, and lots of fun! Are you game for the Mind Quest? Put your knowledge, creativity, and quick thinking to the ultimate test?',
+        image: 'Events/MindQuest.png'
     },
-    'StartupWorkshop': {
-        title: 'Navigating Indian Startup Landscape',
-        date: 'October 19, 2024',
+    'DSA': {
+        title: 'DSA Workshop',
+        date: 'September 09, 2025',
         description: 'A comprehensive workshop covering the reality of Indian startups. This workshop provided insights into the challenges and opportunities in the Indian startup ecosystem, featuring guest speakers from successful startups and interactive sessions on entrepreneurship.',
-        image: 'Events/Startup.webp'
-    },
-    'GoodVibesGathering': {
+        image: 'Events/DSA.png'
+    }
+    /*'GoodVibesGathering': {
         title: 'Good Vibes Gathering',
         date: 'October 30, 2024',
         description: 'A thoughtful attempt to bridge the gap between the juniors and seniors and have a wonderful session filled with experiences to inspire and grow together as a team. The event included team-building activities, sharing sessions, and fun games to foster connections.',
@@ -95,7 +95,7 @@ const eventDetails = {
         date: 'March 22, 2025',
         description: 'PrepQuest was a highly successful online event designed to upskill participants and help them excel in placements. The event featured a comprehensive set of challenges that focused on key areas necessary for career growth, including aptitude tests, coding challenges, and mock interviews.',
         image: 'Events/PrepQuest.webp'
-    }
+    }*/
 };
 
 // Function to handle event details modal

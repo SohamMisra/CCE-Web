@@ -83,6 +83,9 @@
       border: none;
       background: transparent;
   }
+  .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
   
   .navbar-collapse {
       position: absolute;
@@ -94,13 +97,6 @@
       padding: 1rem;
       z-index: 1000;
       border-top: 1px solid #eeeeee;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-  }
-
-  .navbar-collapse.show {
-      max-height: 500px;
   }
 
   .navbar-nav {

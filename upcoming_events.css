@@ -586,10 +586,13 @@ body {
 
 @media (max-width: 991px) {
     .navbar-toggler {
-        display: block;
+        display: block !important;
         border: none;
-        background: rgba(255, 98, 0, 0.1);
+        background: rgba(212, 205, 201, 0.1);
         color: #ff6200;
+        padding: 8px, 12px;
+        border-radius: 4px;
+        margin-left: auto;
     }
     
     .navbar-collapse {

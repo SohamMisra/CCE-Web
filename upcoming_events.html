@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACCESS Events</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="upcoming_events.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="card-effects.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="navbar.css">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="navbar.js" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -23,10 +28,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><span class="nav-link-text">HOME</span></a>
+                        <a class="nav-link" href="index.html"><span class="nav-link-text" id="home-nav">HOME</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" >FACULTY</span></a>
+                        <a class="nav-link" href="faculty.html"><span class="nav-link-text" id="faculty-nav">FACULTY</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="committee_members.html"><span class="nav-link-text">COMMITTEE MEMBERS</span></a>
@@ -52,7 +57,36 @@
     <div class="hero-section">
         <div class="hero-overlay">
             <h1 class="animated-title">ACCESS Events</h1>
-            <p class="hero-subtitle">Discover Amazing Tech Events</p>
+            <style>
+                .navbar {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 70px;
+                    z-index: 1000;
+                    padding: 0.5rem 1rem;
+                    background-color: rgba(25, 25, 35, 0.95) !important;
+                    backdrop-filter: blur(10px);
+                    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+                    transition: all 0.3s ease;
+                }
+                body {
+                    padding-top: 70px;
+                }
+                .navbar-toggler {
+                    display: none;
+                }
+                @media (max-width: 991px) {
+                    .navbar-toggler {
+                        display: block;
+                        border: none;
+                        background: rgba(255, 98, 0, 0.1);
+                        color: #ff6200;
+                    }
+                }
+            </style>
+            <p class="hero-subtitle">Discover Amazing Events Organised by ACCESS</p>
         </div>
         <div class="bubbles">
             <!-- Generate 15 bubbles -->
@@ -77,131 +111,127 @@
     <!-- Events Grid -->
     <div class="events-container">
         <div class="events-grid" id="eventsGrid">
-            <!-- Event Card: LogoRush -->
+            <!-- Event Card: ISRO -->
             <div class="event-card" data-category="Technical" style="--card-order: 1;">
                 <div class="event-image">
-                    <img src="Events/LogoRush.webp" alt="LogoRush" class="event-poster">
+                    <img src="Events/ISRO.jpg" alt="ISRO" class="event-poster">
                     <div class="event-badge">Technical</div>
                     <div class="event-date">
-                        <span class="day">14-17</span>
+                        <span class="day">20</span>
                         <span class="month">AUG</span>
                     </div>
                 </div>
                 <div class="event-info">
-                    <h3>LogoRush</h3>
+                    <h3>Challenges faced during space programs</h3>
                     <p class="event-description">
-                        The event focused on giving the access Logo a new, renovated look but still maintaining it's original essence
+                        When Science & Dreams Collide, Space is Conquered! Expert session on ISRO Space Programs & Engineering Applications.
                     </p>
                     <div class="event-meta">
-                        <span><i class="fas fa-calendar"></i> Aug 14-17, 2025</span>
+                        <span><i class="fas fa-calendar"></i> Aug 20, 2025</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Event Card: Militia -->
-            <div class="event-card" data-category="Gaming" style="--card-order: 2;">
+            <!-- Event Card: Madveritising -->
+            <div class="event-card" data-category="FUN" style="--card-order: 2;">
                 <div class="event-image">
-                    <img src="Events/Militia.webp" alt="Militia Battleground Arena" class="event-poster">
-                    <div class="event-badge">Gaming</div>
+                    <img src="Events/Madvertising.jpg" alt="Madvertising" class="event-poster">
+                    <div class="event-badge">Cultural</div>
                     <div class="event-date">
-                        <span class="day">31</span>
+                        <span class="day">30</span>
                         <span class="month">AUG</span>
                     </div>
                 </div>
                 <div class="event-info">
-                    <h3>Militia Battleground Arena</h3>
+                    <h3>Madvertising</h3>
                     <p class="event-description">
-                        This is where our players got ready to fight, we had students from all over the college participating, with all our labs completely full. We mainly had two games Mini Militia and BGMI LAN EVENT
-                    </p>
+                        Mix, match & market — The Madvertising where ads meet madness, where creativity meets confidence and presence of mind beats presentation!                    </p>
                     <div class="event-meta">
                         <span><i class="fas fa-calendar"></i> Aug 31, 2025</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Event Card: Data Structures -->
+            <!-- Event Card: Github -->
             <div class="event-card" data-category="Workshop" style="--card-order: 3;">
                 <div class="event-image">
-                    <img src="Events/DataStructures.webp" alt="Data Structures" class="event-poster">
+                    <img src="Events/Git.jpg" alt="Data Structures" class="event-poster">
                     <div class="event-badge">Workshop</div>
                     <div class="event-date">
-                        <span class="day">20</span>
+                        <span class="day">02-03</span>
                         <span class="month">SEP</span>
                     </div>
                 </div>
                 <div class="event-info">
-                    <h3>Data Structures</h3>
+                    <h3>Github Workshop </h3>
                     <p class="event-description">
-                        A refresher session on Data Structures from linear to non-linear
-                    </p>
+                        Build. Share. Contribute. The GitHub way!                    </p>
                     <div class="event-meta">
-                        <span><i class="fas fa-calendar"></i> Sep 20, 2024</span>
+                        <span><i class="fas fa-calendar"></i> Sep 02-03, 2025</span>
                     </div>
                 </div>
             </div>
-			<div class="event-card" data-category="Technical" style="--card-order: 4;">
+			<div class="event-card" data-category="Cultural" style="--card-order: 4;">
                 <div class="event-image">
-                    <img src="Events/QuizWhizShowdown.webp" alt="Quiz Whiz Showdown" class="event-poster">
-                    <div class="event-badge">Technical</div>
+                    <img src="Events/Teacher.png" alt="Teachers Day Celebration" class="event-poster">
+                    <div class="event-badge">Cultural</div>
                     <div class="event-date">
-                        <span class="day">5</span>
-                        <span class="month">OCT</span>
+                        <span class="day">4</span>
+                        <span class="month">SEP</span>
                     </div>
                 </div>
                 <div class="event-info">
-                    <h3>Quiz Whiz Showdown</h3>
+                    <h3>Teachers Day Celebration</h3>
                     <p class="event-description">
-                        An interesting tech event, with three different rounds in which participants' intellect were tested based on different criteria and chose the ultimate winner
-                    </p>
+                        A fun filled day where we celebrated teachers and their hardware !                    </p>
                     <div class="event-meta">
-                        <span><i class="fas fa-calendar"></i> Oct 5, 2024</span>
+                        <span><i class="fas fa-calendar"></i> SEP 04, 2025</span>
                     </div>
                 </div>
             </div>
-             <!-- Event Card: Ayudha Pooja -->
-			 <div class="event-card" data-category="Devotional" style="--card-order: 5;">
+             <!-- Event Card: MINDQUEST -->
+			 <div class="event-card" data-category="FUN" style="--card-order: 5;">
                 <div class="event-image">
-                    <img src="Events/GitHubWorkshop.webp" alt="Ayudha Pooja" class="event-poster">
-                    <div class="event-badge">Devotional</div>
+                    <img src="Events/MindQuest.png" alt="MINDQUEST" class="event-poster">
+                    <div class="event-badge">FUN</div>
                     <div class="event-date">
-                        <span class="day">7</span>
-                        <span class="month">OCT</span>
+                        <span class="day">07</span>
+                        <span class="month">SEP</span>
                     </div>
                 </div>
                 <div class="event-info">
-                    <h3>Ayudha Pooja</h3>
+                    <h3>MindQuest</h3>
                     <p class="event-description">
-                        A beautiful celebration for which whole of the CCE department comes together to pray and thank the almighty for all the blessings we have.
-                    </p>
+                        Puzzles, quizzes, and lots of fun! Are you game for the Mind Quest? Put your knowledge, creativity, and quick thinking to the ultimate test?</p>
                     <div class="event-meta">
                         <span><i class="fas fa-calendar"></i> Oct 7, 2024</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Event Card: Startup Workshop -->
+            <!-- Event Card: DSA Workshop -->
             <div class="event-card" data-category="Workshop" style="--card-order: 6;">
                 <div class="event-image">
-                    <img src="Events/Startup.webp" alt="Startup Workshop" class="event-poster">
+                    <img src="Events/DSA.png" alt="DSA Workshop" class="event-poster">
                     <div class="event-badge">Workshop</div>
                     <div class="event-date">
-                        <span class="day">19</span>
-                        <span class="month">OCT</span>
+                        <span class="day">09</span>
+                        <span class="month">SEP</span>
                     </div>
                 </div>
                 <div class="event-info">
-                    <h3>Navigating Indian Startup Landscape</h3>
+                    <h3>Workshop on DSA</h3>
                     <p class="event-description">
-                        A workshop covering reality of Indian startups
+                        A comprehensive workshop covering the reality of Indian startups. This workshop provided insights into the challenges and opportunities in the Indian startup ecosystem, featuring guest speakers from successful startups and interactive sessions on entrepreneurship.'</p>
                     </p>
                     <div class="event-meta">
-                        <span><i class="fas fa-calendar"></i> Oct 19, 2024</span>
+                        <span><i class="fas fa-calendar"></i> SEP 09, 2025</span>
                     </div>
                 </div>
             </div>
             
             <!-- Event Card: Good Vibes Gathering -->
-            <div class="event-card" data-category="Entertainment" style="--card-order: 7;">
+            <!--<div class="event-card" data-category="Entertainment" style="--card-order: 7;">
                 <div class="event-image">
                     <img src="Events/GoodVibesGathering.webp" alt="Good Vibes Gathering" class="event-poster">
                     <div class="event-badge">Entertainment</div>
@@ -221,7 +251,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: GitHub Workshop -->
+            <!-- Event Card: GitHub Workshop 
             <div class="event-card" data-category="Technical" style="--card-order: 8;">
                 <div class="event-image">
                     <img src="Events/GitHubWorkshop.webp" alt="GitHub Workshop" class="event-poster">
@@ -242,7 +272,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: Tech Fusion -->
+            <!-- Event Card: Tech Fusion 
             <div class="event-card" data-category="Technical" style="--card-order: 9;">
                 <div class="event-image">
                     <img src="Events/TechFusion.webp" alt="Tech Fusion" class="event-poster">
@@ -263,7 +293,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: ACCESS Football League -->
+            <!-- Event Card: ACCESS Football League 
             <div class="event-card" data-category="Sports" style="--card-order: 10;">
                 <div class="event-image">
                     <img src="Events/AccessFootball.webp" alt="ACCESS Football League" class="event-poster">
@@ -284,7 +314,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: Quiz-O-Mania -->
+            <!-- Event Card: Quiz-O-Mania 
             <div class="event-card" data-category="Technical" style="--card-order: 11;">
                 <div class="event-image">
                     <img src="Events/Quizomania.webp" alt="Quiz-O-Mania" class="event-poster">
@@ -305,7 +335,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: Bollywood Mania -->
+            <!-- Event Card: Bollywood Mania 
             <div class="event-card" data-category="Entertainment" style="--card-order: 12;">
                 <div class="event-image">
                     <img src="Events/BollywoodMania.webp" alt="Bollywood Mania" class="event-poster">
@@ -326,7 +356,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: Spinfinite Logic -->
+            <!-- Event Card: Spinfinite Logic 
             <div class="event-card" data-category="Incridea" style="--card-order: 13;">
                 <div class="event-image">
                     <img src="Events/Spin.webp" alt="Spinfinite Logic" class="event-poster">
@@ -347,7 +377,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: Meme War -->
+            <!-- Event Card: Meme War 
             <div class="event-card" data-category="Incridea" style="--card-order: 14;">
                 <div class="event-image">
                     <img src="Events/MemeWar.webp" alt="Meme War" class="event-poster">
@@ -368,7 +398,7 @@
                 </div>
             </div>
             
-            <!-- Event Card: Smokeless Bites -->
+            <!-- Event Card: Smokeless Bites
             <div class="event-card" data-category="Culinary" style="--card-order: 15;">
                 <div class="event-image">
                     <img src="Events/SmokelessBites.webp" alt="Smokeless Bites" class="event-poster">
@@ -387,7 +417,7 @@
                         <span><i class="fas fa-calendar"></i> Mar 7, 2025</span>
                     </div>
                 </div>
-            </div>
+            </div>-->
             
 
             <!-- Rest of the event cards remain the same -->
@@ -395,7 +425,7 @@
             
             <!-- Last few events shown to maintain the example -->
             <!-- Event Card: PrepQuest -->
-            <div class="event-card" data-category="Technical" style="--card-order: 16;">
+            <!--<div class="event-card" data-category="Technical" style="--card-order: 16;">
                 <div class="event-image">
                     <img src="Events/PrepQuest.webp" alt="PrepQuest" class="event-poster">
                     <div class="event-badge">Technical</div>
@@ -415,7 +445,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     
     <!-- Event Details Modal -->
     <div id="eventDetailsModal" class="event-modal">
@@ -432,6 +462,9 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="events.js"></script>
 </body>
 </html>

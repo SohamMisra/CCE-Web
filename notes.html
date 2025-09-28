@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="utility-classes/social-media.css">
     <link rel="stylesheet" href="utility-classes/pop-up.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="navbar.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -30,7 +31,7 @@
                 <img src="images/accesslogo.png" alt="Logo">
             </a>
             
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -64,7 +65,7 @@
 
     <div class="main">
         <div class="container">
-            <h1 style="text-align: center;">Syllabus and Time Table</h1>
+            <h1 style="text-align: relative;">Syllabus and Time Table</h1>
             
             <!-- Parent Container for Syllabus and Time Table -->
             <div class="content">
@@ -319,6 +320,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="navbar.js"></script>
+    <script>
+        // Hardening: ensure navbar toggler works even if Bootstrap JS conflicts
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggler = document.querySelector('.navbar .navbar-toggler');
+            var collapse = document.getElementById('navbarNav');
+            if (toggler && collapse) {
+                toggler.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    collapse.classList.toggle('show');
+                    var expanded = toggler.getAttribute('aria-expanded') === 'true';
+                    toggler.setAttribute('aria-expanded', (!expanded).toString());
+                });
+            }
+        });
+    </script>
     
     <!-- Add script to highlight current page in navbar -->
     <script>

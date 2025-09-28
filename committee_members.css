@@ -9,19 +9,22 @@ body {
     padding-top: 80px;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuXzAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0iTSAtNSw1IEwgNSw1IiBzdHJva2U9IiMyYTJhM2EiIHN0cm9rZS13aWR0aD0iMC41Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm5fMCkiLz48L3N2Zz4='), linear-gradient(135deg, #121212 0%, #1e1e2d 100%);
     background-attachment: fixed;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 /* Container Styling */
 .container[data-year] {
-    max-width: 1300px;
-    margin: 30px auto;
-    padding: 20px;
-    background: rgba(25, 25, 35, 0.6);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
+    max-width: 1300px !important;
+    margin: 30px auto !important;
+    padding: 20px !important;
+    background: rgba(25, 25, 35, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
 }
 
 h1 {
@@ -34,22 +37,40 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* Grid Layout */
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+/* Grid Layout - Override Bootstrap with maximum specificity */
+body.committee-members-page .container[data-year] .members-grid.committee-members-grid,
+body.committee-members-page .members-grid.committee-members-grid,
+.members-grid.committee-members-grid,
+.container .members-grid.committee-members-grid,
+body .members-grid.committee-members-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 0 10px !important;
+    width: 100% !important;
+    max-width: none !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
 }
 
-/* Individual Member Box */
-.member {
-    background: rgba(35, 35, 45, 0.8);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+/* Individual Member Box - Override Bootstrap */
+.member,
+.members-grid .member,
+.container .member {
+    background: rgba(35, 35, 45, 0.8) !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    cursor: pointer !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    float: none !important;
+    position: relative !important;
 }
 
 .member:hover {
@@ -61,12 +82,12 @@ h1 {
 
 /* Profile Image */
 .member img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255, 98, 0, 0.6);
-    margin-bottom: 15px;
+    border: 3px solid rgba(255, 98, 0, 0.6);
+    margin-bottom: 12px;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -79,21 +100,21 @@ h1 {
 
 /* Member Info */
 .member h2 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: all 0.3s ease;
 }
 
 .member .role {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #ff6200;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .member .semester {
-    font-size: 1em;
+    font-size: 0.9em;
     color: #aaa;
 }
 
@@ -197,6 +218,7 @@ h1 {
     justify-content: center;
     gap: 15px;
     padding: 15px 0;
+    flex-wrap: wrap;
 }
 
 .year-tab {
@@ -272,9 +294,27 @@ h1 {
 }
 
 /* Responsive Design */
+@media (max-width: 1400px) {
+    .container[data-year] {
+        max-width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .members-grid {
+        gap: 20px;
+        padding: 0 5px;
+    }
+}
+
 @media (max-width: 1200px) {
     .members-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 18px;
+    }
+    
+    .member {
+        max-width: 220px;
     }
 }
 
@@ -314,11 +354,58 @@ h1 {
     .logo1 > img {
         max-height: 50px;
     }
+    
+    .container[data-year] {
+        margin: 15px auto;
+        padding: 15px;
+    }
+    
+    .members-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    
+    .member {
+        max-width: 200px;
+        padding: 15px;
+    }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+    .container[data-year] {
+        margin: 10px auto;
+        padding: 12px;
+    }
+    
     .members-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        padding: 0;
+    }
+    
+    .member {
+        max-width: 180px;
+        padding: 12px;
+    }
+    
+    .member img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .year-tabs {
+        gap: 10px;
+        padding: 10px 0;
+    }
+    
+    .year-tab {
+        padding: 10px 20px;
+        font-size: 15px;
     }
 }
 
@@ -333,23 +420,80 @@ h1 {
     
     h1 {
         font-size: 1.5rem;
-        padding: 0 15px;
+        padding: 0 10px;
+        margin-bottom: 15px;
     }
-}
-
-@media (max-width: 600px) {
+    
+    .container[data-year] {
+        margin: 8px auto;
+        padding: 10px;
+    }
+    
     .members-grid {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0;
     }
-
+    
+    .member {
+        max-width: 100%;
+        padding: 12px;
+    }
+    
     .member img {
-        width: 120px;
-        height: 120px;
+        width: 90px;
+        height: 90px;
     }
     
     .year-tab {
         padding: 8px 15px;
         font-size: 14px;
+    }
+    
+    .year-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .container[data-year] {
+        margin: 5px auto;
+        padding: 8px;
+    }
+    
+    .member {
+        padding: 10px;
+    }
+    
+    .member img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .member h2 {
+        font-size: 1.2em;
+    }
+    
+    .member .role {
+        font-size: 1em;
+    }
+    
+    .member .semester {
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .year-tab {
+        padding: 6px 12px;
+        font-size: 13px;
     }
 }
 footer {

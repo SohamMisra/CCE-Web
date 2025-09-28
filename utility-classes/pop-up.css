@@ -48,12 +48,15 @@
   position: relative;
   max-height: 80vh; /* Ensure the pop-up doesn’t exceed viewport */
   overflow-y: auto; /* Enable vertical scrolling */
+  box-sizing: border-box;
 }
 
 .popup h2 {
   margin-top: 0;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
+  margin-left: 16px;
+  text-align: left;
 }
 .popup .close {
   position: absolute;
@@ -73,6 +76,28 @@
   min-height: auto;
   overflow-y: auto;
   padding-right: 10px;
+  word-break: break-word;
+  text-align: left;
+  padding-left: 16px;
+}
+
+/* Override any global UL styles inside the popup to keep lists vertical */
+.popup .content ul {
+  display: block;
+  float: none;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 20px;
+  margin: 0 0 10px 16px;
+}
+
+.popup .content li {
+  display: list-item;
+  white-space: normal;
+  word-break: normal;
 }
 
 /* Collapsable info */
@@ -84,15 +109,19 @@ padding: 0;
 list-style-type: none;
 text-align: left;
 border: 2px solid black;
+margin-left: 16px;
 }
 
 .accordion li label{
-display: flex;
-align-items: center;
-padding: 10px;
-font-size: 20px;
-font-weight: 500;
-cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  justify-content: flex-start;
+  padding-left: 16px;
 }
 
 label::before{
@@ -113,11 +142,12 @@ line-height: 26px;
 max-height: 0;
 overflow: hidden;
 transition: max-height 0.5s, padding 0.5s;  
+text-align: left;
 }
 
 .accordion input[type="radio"]:checked + label + .dropdown-content {
 max-height: 400px;
-padding: 10px 10px 20px;
+padding: 10px 16px 20px;
 }
 
 .accordion input[type="radio"]:checked + label::before{
@@ -126,9 +156,19 @@ content: '-';
 
 @media screen and (max-width: 700px){
 .box{
-  width: 70%;
+  width: 92%;
 }
 .popup{
-  width: 70%;
+  width: 92%;
+  padding: 16px;
+}
+.popup .content img{
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+.accordion li label{
+  font-size: 18px;
 }
 }

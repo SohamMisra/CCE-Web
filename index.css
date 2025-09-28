@@ -212,7 +212,7 @@ body {
         font-weight: 700;
     }
     .content-section{
-        width: 150vw;
+        width: 100vw;
     }
 }
 .info-section{
@@ -341,7 +341,7 @@ video {
     padding: 0.5rem 1rem;
     background-color: rgba(25, 25, 35, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 20px rgba(97, 96, 96, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -350,7 +350,7 @@ video {
 }
 
 .navbar .container {
-    max-width: 1200px;
+    max-width: 120%;
     margin: 0 auto;
     padding: 0 15px;
     display: flex;
@@ -358,6 +358,7 @@ video {
     justify-content: space-between;
     align-items: center;
     background: none;
+    
     box-shadow: none;
 }
 

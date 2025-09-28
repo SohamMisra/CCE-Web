@@ -33,33 +33,36 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
     }
     
-    // Handle mobile menu toggle
+    // Handle mobile menu toggle - let Bootstrap handle the main toggle
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function() {
-            navbarCollapse.classList.toggle('show');
-        });
-    }
-    
-    // Close navbar when clicking outside on mobile
-    document.addEventListener('click', function(event) {
-        const isClickInside = navbarToggler.contains(event.target) || 
-                             navbarCollapse.contains(event.target);
-        
-        if (!isClickInside && navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
-        }
-    });
     
     // Close navbar when clicking a nav link on mobile
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 991 && navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
+                // Use Bootstrap's collapse method if available, otherwise manual toggle
+                if (typeof $ !== 'undefined' && $.fn.collapse) {
+                    $(navbarCollapse).collapse('hide');
+                } else {
+                    navbarCollapse.classList.remove('show');
+                }
             }
         });
+    });
+    
+    // Close navbar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        const isClickInside = (navbarToggler && navbarToggler.contains(event.target)) || 
+                             (navbarCollapse && navbarCollapse.contains(event.target));
+        
+        if (!isClickInside && navbarCollapse && navbarCollapse.classList.contains('show')) {
+            if (typeof $ !== 'undefined' && $.fn.collapse) {
+                $(navbarCollapse).collapse('hide');
+            } else {
+                navbarCollapse.classList.remove('show');
+            }
+        }
     });
 }); 
