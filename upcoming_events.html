@@ -108,13 +108,18 @@
         </div>
     </div>
     
+    <div class="year-tabs">
+        <button class="year-tab active" data-year="2025">2025-26</button>
+        <button class="year-tab" data-year="2024">2024-25</button>
+    </div>
+
     <!-- Events Grid -->
-    <div class="events-container">
+    <div class="events-container" data-year="2025">
         <div class="events-grid" id="eventsGrid">
             <!-- Event Card: ISRO -->
             <div class="event-card" data-category="Technical" style="--card-order: 1;">
                 <div class="event-image">
-                    <img src="Events/ISRO.jpg" alt="ISRO" class="event-poster">
+                    <img src="Events/2025-26/ISRO.jpg" alt="ISRO" class="event-poster">
                     <div class="event-badge">Technical</div>
                     <div class="event-date">
                         <span class="day">20</span>
@@ -135,7 +140,7 @@
             <!-- Event Card: Madveritising -->
             <div class="event-card" data-category="FUN" style="--card-order: 2;">
                 <div class="event-image">
-                    <img src="Events/Madvertising.jpg" alt="Madvertising" class="event-poster">
+                    <img src="Events/2025-26/Madvertising.jpg" alt="Madvertising" class="event-poster">
                     <div class="event-badge">Cultural</div>
                     <div class="event-date">
                         <span class="day">30</span>
@@ -155,7 +160,7 @@
             <!-- Event Card: Github -->
             <div class="event-card" data-category="Workshop" style="--card-order: 3;">
                 <div class="event-image">
-                    <img src="Events/Git.jpg" alt="Data Structures" class="event-poster">
+                    <img src="Events/2025-26/Git.jpg" alt="Data Structures" class="event-poster">
                     <div class="event-badge">Workshop</div>
                     <div class="event-date">
                         <span class="day">02-03</span>
@@ -173,7 +178,7 @@
             </div>
 			<div class="event-card" data-category="Cultural" style="--card-order: 4;">
                 <div class="event-image">
-                    <img src="Events/Teacher.png" alt="Teachers Day Celebration" class="event-poster">
+                    <img src="Events/2025-26/Teacher.png" alt="Teachers Day Celebration" class="event-poster">
                     <div class="event-badge">Cultural</div>
                     <div class="event-date">
                         <span class="day">4</span>
@@ -192,7 +197,7 @@
              <!-- Event Card: MINDQUEST -->
 			 <div class="event-card" data-category="FUN" style="--card-order: 5;">
                 <div class="event-image">
-                    <img src="Events/MindQuest.png" alt="MINDQUEST" class="event-poster">
+                    <img src="Events/2025-26/MindQuest.png" alt="MINDQUEST" class="event-poster">
                     <div class="event-badge">FUN</div>
                     <div class="event-date">
                         <span class="day">07</span>
@@ -204,7 +209,7 @@
                     <p class="event-description">
                         Puzzles, quizzes, and lots of fun! Are you game for the Mind Quest? Put your knowledge, creativity, and quick thinking to the ultimate test?</p>
                     <div class="event-meta">
-                        <span><i class="fas fa-calendar"></i> Oct 7, 2024</span>
+                        <span><i class="fas fa-calendar"></i> Sep 7, 2025</span>
                     </div>
                 </div>
             </div>
@@ -212,7 +217,7 @@
             <!-- Event Card: DSA Workshop -->
             <div class="event-card" data-category="Workshop" style="--card-order: 6;">
                 <div class="event-image">
-                    <img src="Events/DSA.png" alt="DSA Workshop" class="event-poster">
+                    <img src="Events/2025-26/DSA.png" alt="DSA Workshop" class="event-poster">
                     <div class="event-badge">Workshop</div>
                     <div class="event-date">
                         <span class="day">09</span>
@@ -229,11 +234,96 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Event Card: Good Vibes Gathering -->
-            <!--<div class="event-card" data-category="Entertainment" style="--card-order: 7;">
+
+            <!-- Event Card: Memory lane 2.0  -->
+            <div class="event-card" data-category="Cultural" style="--card-order: 6;">
                 <div class="event-image">
-                    <img src="Events/GoodVibesGathering.webp" alt="Good Vibes Gathering" class="event-poster">
+                    <img src="Events/2025-26/memory.jpg" alt="Memory lane" class="event-poster">
+                    <div class="event-badge">Fun</div>
+                    <div class="event-date">
+                        <span class="day">27</span>
+                        <span class="month">SEP</span>
+                    </div>
+                </div>
+                <div class="event-info">
+                    <h3>Memory Lane 2.0</h3>
+                    <p class="event-description">
+                        Sharpen your memory, trust your instincts, and become the Memory Lane 2.0 Champion!.
+                    </p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> SEP 27, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Event card: Rang manthan-->
+            <div class="event-card" data-category="Cultural" style="--card-order: 6;">
+                <div class="event-image">
+                    <img src="Events/2025-26/rangoli.jpeg" alt="Rangoli" class="event-poster">
+                    <div class="event-badge">Cultural</div>
+                    <div class="event-date">
+                        <span class="day">29</span>
+                        <span class="month">SEP</span>
+                    </div>
+                </div>
+                <div class="event-info">
+                    <h3>Rang Manthan</h3>
+                    <p class="event-description">
+                        The Rangoli event is around the corner, where creativity meets tradition and every design tells a story. Be ready to create a version that describes your story come to reality. 
+                    </p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> SEP 29, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Ayudha pooja-->
+            <div class="event-card" data-category="Cultural" style="--card-order: 6;">
+                <div class="event-image">
+                    <img src="Events/2025-26/AyudhaPooja.jpg" alt="Ayudha pooja" class="event-poster">
+                    <div class="event-badge">Cultural</div>
+                    <div class="event-date">
+                        <span class="day">30</span>
+                        <span class="month">SEP</span>
+                    </div>
+                </div>
+                <div class="event-info">
+                    <h3>Ayudha pooja</h3>
+                    <p class="event-description">
+                        Ayudha Pooja is not just a festival, but a reminder to respect the very tools that help us shape our dreams and progress in life✨.Let’s celebrate with gratitude, devotion, and joy as we seek blessings for wisdom and prosperity</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> SEP 30, 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Twirl N Taal-->
+            <div class="event-card" data-category="Cultural" style="--card-order: 6;">
+                <div class="event-image">
+                    <img src="Events/2025-26/Garba_Poster.png" alt="Twirl N Taal" class="event-poster">
+                    <div class="event-badge">Cultural</div>
+                    <div class="event-date">
+                        <span class="day">30</span>
+                        <span class="month">SEP</span>
+                    </div>
+                </div>
+                <div class="event-info">
+                    <h3>Twirl N Taal</h3>
+                    <p class="event-description">
+                        Get ready to lose yourself in the rhythm of the dhol and the magic of tradition! Twirl & Taal brings together joy, devotion, and dance as we celebrate the spirit of Garba with colors, energy, and endless smiles. Let’s twirl into the night and let every beat tell a story of togetherness.                     <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> SEP 30, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="events-container" data-year="2024">
+        <div class="events-grid" id="eventsGrid">
+            <!-- Event Card: Good Vibes Gathering -->
+            <div class="event-card" data-category="Entertainment" style="--card-order: 7;">
+                <div class="event-image">
+                    <img src="Events/2024-25/GoodVibesGathering.webp" alt="Good Vibes Gathering" class="event-poster">
                     <div class="event-badge">Entertainment</div>
                     <div class="event-date">
                         <span class="day">30</span>
@@ -251,10 +341,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: GitHub Workshop 
+            <!--Event Card: GitHub Workshop -->
             <div class="event-card" data-category="Technical" style="--card-order: 8;">
                 <div class="event-image">
-                    <img src="Events/GitHubWorkshop.webp" alt="GitHub Workshop" class="event-poster">
+                    <img src="Events/2024-25/GitHubWorkshop.webp" alt="GitHub Workshop" class="event-poster">
                     <div class="event-badge">Technical</div>
                     <div class="event-date">
                         <span class="day">18</span>
@@ -272,10 +362,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: Tech Fusion 
+            <!-- Event Card: Tech Fusion-->
             <div class="event-card" data-category="Technical" style="--card-order: 9;">
                 <div class="event-image">
-                    <img src="Events/TechFusion.webp" alt="Tech Fusion" class="event-poster">
+                    <img src="Events/2024-25/TechFusion.webp" alt="Tech Fusion" class="event-poster">
                     <div class="event-badge">Technical</div>
                     <div class="event-date">
                         <span class="day">11</span>
@@ -293,10 +383,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: ACCESS Football League 
+            <!-- Event Card: ACCESS Football League -->
             <div class="event-card" data-category="Sports" style="--card-order: 10;">
                 <div class="event-image">
-                    <img src="Events/AccessFootball.webp" alt="ACCESS Football League" class="event-poster">
+                    <img src="Events/2024-25/AccessFootball.webp" alt="ACCESS Football League" class="event-poster">
                     <div class="event-badge">Sports</div>
                     <div class="event-date">
                         <span class="day">25</span>
@@ -314,10 +404,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: Quiz-O-Mania 
+            <!-- Event Card: Quiz-O-Mania -->
             <div class="event-card" data-category="Technical" style="--card-order: 11;">
                 <div class="event-image">
-                    <img src="Events/Quizomania.webp" alt="Quiz-O-Mania" class="event-poster">
+                    <img src="Events/2024-25/Quiz.jpg" alt="Quiz-O-Mania" class="event-poster">
                     <div class="event-badge">Technical</div>
                     <div class="event-date">
                         <span class="day">1</span>
@@ -335,10 +425,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: Bollywood Mania 
+            <!-- Event Card: Bollywood Mania--> 
             <div class="event-card" data-category="Entertainment" style="--card-order: 12;">
                 <div class="event-image">
-                    <img src="Events/BollywoodMania.webp" alt="Bollywood Mania" class="event-poster">
+                    <img src="Events/2024-25/Bollywood.png" alt="Bollywood Mania" class="event-poster">
                     <div class="event-badge">Entertainment</div>
                     <div class="event-date">
                         <span class="day">8</span>
@@ -356,10 +446,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: Spinfinite Logic 
+            <!-- Event Card: Spinfinite Logic--> 
             <div class="event-card" data-category="Incridea" style="--card-order: 13;">
                 <div class="event-image">
-                    <img src="Events/Spin.webp" alt="Spinfinite Logic" class="event-poster">
+                    <img src="Events/2024-25/Spin.png" alt="Spinfinite Logic" class="event-poster">
                     <div class="event-badge">Incridea</div>
                     <div class="event-date">
                         <span class="day">27</span>
@@ -377,10 +467,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: Meme War 
+            <!-- Event Card: Meme War -->
             <div class="event-card" data-category="Incridea" style="--card-order: 14;">
                 <div class="event-image">
-                    <img src="Events/MemeWar.webp" alt="Meme War" class="event-poster">
+                    <img src="Events/2024-25/MemeWar.png" alt="Meme War" class="event-poster">
                     <div class="event-badge">Incridea</div>
                     <div class="event-date">
                         <span class="day">28</span>
@@ -398,10 +488,10 @@
                 </div>
             </div>
             
-            <!-- Event Card: Smokeless Bites
+            <!-- Event Card: Smokeless Bites-->
             <div class="event-card" data-category="Culinary" style="--card-order: 15;">
                 <div class="event-image">
-                    <img src="Events/SmokelessBites.webp" alt="Smokeless Bites" class="event-poster">
+                    <img src="Events/2024-25/SmokelessBites.png" alt="Smokeless Bites" class="event-poster">
                     <div class="event-badge">Culinary</div>
                     <div class="event-date">
                         <span class="day">7</span>
@@ -417,17 +507,16 @@
                         <span><i class="fas fa-calendar"></i> Mar 7, 2025</span>
                     </div>
                 </div>
-            </div>-->
+            </div>
             
-
             <!-- Rest of the event cards remain the same -->
             <!-- Remaining event cards... -->
             
             <!-- Last few events shown to maintain the example -->
             <!-- Event Card: PrepQuest -->
-            <!--<div class="event-card" data-category="Technical" style="--card-order: 16;">
+            <div class="event-card" data-category="Technical" style="--card-order: 16;">
                 <div class="event-image">
-                    <img src="Events/PrepQuest.webp" alt="PrepQuest" class="event-poster">
+                    <img src="Events/2024-25/PrepQuest.png" alt="PrepQuest" class="event-poster">
                     <div class="event-badge">Technical</div>
                     <div class="event-date">
                         <span class="day">22</span>
@@ -445,7 +534,7 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
     
     <!-- Event Details Modal -->
     <div id="eventDetailsModal" class="event-modal">
@@ -466,5 +555,56 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="events.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Get all year tabs and containers
+    const yearTabs = document.querySelectorAll('.year-tab');
+    const containers = document.querySelectorAll('.events-container[data-year]');
+
+    // Function to show content for selected year with smooth transitions
+    function showYearContent(year) {
+        // First fade out all containers
+        containers.forEach(container => {
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            // Short delay before hiding to allow fade out animation
+            setTimeout(() => {
+                if (container.getAttribute('data-year') === year) {
+                    container.style.display = 'block';
+                    // Small delay before fading in the selected container
+                    setTimeout(() => {
+                        container.style.opacity = '1';
+                        container.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    container.style.display = 'none';
+                }
+            }, 300);
+        });
+    }
+
+    // Add click event listeners to year tabs
+    yearTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            yearTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked tab with a pulse effect
+            tab.classList.add('active');
+            tab.style.animation = 'none';
+            setTimeout(() => {
+                tab.style.animation = 'pulse 0.5s ease-in-out';
+            }, 5);
+            
+            // Show content for selected year
+            showYearContent(tab.getAttribute('data-year'));
+        });
+    });
+
+    // Show 2025 content by default
+    showYearContent('2025');
+    });
+    </script>
 </body>
 </html>

@@ -25,7 +25,7 @@ body {
 /* Hero Section Styles with Enhanced Bubbles */
 .hero-section {
     position: relative;
-    height: 60vh;
+    height: 40vh;
     background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
     overflow: hidden;
     margin-bottom: 30px;
@@ -110,7 +110,75 @@ body {
 .bubble:nth-child(14) { left: 85%; animation-duration: 11s; animation-delay: 0s; }
 .bubble:nth-child(15) { left: 15%; animation-duration: 9s; animation-delay: 2s; }
 
+/* Year Tabs Styling */
+.year-tabs {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+    flex-wrap: wrap;
+}
+
+.year-tab {
+    padding: 12px 25px;
+    border: none;
+    background-color: rgba(35, 35, 45, 0.7);
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.year-tab:hover {
+    background-color: rgba(45, 45, 60, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.year-tab.active {
+    background-color: #ff6200;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255, 98, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Added animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container[data-year] {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.member {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@media (min-width: 601px) {
+    .members-grid .member:nth-child(1) { animation-delay: 0.05s; }
+    .members-grid .member:nth-child(2) { animation-delay: 0.1s; }
+    .members-grid .member:nth-child(3) { animation-delay: 0.15s; }
+    .members-grid .member:nth-child(4) { animation-delay: 0.2s; }
+    .members-grid .member:nth-child(5) { animation-delay: 0.25s; }
+    .members-grid .member:nth-child(6) { animation-delay: 0.3s; }
+    .members-grid .member:nth-child(7) { animation-delay: 0.35s; }
+    .members-grid .member:nth-child(8) { animation-delay: 0.4s; }
+    /* and so on for other elements */
+}
+
 /* Events Container Styles */
+.events-container { display: none; }
+
 .events-container {
     max-width: 1200px;
     margin: 0 auto;
